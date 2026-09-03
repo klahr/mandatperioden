@@ -1,0 +1,57 @@
+{
+ "finanskris": {
+  "namn": "Finanskrisens efterdyningar och eurokrisen",
+  "nar": "2009–2013",
+  "vad": "Sverige gick in i mandatperioden 2010–2014 med arbetslösheten uppe på 8,6 procent efter finanskrisen 2008–2009, och fick därefter eurokrisen ovanpå. Efterfrågan på svensk export föll två gånger på fyra år. Perioden är den svagaste av de fyra i flera av rapportens ekonomiska mått, och orsaken ligger till största delen utanför svensk politik.",
+  "ankare": [
+   "Höständringsbudget för 2012"
+  ]
+ },
+ "flykting2015": {
+  "namn": "Flyktingmottagandet 2015",
+  "nar": "hösten 2015 och åren efter",
+  "vad": "Sverige tog emot cirka 163 000 asylsökande under 2015. Det syns i flera av rapportens mått med några års fördröjning: befolkningens sammansättning, sysselsättningsgapet mellan inrikes och utrikes födda, elevunderlaget i skolan och kommunernas kostnader. Riksdagen beslutade våren 2016 om tillfälliga begränsningar av uppehållstillstånd.",
+  "ankare": [
+   "Tillfälliga begränsningar av möjligheten att få uppehållstillstånd i Sverige"
+  ]
+ },
+ "pandemi": {
+  "namn": "Coronapandemin",
+  "nar": "mars 2020 – mars 2022",
+  "vad": "Pandemin bryter nästan varje serie i rapporten, och gör det åt olika håll. Dödligheten steg 2020, medellivslängden föll för första gången på decennier, sjukfrånvaron sköt upp, vården sköt upp planerade operationer så att köerna växte, anmälda brott föll när folk höll sig hemma och tågpunktligheten förbättrades kraftigt när trafiken minskade. Riksdagen fattade ett tjugotal extra ändringsbudgetar. Nästan allt detta är pandemieffekt, inte politisk effekt – och en del av rörelsen 2022–2026 är återgång till det normala snarare än förbättring.",
+  "ankare": [
+   "Upphävande av covid-19-lagen och lagen om tillfälliga smittskyddsåtgärder på serveringsställen",
+   "Extra ändringsbudget för 2020 – Stöd till hälso- och sjukvården, utbildningsinsatser och andra åtgärder med anledning av coronaviruset"
+  ]
+ },
+ "krig2022": {
+  "namn": "Rysslands fullskaliga invasion av Ukraina",
+  "nar": "från 24 februari 2022",
+  "vad": "Invasionen inledde den pågående mandatperioden och driver flera av dess mått direkt: energipriserna, inflationen, försvarsutgifterna och Natoanslutningen. Försvarsutgifternas uppgång under 2022–2026 är i den meningen inte ett resultat av att svensk politik prioriterat om av egen kraft, utan av ett säkerhetsläge som ändrades utifrån.",
+  "ankare": [
+   "Extra ändringsbudget för 2022 - Åtgärder för att stärka rikets militära försvar och kompensation till hushållen för höga elpriser"
+  ]
+ },
+ "inflation2022": {
+  "namn": "Inflations-, energipris- och räntechocken",
+  "nar": "2022–2024",
+  "vad": "Inflationen nådde drygt 12 procent i december 2022 och Riksbanken höjde styrräntan från noll till 4,00 procent på under två år. Det är den enskilt viktigaste förklaringen till hur den pågående mandatperioden ser ut i rapporten: reallönerna föll och återhämtade sig, bostadspriserna och bostadsbyggandet föll, konkurserna och skuldsättningen steg, elpriserna toppade. Riksdagen beslutade om elstöd till hushåll och företag. Riksbankens penningpolitik beslutas inte av riksdagen, så huvuddelen av rörelsen i dessa mått ligger utanför mandatperiodens politiska kontroll.",
+  "ankare": [
+   "Extra ändringsbudget för 2023 – Stöd till Ukraina samt åtgärder riktade till företag",
+   "Sekretess vid Försäkringskassans handläggning av ärenden om elstöd samt slopad kontrolluppgiftsskyldighet"
+  ]
+ },
+ "gangvald": {
+  "namn": "Det dödliga skjutvapenvåldets uppgång och vändning",
+  "nar": "cirka 2013–2023 uppgång, därefter nedgång",
+  "vad": "Dödligt våld med skjutvapen steg från cirka 17 fall per år i början av 2010-talet till 63 år 2022, och föll därefter. Uppgången började långt före den mandatperiod då nedgången inträffade, och nedgången började innan de skärpningar som beslutades 2023–2024 hunnit få verkan. Brå:s egen bedömning är att utvecklingen har flera samtidiga orsaker, däribland konfliktdynamik mellan kriminella nätverk, och att polisiära och rättsliga insatser är en del av bilden men inte hela.",
+  "ankare": [
+   "Skärpta straff för brott i kriminella nätverk"
+  ]
+ },
+ "demografi": {
+  "namn": "Den demografiska förskjutningen",
+  "nar": "hela perioden 2010–2026",
+  "vad": "Gruppen 80 år och äldre växer snabbt medan de stora 1990-talskullarna kommer ut i arbetslivet. Det påverkar vårdbehov, äldreomsorgens täckningsgrad, medelåldern och skatteunderlaget oavsett vilken politik som förs. Befolkningen växte dessutom med 3,5, 5,0, 2,8 och 0,6 procent under de fyra perioderna, vilket är skälet till att rapporten räknar per invånare där det är möjligt."
+ }
+}

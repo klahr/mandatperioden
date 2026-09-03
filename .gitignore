@@ -1,0 +1,9 @@
+pipeline/cache/
+pipeline/cache_alt/
+pipeline/cache_rd/
+pipeline/sources/
+pipeline/data/
+out/
+__pycache__/
+*.pyc
+.DS_Store
