@@ -1,95 +1,166 @@
 {
-  "_om": "Mandatperioderna. Lägg till en period genom att lägga till ett objekt i listan och kör om analyze.py och render.py. Inget annat behöver ändras: nollpunkter och periodfönster räknas fram ur datumen och reglerna nedan.",
-  "periods": [
-    {
-      "start": "2010-10-15",
-      "slut": "2014-10-14",
-      "label": "2010–2014",
-      "kort": "10–14",
-      "regering": "Reinfeldt II",
-      "not": "Fullbordad period. Innehåller eurokrisen och återhämtningen efter finanskrisen."
-    },
-    {
-      "start": "2014-10-15",
-      "slut": "2018-10-14",
-      "label": "2014–2018",
-      "kort": "14–18",
-      "regering": "Löfven I",
-      "not": "Fullbordad period. Flyktingmottagandet 2015 och en stark konjunktur."
-    },
-    {
-      "start": "2018-10-15",
-      "slut": "2022-10-14",
-      "label": "2018–2022",
-      "kort": "18–22",
-      "regering": "Löfven II och Andersson",
-      "not": "Fullbordad period. Pandemiåren 2020–2021 och inflationsvåren 2022."
-    },
-    {
-      "start": "2022-10-15",
-      "slut": "2026-10-14",
-      "label": "2022–2026",
-      "kort": "22–26",
-      "regering": "Kristersson",
-      "not": "Pågående. Statistiken når som längst andra kvartalet 2026; flera register slutar 2024."
-    }
-  ],
-  "_om_frekvenser": "Hur en periodgräns mitt i oktober översätts till statistikens egna perioder. offset räknas från den observationsperiod som innehåller startdatumet: 0 = den perioden själv, 1 = nästa. nollpunkt_offset är hur många steg bakåt från periodens första observation nollpunkten ligger; 1 som standard, 2 för månadsserier så att nollpunkten blir den sista hela månaden före skiftet i stället för oktober, som ligger halvt på var sida. ULF har ojämna intervall och tilldelas i stället efter intervallets mittpunkt.",
-  "frekvenser": {
-    "Q": {
-      "offset": 0,
-      "nollpunkt_offset": 1,
-      "beskrivning": "kvartalet som innehåller den 15 oktober"
-    },
-    "M": {
-      "offset": 1,
-      "nollpunkt_offset": 2,
-      "beskrivning": "första hela månaden efter skiftet"
-    },
-    "A": {
-      "offset": 1,
-      "nollpunkt_offset": 1,
-      "beskrivning": "året efter valåret"
-    },
-    "LA": {
-      "offset": 0,
-      "nollpunkt_offset": 1,
-      "beskrivning": "läsåret som börjar valåret"
-    },
-    "ULF": {
-      "mittpunkt": true,
-      "beskrivning": "intervallet vars mittpunkt ligger inom perioden"
-    }
+ "_om": "Mandatperioderna. Lägg till en period genom att lägga till ett objekt i listan och kör om analyze.py och render.py. Inget annat behöver ändras: nollpunkter och periodfönster räknas fram ur datumen och reglerna nedan.",
+ "periods": [
+  {
+   "start": "2010-10-15",
+   "slut": "2014-10-14",
+   "label": "2010–2014",
+   "kort": "10–14",
+   "regering": "Reinfeldt II",
+   "not": "Fullbordad period. Innehåller eurokrisen och återhämtningen efter finanskrisen.",
+   "regeringspartier": [
+    "M",
+    "C",
+    "FP",
+    "KD"
+   ],
+   "stodpartier": [],
+   "regeringsnot": "Reinfeldt II, alliansregering i minoritet efter valet 2010 (173 av 349 mandat). Sverigedemokraterna kom in i riksdagen samma val; regeringen sökte stöd från fall till fall."
   },
-  "_om_utjamning": "Glidande medelvärde per frekvens. seasonal=true ger 2xN-filtret som tar bort en årscykel exakt.",
-  "utjamning": {
-    "Q": {
-      "fonster": 4,
-      "seasonal": true,
-      "label": "rullande år, 4 kvartal"
-    },
-    "M": {
-      "fonster": 12,
-      "seasonal": true,
-      "label": "rullande år, 12 månader"
-    },
-    "A": {
-      "fonster": 3,
-      "seasonal": false,
-      "label": "3 år"
-    },
-    "LA": {
-      "fonster": 3,
-      "seasonal": false,
-      "label": "3 läsår"
-    },
-    "ULF": null
+  {
+   "start": "2014-10-15",
+   "slut": "2018-10-14",
+   "label": "2014–2018",
+   "kort": "14–18",
+   "regering": "Löfven I",
+   "not": "Fullbordad period. Flyktingmottagandet 2015 och en stark konjunktur.",
+   "regeringspartier": [
+    "S",
+    "MP"
+   ],
+   "stodpartier": [],
+   "regeringsnot": "Löfven I, minoritetsregering. Decemberöverenskommelsen med allianspartierna gällde från december 2014 till oktober 2015; därefter förhandlades budgetarna från fall till fall."
   },
-  "trosklar": {
-    "_om": "Gräns för att kalla en förändring en förändring, respektive en taktändring en taktändring.",
-    "niva_procentenheter": 0.5,
-    "niva_procent": 0.5,
-    "takt_procentenheter": 0.2,
-    "takt_procent": 0.5
+  {
+   "start": "2018-10-15",
+   "slut": "2022-10-14",
+   "label": "2018–2022",
+   "kort": "18–22",
+   "regering": "Löfven II och Andersson",
+   "not": "Fullbordad period. Pandemiåren 2020–2021 och inflationsvåren 2022.",
+   "regeringspartier": [
+    "S",
+    "MP"
+   ],
+   "stodpartier": [
+    "C",
+    "L"
+   ],
+   "regeringsnot": "Perioden inleddes med 134 dagars regeringsbildning, där Löfven I satt som övergångsregering till januari 2019. Löfven II bildades sedan med Januariavtalet, där C och L gav stöd utan att ingå i regeringen. Miljöpartiet lämnade i november 2021, varefter Andersson ledde en enpartiregering (S) till periodens slut."
+  },
+  {
+   "start": "2022-10-15",
+   "slut": "2026-10-14",
+   "label": "2022–2026",
+   "kort": "22–26",
+   "regering": "Kristersson",
+   "not": "Pågående. Statistiken når som längst andra kvartalet 2026; flera register slutar 2024.",
+   "regeringspartier": [
+    "M",
+    "KD",
+    "L"
+   ],
+   "stodpartier": [
+    "SD"
+   ],
+   "regeringsnot": "Kristerssons regering. Sverigedemokraterna står utanför regeringen men är samarbetsparti genom Tidöavtalet."
   }
+ ],
+ "_om_frekvenser": "Hur en periodgräns mitt i oktober översätts till statistikens egna perioder. offset räknas från den observationsperiod som innehåller startdatumet: 0 = den perioden själv, 1 = nästa. nollpunkt_offset är hur många steg bakåt från periodens första observation nollpunkten ligger; 1 som standard, 2 för månadsserier så att nollpunkten blir den sista hela månaden före skiftet i stället för oktober, som ligger halvt på var sida. ULF har ojämna intervall och tilldelas i stället efter intervallets mittpunkt.",
+ "frekvenser": {
+  "Q": {
+   "offset": 0,
+   "nollpunkt_offset": 1,
+   "beskrivning": "kvartalet som innehåller den 15 oktober"
+  },
+  "M": {
+   "offset": 1,
+   "nollpunkt_offset": 2,
+   "beskrivning": "första hela månaden efter skiftet"
+  },
+  "A": {
+   "offset": 1,
+   "nollpunkt_offset": 1,
+   "beskrivning": "året efter valåret"
+  },
+  "LA": {
+   "offset": 0,
+   "nollpunkt_offset": 1,
+   "beskrivning": "läsåret som börjar valåret"
+  },
+  "ULF": {
+   "mittpunkt": true,
+   "beskrivning": "intervallet vars mittpunkt ligger inom perioden"
+  }
+ },
+ "_om_utjamning": "Glidande medelvärde per frekvens. seasonal=true ger 2xN-filtret som tar bort en årscykel exakt.",
+ "utjamning": {
+  "Q": {
+   "fonster": 4,
+   "seasonal": true,
+   "label": "rullande år, 4 kvartal"
+  },
+  "M": {
+   "fonster": 12,
+   "seasonal": true,
+   "label": "rullande år, 12 månader"
+  },
+  "A": {
+   "fonster": 3,
+   "seasonal": false,
+   "label": "3 år"
+  },
+  "LA": {
+   "fonster": 3,
+   "seasonal": false,
+   "label": "3 läsår"
+  },
+  "ULF": null
+ },
+ "trosklar": {
+  "_om": "Gräns för att kalla en förändring en förändring, respektive en taktändring en taktändring.",
+  "niva_procentenheter": 0.5,
+  "niva_procent": 0.5,
+  "takt_procentenheter": 0.2,
+  "takt_procent": 0.5
+ },
+ "partier": {
+  "_not": "Partifärgerna är de vedertagna. De används bara för att skilja partierna åt i gränssnittet och innebär ingen värdering.",
+  "S": {
+   "namn": "Socialdemokraterna",
+   "farg": "#e8112d"
+  },
+  "M": {
+   "namn": "Moderaterna",
+   "farg": "#52bdec"
+  },
+  "SD": {
+   "namn": "Sverigedemokraterna",
+   "farg": "#ddb725"
+  },
+  "C": {
+   "namn": "Centerpartiet",
+   "farg": "#016a3a"
+  },
+  "V": {
+   "namn": "Vänsterpartiet",
+   "farg": "#da291c"
+  },
+  "KD": {
+   "namn": "Kristdemokraterna",
+   "farg": "#005ea3"
+  },
+  "L": {
+   "namn": "Liberalerna",
+   "farg": "#006ab3"
+  },
+  "FP": {
+   "namn": "Folkpartiet liberalerna",
+   "farg": "#006ab3"
+  },
+  "MP": {
+   "namn": "Miljöpartiet",
+   "farg": "#83cf39"
+  }
+ }
 }

@@ -202,7 +202,8 @@ AGG = {"alla": _panel(VALUED),
 json.dump({"base_year": D["base_year"], "shared_reqs": SHARED, "aggregate": AGG,
            "indicators": OUT, "tables": D["tables"],
            "alt_sources": A["sources"], "periods": PP.LABEL, "periods_short": PP.SHORT,
-           "period_meta": PP.PERIODS, "smoothing": PP.SMOOTH},
+           "period_meta": PP.PERIODS, "smoothing": PP.SMOOTH,
+           "parties": PP.PARTIES},
           open(os.path.join(DATA, "analysis.json"), "w", encoding="utf-8"),
           ensure_ascii=False, indent=1)
 

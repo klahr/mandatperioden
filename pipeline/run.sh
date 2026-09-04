@@ -30,6 +30,8 @@ echo "== räknar om perioderna ur config/periods.json"
 python3 analyze.py
 echo "== kopplar orsakslagret ur config/causes.json"
 python3 causes.py
+echo "== hämtar partiernas röster för de betänkanden som citeras"
+python3 fetch_votes.py
 echo "== renderar"
 python3 render.py
 echo "== klar: ../docs/index.html"

@@ -407,6 +407,10 @@ CAUSES = json.load(open(os.path.join(HERE, "data", "causes.json"),
                         encoding="utf-8")) if os.path.exists(
     os.path.join(HERE, "data", "causes.json")) else {"matpunkter": {}, "omvarld": {}}
 
+N_BESLUT = sum(len(v.get("beslut", [])) for v in CAUSES["matpunkter"].values())
+N_BET = sum(1 for v in CAUSES["matpunkter"].values()
+            for d in v.get("beslut", []) if d.get("bet_url"))
+
 DOKNAMN = {"prop": "Proposition", "bet": "Betänkande", "rir": "Riksrevisionen",
            "sou": "Utredning", "rfr": "Riksdagsrapport"}
 
@@ -423,10 +427,106 @@ def _doklista(rader, med_period=True):
         if d.get("sammanfattning"):
             cit = (f'<blockquote class="dcit">{E(d["sammanfattning"])}'
                    f'<cite>{E(d["ref"])}, egen sammanfattning</cite></blockquote>')
+        bet = ""
+        if d.get("bet_url"):
+            bet = (f'<a class="votelink" href="{E(d["bet_url"])}" rel="noopener noreferrer" '
+                   f'target="_blank" title="Utskottets betänkande {E(d["bet_ref"])}. Där står '
+                   f'förslagspunkterna och, om någon punkt gick till omröstning, hur varje '
+                   f'parti röstade.">votering och beslut →</a>')
         ut.append(f'<li>{pd}<a href="{E(d["url"])}" rel="noopener noreferrer" '
                   f'target="_blank">{E(d["titel"])}</a> '
-                  f'<span class="dref">{E(d["ref"])} · {E(d["datum"])}</span>{cit}</li>')
+                  f'<span class="dref">{E(d["ref"])} · {E(d["datum"])}</span>{bet}'
+                  f'{vote_block(d)}{cit}</li>')
     return "".join(ut)
+
+
+PARTIES = D.get("parties", {})
+
+
+def _lum(hexv):
+    r, g, b = (int(hexv[i:i + 2], 16) / 255 for i in (1, 3, 5))
+    f = lambda v: v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** 2.4
+    return 0.2126 * f(r) + 0.7152 * f(g) + 0.0722 * f(b)
+
+
+def _kontrast(a, b):
+    hi, lo = sorted((_lum(a), _lum(b)), reverse=True)
+    return (hi + 0.05) / (lo + 0.05)
+
+
+def party_ink(farg):
+    """Svart eller vit text på partifärgen, den som ger högst kontrast. Färgerna
+    är partiernas egna och ändras inte, så texten får anpassa sig."""
+    svart, vit = _kontrast(farg, "#111111"), _kontrast(farg, "#ffffff")
+    ink = "#111111" if svart >= vit else "#ffffff"
+    if max(svart, vit) < 4.5:                 # 4.5:1 krävs för text i den här storleken
+        raise SystemExit(f"partifärg {farg} klarar inte 4.5:1 mot varken svart eller vitt")
+    return ink
+
+
+def party_chip(kod, stod=False):
+    m = PARTIES.get(kod, {})
+    farg = m.get("farg", "#888888")
+    titel = m.get("namn", kod) + (" – samarbets- eller stödparti utanför regeringen" if stod else "")
+    kls = "pchip stod" if stod else "pchip"
+    return (f'<span class="{kls}" style="--pc:{farg};--pi:{party_ink(farg)}" '
+            f'title="{E(titel)}">{E(kod)}</span>')
+
+
+def party_row(i, med_etikett=True):
+    """Regeringsunderlaget för en mandatperiod. Regeringspartier fyllda,
+    stödpartier utanför regeringen streckade."""
+    m = PMETA[i]
+    reg, stod = m.get("regeringspartier") or [], m.get("stodpartier") or []
+    if not reg:
+        return ""
+    chips = "".join(party_chip(k) for k in reg) + "".join(party_chip(k, True) for k in stod)
+    lbl = f'<span class="pchip-lbl">{E(m.get("regering", ""))}</span>' if med_etikett else ""
+    return f'<span class="pchips">{lbl}{chips}</span>' 
+
+VOTES = json.load(open(os.path.join(HERE, "data", "votes.json"),
+                       encoding="utf-8"))["betankanden"] if os.path.exists(
+    os.path.join(HERE, "data", "votes.json")) else {}
+
+ROSTORD = [("Ja", "ja"), ("Nej", "nej"), ("Avstår", "avst"), ("Frånvarande", "franv")]
+
+
+def vote_block(d):
+    """How the parties voted on the committee report that handled this bill.
+    Reported point by point, because that is the unit a division applies to -
+    the party lines differ between the points of one report."""
+    b = VOTES.get(d.get("bet_id") or "")
+    if not b:
+        return ""
+    röstade = [p for p in b["punkter"] if p.get("partier")]
+    if not röstade:
+        return ""
+    ack = sum(1 for p in b["punkter"] if p.get("beslutstyp") == "acklamation")
+    rader = ""
+    for p in röstade:
+        grupper = ""
+        for rost, kls in ROSTORD:
+            med = [k for k, v in p["partier"].items()
+                   if v["linje"] == rost and k not in ("-", "")]
+            if not med:
+                continue
+            chips = "".join(party_chip(k) for k in med)
+            grupper += (f'<span class="vgrp v-{kls}">'
+                        f'<span class="vlbl">{E(rost)}</span>{chips}</span>')
+        split = [f'{k}: {v["avvikande"]} av {v["narvarande"]} närvarande röstade annat'
+                 for k, v in p["partier"].items() if v.get("avvikande")]
+        splittext = (f'<span class="vsplit">{E(" · ".join(split))}</span>'
+                     if split else "")
+        rader += (f'<div class="vrow"><div class="vpt">Punkt {E(str(p["punkt"]))}'
+                  f' · {E(p["rubrik"] or "utan rubrik")}</div>'
+                  f'<div class="vgrps">{grupper}</div>{splittext}</div>')
+    ackrad = (f'<div class="vack">{ack} av {len(b["punkter"])} punkter avgjordes '
+              f'med acklamation – ingen ledamot begärde omröstning.</div>'
+              if ack else "")
+    return (f'<div class="votes"><div class="vhead">Hur partierna röstade'
+            f'<span class="vn">{len(röstade)} omröstning'
+            f'{"ar" if len(röstade) != 1 else ""}</span></div>'
+            f'<div class="vbody">{rader}{ackrad}</div></div>')
 
 
 def causes_block(key):
@@ -467,10 +567,13 @@ def causes_block(key):
                  'orsakade den – listan visar vad som gjordes, inte vad det gav.</p>'
                  f'<ul class="dlist">{_doklista(c["beslut"])}</ul></div>')
 
+    nröst = sum(1 for b in c.get("beslut", []) if VOTES.get(b.get("bet_id") or "")
+                and any(p.get("partier") for p in VOTES[b["bet_id"]]["punkter"]))
+    röst = f' · {nröst} med partiröster' if nröst else ""
     return ('<details class="causes"><summary>Orsaker och sammanhang'
             '<span class="cn">' + str(len(c.get("beslut", [])) +
                                       len(c.get("granskning", []))) +
-            ' källor</span></summary><div class="cbody">' + "".join(d) +
+            f' källor{röst}</span></summary><div class="cbody">' + "".join(d) +
             '</div></details>')
 
 
@@ -542,6 +645,23 @@ def ov_sort(rows):
     return sorted(rows, key=lambda x: (x["rank"] is None, -(x["rank"] or 0)))
 OV_PP, OV_REL = ov_sort(OV_PP), ov_sort(OV_REL)
 
+def gov_block():
+    """Regeringsunderlaget per mandatperiod. Rena fakta om vem som styrde -
+    rapporten kopplar inga utfall till partier, och säger det uttryckligen."""
+    rader = ""
+    for i in range(NP):
+        rader += (f'<div class="govrow">'
+                  f'<div class="govhead"><span class="swatch" style="background:var(--p{i+1})">'
+                  f'</span><b>{E(PLABEL[i])}</b>{party_row(i)}</div>'
+                  f'<p>{E(GOVNOT[i])}</p></div>')
+    return (f'<div class="govbox"><span class="eyebrow">Vem som styrde</span>'
+            f'{rader}<p class="govfoot">Fyllda märken är regeringspartier, streckade är '
+            f'partier som gav stöd utan att ingå i regeringen. Uppgifterna är sammanställda '
+            f'för hand och är den enda delen av rapporten som inte kommer ur ett API – '
+            f'regeringsbildningar finns inte som statistik. <b>Rapporten kopplar inga utfall '
+            f'till partier.</b> Att en förändring inträffade under en viss regering säger '
+            f'ingenting om vad regeringen orsakade; se metodavsnittet.</p></div>')
+
 def agg_table(panel_key, from_i=0):
     rows = [
       ("Andel som förbättrades", "andel", "%", 0,
@@ -565,7 +685,8 @@ def agg_table(panel_key, from_i=0):
        "bästa. Helt fri från enheter och utstickare, men säger bara vilken period som "
        "var bäst, inte hur mycket."),
     ]
-    ths = "".join(f'<th class="pcol" scope="col">{E(PLABEL[i])}</th>' for i in range(NP))
+    ths = "".join(f'<th class="pcol" scope="col">{E(PLABEL[i])}'
+                  f'{party_row(i, med_etikett=False)}</th>' for i in range(NP))
     body = ""
     for name, key, unit, dec, expl in rows:
         vals = AGG[panel_key][key]
@@ -723,6 +844,7 @@ N_STALE = sum(1 for k in ORDER
 
 GOV = [p.get("regering", "") for p in PMETA]
 SUB = [p.get("not", "") for p in PMETA]
+GOVNOT = [p.get("regeringsnot", "") for p in PMETA]
 
 CSSOUT = CSS
 for k, v in period_css().items():
@@ -747,6 +869,7 @@ def pbar():
                    f'<span class="eyebrow">{E(PSHORT[i])}</span></div>'
                    f'<div class="dates">{E(PLABEL[i])}</div>'
                    f'<div class="sub">{E(SUB[i])}</div>'
+                   f'{party_row(i, med_etikett=False)}'
                    f'<span class="gov">{E(GOV[i])} · {COV[i]} av {len(ORDER)} mätpunkter</span></div>')
     return "".join(out) + "</div>"
 
@@ -853,6 +976,8 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
     ingår i ingen av dem: {E(", ".join(AGG.get("excluded_names", [])))}.</p>
   </div>
 
+  {gov_block()}
+
   <h3 style="margin:34px 0 8px;font-size:1.15rem">Sex mått, två paneler</h3>
   <p class="lede" style="margin-bottom:14px">Grönt är bästa värdet för respektive mått inom panelen.
   Den bredare panelen har {AGG["balanserad3"]["n_matpunkter"] - AGG["balanserad"]["n_matpunkter"]}
@@ -936,6 +1061,39 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       rörelserna i rapporten – inflationschocken, pandemin, energipriserna, räntan – är omvärlden hela
       förklaringen, och den mandatperiod som råkar innehålla återhämtningen får kredit för något den
       inte gjort.</p>
+      <p><b>Partierna.</b> Varje mandatperiod visar vilka partier som satt i regeringen och vilka
+      som gav stöd utanför den. Det är den enda uppgiften i rapporten som är sammanställd för hand:
+      regeringsbildningar publiceras inte som statistik, och riksdagens öppna data beskriver dokument,
+      inte regeringar. Uppgifterna är okontroversiella men går inte att verifiera maskinellt som
+      resten av materialet, och de står därför i ett eget block, inte i tabellerna.</p>
+      <p><b>Partiernas röster redovisas per förslagspunkt.</b> Under varje listat beslut går det att
+      fälla ut hur partierna röstade i det utskottsbetänkande som behandlade förslaget. Punkten är den
+      enhet en omröstning faktiskt gäller, och det är därför varje punkt redovisas för sig i stället
+      för ett tal för beslutet: Justitieutskottets betänkande 2022/23:JuU12 har fyra punkter och
+      partilinjerna skiljer sig på varje – Socialdemokraterna röstade nej på en, ja på en annan och
+      avstod på en tredje. Rapporten pekar därför aldrig ut vilken punkt som ”är” regeringens förslag.
+      Det fält i datan som skulle säga det är nästan aldrig ifyllt, och att gissa vore att uppfinna
+      ett svar.</p>
+      <p>Underlaget är 215 betänkanden med 1012 förslagspunkter, varav 374 avgjordes med
+      omröstning och 609 med acklamation. Acklamation betyder att ingen ledamot begärde
+      omröstning, vilket i sig säger något: förslaget möttes inte av tillräckligt motstånd för att
+      någon skulle kräva votering. Partilinjen är den röst flertalet av partiets närvarande ledamöter
+      lade. En avvikelse redovisas bara när den är verklig – minst tre ledamöter och minst en tiondel
+      av de närvarande – eftersom en enda avvikande ledamot i ett parti på hundra inte är en delad
+      partilinje. Talmannen och ledamöter utan partibeteckning utgör inget parti och ingår inte.
+      Två omröstningar från 2011/12 saknas helt: källan svarar med ett tomt dokument.</p>
+      <p><b>Att listan inte är en lista över orsaker.</b> Besluten är valda på titelinnehåll, tre per
+      mandatperiod, och rapporten har inte visat att något av dem påverkade måttet. Att se hur
+      partierna röstade om ett beslut i samma sakområde som en förändring är inte att se vem som
+      orsakade förändringen. Den slutsatsen bär materialet inte, och partirösterna gör den inte
+      starkare – de gör bara besluten mer genomskinliga.</p>
+      <p><b>Men vägen dit finns.</b> Varje beslut som listas länkar till propositionen på
+      riksdagen.se, och de flesta har dessutom länken <span class="votelink"
+      style="margin:0">votering och beslut →</span> direkt till utskottets betänkande. Där står
+      förslagspunkterna, vilka som avgjordes med omröstning och hur varje parti röstade på var och
+      en. Kopplingen mellan proposition och betänkande görs på identisk titel inom ett år, och bara
+      när träffen är entydig – {N_BET} av {N_BESLUT} beslutsrader får en länk, resten ingen, eftersom
+      en felaktig källhänvisning är sämre än ingen.</p>
       <p><b>Rapporten belägger inte orsakssamband.</b> Den mäter nivåer och förändringar, och kan visa
       att en förändring sammanfaller i tid med ett beslut. Att gå därifrån till att beslutet orsakade
       förändringen kräver en kontrafaktisk jämförelse som statistiken här inte innehåller. De enda

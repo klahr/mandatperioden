@@ -25,6 +25,7 @@ PERIODS = CFG["periods"]
 FREQ = CFG["frekvenser"]
 SMOOTH = CFG["utjamning"]
 THR = CFG["trosklar"]
+PARTIES = {k: v for k, v in CFG.get("partier", {}).items() if not k.startswith("_")}
 N = len(PERIODS)
 LABEL = [p["label"] for p in PERIODS]
 SHORT = [p["kort"] for p in PERIODS]

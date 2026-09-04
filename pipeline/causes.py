@@ -49,11 +49,37 @@ BY_ID = {d["dok_id"]: d for d in ALLA}
 FEL = []
 
 
+# data.riksdagen.se serves the raw document body with no navigation at all, so a
+# reader who lands there cannot get to the committee report or the votes. The
+# public page carries "Ärendets gång" and links onward.
+SLUG = {"prop": "proposition", "bet": "betankande", "rir": "granskningsrapport",
+        "sou": "statens-offentliga-utredningar", "rfr": "rapport-fran-riksdagen"}
+
+
 def länk(d):
-    u = d.get("dokument_url_html") or ""
-    if u.startswith("//"):
-        u = "https:" + u
-    return u or f"https://data.riksdagen.se/dokument/{d['dok_id']}"
+    slug = SLUG.get(d["doktyp"])
+    if slug:
+        return ("https://www.riksdagen.se/sv/dokument-och-lagar/dokument/"
+                f"{slug}/_{d['dok_id']}/")
+    return f"https://data.riksdagen.se/dokument/{d['dok_id']}"
+
+
+_BET_BY_TITLE = {}
+for _b in DOK.get("bet", []):
+    _BET_BY_TITLE.setdefault(_b["titel"].strip().lower(), []).append(_b)
+
+
+def betankande(d):
+    """The committee report that handled a bill, matched on identical title
+    within a year. The votes live on that page; the bill's own page does not
+    have them. Ambiguous matches are dropped - a wrong citation is worse than
+    none, so 217 of 305 bills get a link and the rest do not."""
+    if d["doktyp"] != "prop":
+        return None
+    år = int(d["datum"][:4])
+    kand = [b for b in _BET_BY_TITLE.get(d["titel"].strip().lower(), [])
+            if abs(int(b["datum"][:4]) - år) <= 1]
+    return kand[0] if len(kand) == 1 else None
 
 
 def beteckning(d):
@@ -61,7 +87,7 @@ def beteckning(d):
     if t == "prop":
         return f"prop. {rm}:{nr}"
     if t == "bet":
-        return f"bet. {rm}:{d.get('organ','')}{nr}"
+        return f"bet. {rm}:{d.get('beteckning') or nr}"
     if t == "rir":
         return f"RiR {rm}:{nr}"
     if t == "sou":
@@ -178,6 +204,13 @@ def dok_ut(d, med_sammanfattning=False):
          "datum": d["datum"][:10], "url": länk(d), "period": period_index(d["datum"])}
     if d.get("beslutsdag"):
         r["beslutsdag"] = d["beslutsdag"][:10]
+    b = betankande(d)
+    if b:
+        r["bet_id"] = b["dok_id"]
+        r["bet_rm"] = b.get("rm")
+        r["bet_bet"] = b.get("beteckning")
+        r["bet_ref"] = beteckning(b)
+        r["bet_url"] = länk(b)
     if med_sammanfattning:
         s = sammanfattning(d["dok_id"])
         if s:

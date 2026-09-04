@@ -19,11 +19,11 @@ License along with this program; see the file LICENSE or
 CSS = r"""
 :root{
   --paper:#e8eae4; --sheet:#f8f9f6; --sunk:#dfe2da;
-  --ink:#191b16; --ink-2:#575a4f; --ink-3:#7e8177;
+  --ink:#191b16; --ink-2:#575a4f; --ink-3:#60625b;
   --rule:#cfd2c7; --rule-soft:#dcdfd5;
   /* the terms = an ordered scale in one hue, oldest lightest */
 /*PERIODCOLORS-LIGHT*/
-  --good:#0ca30c; --bad:#d03b3b; --flat:#7e8177; --warn:#b8860b;
+  --good:#077507; --bad:#b73333; --flat:#62655d; --warn:#7e5c06;
   --shadow:0 1px 0 rgba(25,27,22,.05), 0 8px 24px -18px rgba(25,27,22,.5);
   --display:"Familjen Grotesk","Helvetica Neue",Arial,sans-serif;
   --body:"Source Serif 4",Georgia,"Times New Roman",serif;
@@ -87,6 +87,31 @@ a:hover{text-decoration-color:var(--p3)}
 .dlist>li{font-size:.79rem; line-height:1.45; padding-left:0}
 .dlist>li a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--rule)}
 .dlist>li a:hover{border-bottom-color:var(--ink)}
+.votes{margin:5px 0 2px}
+.vhead{font-family:var(--mono); font-size:.62rem; color:var(--ink-2);
+       display:flex; align-items:baseline; gap:8px; margin-bottom:3px}
+.votes .vn{color:var(--ink-2)}
+.vbody{margin:6px 0 2px; padding:8px 11px; border-left:2px solid var(--rule);
+       background:var(--paper)}
+.vrow{padding:5px 0; border-top:1px solid var(--rule)}
+.vrow:first-child{border-top:0; padding-top:0}
+.vpt{font-family:var(--mono); font-size:.6rem; color:var(--ink-2); margin-bottom:4px}
+.vgrps{display:flex; flex-wrap:wrap; gap:4px 14px}
+.vgrp{display:inline-flex; align-items:center; gap:3px}
+.vlbl{font-family:var(--display); font-size:.62rem; font-weight:600; color:var(--ink-2);
+      margin-right:2px}
+.v-ja .vlbl{color:var(--good)} .v-nej .vlbl{color:var(--bad)}
+.vsplit{display:block; margin-top:4px; font-size:.68rem; color:var(--ink-2)}
+.vack{margin-top:7px; padding-top:6px; border-top:1px solid var(--rule);
+      font-size:.68rem; line-height:1.45; color:var(--ink-2)}
+@media print{.votes{break-inside:avoid}}
+
+.votelink{display:inline-block; margin-left:7px; font-family:var(--mono); font-size:.6rem;
+          letter-spacing:.02em; white-space:nowrap; color:var(--p4)!important;
+          border:1px solid var(--rule); border-radius:2px; padding:1px 5px;
+          text-decoration:none; vertical-align:1px}
+.votelink:hover{border-color:var(--p4); background:var(--paper)}
+
 .dref{font-family:var(--mono); font-size:.62rem; color:var(--ink-2); white-space:nowrap}
 .dperiod{display:inline-flex; align-items:center; gap:4px; font-family:var(--mono);
          font-size:.6rem; color:var(--ink-2); margin-right:7px}
@@ -111,7 +136,7 @@ a:hover{text-decoration-color:var(--p3)}
 .periodbar .dates{font-family:var(--display); font-size:.98rem; font-weight:600;
                   font-variant-numeric:tabular-nums}
 .periodbar .sub{font-size:.8rem; color:var(--ink-2); line-height:1.4; margin-top:4px}
-.periodbar .gov{font-family:var(--mono); font-size:.68rem; color:var(--ink-3); margin-top:6px; display:block}
+.periodbar .gov{font-family:var(--mono); font-size:.68rem; color:var(--ink-2); margin-top:6px; display:block}
 
 .tblock{margin-bottom:20px}
 .tbhead{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px}
@@ -161,6 +186,33 @@ table.ledger td.p4col{background:var(--p4w)}
        font-size:.92rem; white-space:nowrap}
 .delta.up{color:var(--good)} .delta.down{color:var(--bad)}
 .delta.nil{color:var(--flat)} .delta.na{color:var(--ink-3); font-weight:400}
+.govbox{margin-top:30px; padding:16px 18px; border:1px solid var(--rule); background:var(--sunk)}
+.govrow{padding:9px 0; border-top:1px solid var(--rule)}
+.govrow:first-of-type{border-top:0; padding-top:4px}
+.govhead{display:flex; flex-wrap:wrap; align-items:center; gap:8px}
+.govhead b{font-family:var(--display); font-size:.9rem}
+.govrow p{margin:5px 0 0; font-size:.8rem; line-height:1.5; color:var(--ink-2); max-width:60em}
+.govfoot{margin:12px 0 0; padding-top:11px; border-top:1px solid var(--rule);
+         font-size:.75rem; line-height:1.5; color:var(--ink-2)}
+.aggt .pcol .pchips{margin:4px 0 0}
+
+/* Förklaringen under varje radrubrik. Utan den här regeln renderas den inline
+   och trycker ut periodkolumnerna ur tabellen. */
+.aggt th[scope=row]{max-width:30em}
+.aexpl{display:block; margin-top:3px; font-family:var(--display); font-size:.7rem;
+       font-weight:400; line-height:1.45; letter-spacing:0; text-transform:none;
+       color:var(--ink-2)}
+.aggt .pcol{vertical-align:bottom}
+
+.pchips{display:inline-flex; flex-wrap:wrap; align-items:center; gap:3px; margin:5px 0 2px}
+.pchip-lbl{font-family:var(--display); font-size:.66rem; color:var(--ink-2); margin-right:4px}
+.pchip{font-family:var(--mono); font-size:.6rem; font-weight:500; letter-spacing:.02em;
+       line-height:1; padding:3px 4px; border-radius:2px; color:var(--pi); background:var(--pc);
+       border:1px solid var(--pc)}
+.pchip.stod{background:transparent; color:var(--ink); border-style:dashed}
+.periodbar .pchips{margin:7px 0 3px}
+@media print{.pchip{color:#000; background:transparent; border-color:#000}}
+
 .pflag{font-family:var(--mono); font-size:.6rem; color:var(--ink-2); display:block; line-height:1.2}
 .chip{display:inline-flex; align-items:center; gap:5px; font-family:var(--display);
   font-size:.68rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase;
