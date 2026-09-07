@@ -34,14 +34,60 @@ de två senaste, och en panel med olika innehåll per period jämför olika sake
 
 Två invändningar mot att läsa tabellen som ett betyg på regeringar:
 
-- **Periodgränsen gör en stor del av jobbet.** Inflations- och energiprischocken
-  2022–2023 slog ner i slutet av en period och återhämtningen i början av nästa.
-  Den period som råkar innehålla återhämtningen får kredit för den. Detsamma
-  gäller medellivslängden, som föll under pandemin och steg efteråt.
+- **Periodgränsen gör en stor del av jobbet.** Flera serier rör sig kraftigt i
+  två steg som hamnar på var sin sida om en periodgräns: inflationsavståndet steg
+  6,8 procentenheter under en period och föll 6,4 under nästa, och
+  medellivslängden föll 0,62 år 2020 och steg därefter. Den period som råkar
+  innehålla återhämtningen får kredit för den.
 - **Rapporten belägger inte orsakssamband.** Den mäter nivåer och förändringar
   och kan visa att något sammanfaller i tid med ett riksdagsbeslut. Steget
   därifrån till orsak kräver en kontrafaktisk jämförelse som statistiken inte
   innehåller.
+
+## Avsikt och urval
+
+**Texterna är genererade.** Rapportens löpande texter – kommentarerna under varje mätpunkt,
+orsaksavsnitten och metodavsnittet – är skrivna av en språkmodell. Inget stycke är formulerat för
+hand, och det gäller utan undantag.
+
+Siffrorna är däremot oberoende av texten. De hämtas ur myndigheternas API:er, citaten är maskinellt
+urklippta ur granskningsrapporternas egna sammanfattningskapitel, dokumentraderna kommer ur
+riksdagens öppna data och curl-anropen loggas när hämtningen körs – allt det går att kontrollera mot
+källan, och koden som gör det ligger i det här repot. Texterna om siffrorna har inte samma garanti.
+Där en text påstår något utöver vad tabellen visar är det påståendet det svagaste i rapporten, och
+fel av det slaget rättas gärna – se [Bidra](#bidra).
+
+**Ingen politisk agenda.** Sammanställningen är inte gjord för att stödja någon slutsats, något parti
+eller någon regering. Ambitionen är att allt på sidan ska vara så objektivt som materialet tillåter:
+varje siffra hämtas maskinellt ur myndigheternas egna databaser, ingen är skriven för hand,
+beräkningarna står beskrivna under respektive mätpunkt och koden som gör dem ligger i det här repot.
+Där ett val måste göras – periodgränser, tröskelvärden, skalan en förändring mäts i, vilka mätpunkter
+som vägs samman – redovisas valet och vad det gör med resultatet.
+
+**Statistik går att räkna och visa på fler sätt än ett.** Det är känt och döljs inte. Andra
+periodgränser, andra trösklar, index i stället för nivåer, en annan deflator eller en annan uppsättning
+mätpunkter kan ge en annan bild av samma verklighet. Därför görs sammanvägningen på sex sätt och två
+paneler i stället för på ett enda – skillnaden mellan dem visar hur mycket av resultatet som sitter i
+metodvalet snarare än i statistiken. Ingen tabell ska läsas som den enda möjliga redovisningen.
+
+**Urvalet är godtyckligt.** Det finns ingen tanke bakom vilka 52 mätpunkter som kommit med. De har
+valts efterhand, ungefär i den ordning de dök upp, inte efter någon uppfattning om vad som betyder mest
+och inte för att täcka något samhällsområde jämnt. Godtyckligt är däremot inte samma sak som
+slumpmässigt draget: samlingen är inget statistiskt urval ur någon population av tänkbara mått och är
+inte representativ för svensk officiell statistik. Att rapporten mäter vårdkapacitet, kunskapsresultat,
+äldreomsorg, ungas psykiska hälsa och rättskedjans genomströmning tunnare än ekonomi och brott är
+alltså inget omdöme om vad som betyder mindre, bara ett resultat av hur listan blev till.
+
+## Bidra
+
+Förbättringar och rättelser är välkomna – issues och pull requests tas emot, lika gärna på fel i
+beräkningarna, en missad seriebrytning eller en formulering som lutar, som på **förslag på fler punkter
+att mäta på**. Listan är öppen och fler mätpunkter läggs gärna till på önskemål.
+
+Kraven på en ny mätpunkt är bara att statistiken går att hämta maskinellt från den myndighet som
+ansvarar för den, att den täcker tillräckligt många år för att en mandatperiod ska gå att mäta, och att
+det går att säga vilket håll som räknas som en förbättring – eller att måttet, som medelålder och
+skattetryck, får stå utan omdöme.
 
 ## Källor
 
@@ -132,5 +178,6 @@ fulltexter hämtas en gång. Sedan är cachen varm och omkörningar är gratis.
 GNU General Public License version 3 eller senare – se [LICENSE](LICENSE).
 
 Statistiken tillhör de myndigheter som producerar den och omfattas av deras egna
-villkor, inte av den här licensen. Rapportens texter, urval och beräkningar är
-mina.
+villkor, inte av den här licensen. Licensen gäller repots kod och konfiguration
+och den renderade rapporten. Rapportens löpande texter är genererade av en
+språkmodell – se [Avsikt och urval](#avsikt-och-urval).

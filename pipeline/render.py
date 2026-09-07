@@ -490,6 +490,48 @@ VOTES = json.load(open(os.path.join(HERE, "data", "votes.json"),
 
 ROSTORD = [("Ja", "ja"), ("Nej", "nej"), ("Avstår", "avst"), ("Frånvarande", "franv")]
 
+# The figures the method text quotes about the vote material are counted here, so
+# they cannot drift out of step with what was actually fetched. The categories add
+# up to every point: acclamation, division, and the ones the source leaves blank.
+V_PUNKT = sum(len(b["punkter"]) for b in VOTES.values())
+V_ACK = sum(1 for b in VOTES.values() for p in b["punkter"]
+            if p.get("beslutstyp") == "acklamation")
+V_ROST = sum(1 for b in VOTES.values() for p in b["punkter"]
+             if p.get("beslutstyp") == "röstning")
+V_PARTIER = sum(1 for b in VOTES.values() for p in b["punkter"] if p.get("partier"))
+V_OKAND = V_PUNKT - V_ACK - V_ROST
+V_SAKNAS = V_ROST - V_PARTIER
+
+VERB = {"Ja": "röstade ja", "Nej": "röstade nej", "Avstår": "avstod",
+        "Frånvarande": "var frånvarande"}
+
+
+def vote_example():
+    """The illustration of why party lines are reported per point, taken out of the
+    fetched votes rather than written into the prose: the smallest report where one
+    party casts three different lines across its own points."""
+    best = None
+    for b in VOTES.values():
+        pts = [p for p in b["punkter"] if p.get("partier")]
+        for kod in {k for p in pts for k in p["partier"] if k not in ("-", "")}:
+            rader = [(p["punkt"], p["partier"][kod]["linje"]) for p in pts
+                     if kod in p["partier"]]
+            sedda, urval = set(), []
+            for punkt, linje in rader:
+                if linje not in sedda and linje in VERB:
+                    sedda.add(linje); urval.append((punkt, linje))
+            if len(urval) < 3:
+                continue
+            if best is None or len(b["punkter"]) < len(best[0]["punkter"]):
+                best = (b, kod, urval[:3])
+    if not best:
+        return ""
+    b, kod, urval = best
+    namn = PARTIES.get(kod, {}).get("namn") or kod
+    delar = [f'{VERB[l]} på punkt {E(str(nr))}' for nr, l in urval]
+    return (f' {E(namn)} {delar[0]}, {delar[1]} och {delar[2]} i '
+            f'{E(b["ref"])}, som har {len(b["punkter"])} punkter.')
+
 
 def vote_block(d):
     """How the parties voted on the committee report that handled this bill.
@@ -548,7 +590,9 @@ def causes_block(key):
                if o.get("dokument") else "") + '</li>' for o in om)
         d.append('<div class="csect"><h5>Omvärlden</h5>'
                  '<p class="chint">Händelser utanför politiken som rör måttet. '
-                 'De förklarar ofta mer av rörelsen än besluten gör.</p>'
+                 'De redovisas daterade, med vad som rörde sig i rapportens '
+                 'serier under samma tid. Att något sammanfaller i tid är inget '
+                 'belägg för att det orsakade rörelsen.</p>'
                  f'<ul class="omlist">{rader}</ul></div>')
 
     if c.get("granskning"):
@@ -658,9 +702,9 @@ def gov_block():
                   f'<p>{E(GOVNOT[i])}</p></div>')
     return (f'<div class="govbox"><span class="eyebrow">Vem som styrde</span>'
             f'{rader}<p class="govfoot">Fyllda märken är regeringspartier, streckade är '
-            f'partier som gav stöd utan att ingå i regeringen. Uppgifterna är sammanställda '
-            f'för hand och är den enda delen av rapporten som inte kommer ur ett API – '
-            f'regeringsbildningar finns inte som statistik. <b>Rapporten kopplar inga utfall '
+            f'partier som gav stöd utan att ingå i regeringen. Uppgifterna är den enda delen '
+            f'av rapporten som inte kommer ur ett API – regeringsbildningar finns inte '
+            f'som statistik. <b>Rapporten kopplar inga utfall '
             f'till partier.</b> Att en förändring inträffade under en viss regering säger '
             f'ingenting om vad regeringen orsakade; se metodavsnittet.</p></div>')
 
@@ -949,9 +993,15 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
     {E(PLABEL[0])} och {COV[1]} över {E(PLABEL[1])}, mot {COV[-1]} för den pågående perioden – svensk officiell
     statistik i sin nuvarande form är för många mått yngre än sexton år. Luckorna redovisas öppet i
     stället för att fyllas. {N_STALE} av serierna slutar 2024 eller tidigare och säger därför lite om
-    den pågående periodens andra hälft. Och perioderna är inte jämförbara i art: en innehåller en
-    finanskris, en ett stort flyktingmottagande, en en pandemi och en en inflationschock.</p>
+    den pågående periodens andra hälft. Och perioderna är inte jämförbara i art: varje period
+    innehåller händelser utanför politiken som rapporten inte mäter och därför inte kan räkna bort.</p>
   </div>
+  <p class="mastnote"><b>Ingen politisk agenda, och ett godtyckligt urval.</b> Sammanställningen är
+  inte gjord för att stödja någon slutsats, något parti eller någon regering, och de {len(ORDER)}
+  mätpunkterna är inte valda efter någon uppfattning om vad som betyder mest. Sidans löpande texter
+  är dessutom skrivna av en språkmodell, medan siffrorna hämtas maskinellt. Samma statistik går
+  dessutom att räkna, redovisa och visa på fler sätt än ett. Vad det innebär, och hur fler mätpunkter
+  föreslås, står under <a href="#h-avsikt">Avsikt, urval och förbättringar</a>.</p>
   <p class="mastnote">{N_SCB} av de {len(ORDER)} mätpunkterna kommer ur SCB:s statistikdatabas. De
   övriga {N_ALT} finns inte där och är hämtade från den myndighet som ansvarar för statistiken:
   Brottsförebyggande rådet ({N_BRA} mätpunkter), Sveriges Kommuner och Regioner via Kolada ({N_SKR})
@@ -1047,8 +1097,8 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
     vilket drar ned andelen som passerar tröskeln – antalsmåtten underskattar alltså snarast den
     pågående perioden. De standardiserade måtten räknar per år och påverkas inte.</p>
     <p><b>Och framför allt:</b> det här mäter vad som hände, inte vad någon regering orsakade.
-    Finanskrisen, flyktingmottagandet 2015, pandemin, inflationsvågen och räntecykeln påverkar de
-    flesta serierna mer än enskilda riksdagsbeslut.</p>
+    Rapporten innehåller inga mått på konjunktur, världsmarknadspriser, penningpolitik eller
+    migration, och kan därför inte skilja deras bidrag från politikens i någon serie.</p>
   </div>
 </section>
 
@@ -1080,6 +1130,58 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
   {ENTRIES}
 </section>
 
+<section aria-labelledby="h-avsikt">
+  <div class="sechead">
+    <span class="eyebrow">Avsikt</span>
+    <h2 id="h-avsikt">Avsikt, urval och förbättringar</h2>
+    <p class="lede">Vad rapporten är gjord för, hur mätpunkterna kom med, och hur fler föreslås.</p>
+  </div>
+  <div class="prose" style="max-width:46em">
+    <p><b>Texterna är genererade.</b> Sidans löpande texter – kommentarerna under varje mätpunkt,
+    orsaksavsnitten, metodavsnittet och det här stycket – är skrivna av en språkmodell. Inget stycke
+    är formulerat för hand, och det gäller utan undantag.</p>
+    <p>Siffrorna är däremot oberoende av texten. De hämtas ur myndigheternas API:er, citaten är
+    maskinellt urklippta ur granskningsrapporternas egna sammanfattningskapitel, dokumentraderna
+    kommer ur riksdagens öppna data och curl-anropen loggas när hämtningen körs – allt det går att
+    kontrollera mot källan, och koden som gör det ligger öppet. Texterna om siffrorna har inte samma
+    garanti. Där en text påstår något utöver vad tabellen visar är det påståendet det svagaste i
+    rapporten, och fel av det slaget rättas gärna via repot.</p>
+    <p><b>Ingen politisk agenda.</b> Rapporten är inte gjord för att stödja någon slutsats, något parti
+    eller någon regering, och den är inte skriven mot ett svar som var bestämt i förväg. Ambitionen är
+    att allt på sidan ska vara så objektivt som materialet tillåter: siffrorna hämtas maskinellt ur
+    myndigheternas egna databaser, ingen är skriven för hand, beräkningarna står beskrivna under
+    respektive mätpunkt och koden som gör dem ligger öppet. Där ett val ändå måste göras – periodgränser,
+    tröskelvärden, vilken skala en förändring mäts i, vilka mätpunkter som vägs samman – redovisas valet
+    och vad det gör med resultatet, i stället för bara resultatet.</p>
+    <p><b>Statistik går att räkna och visa på fler sätt än ett.</b> Det är känt och inte något som
+    döljs här. Andra periodgränser, andra trösklar för vad som räknas som en förändring, index i stället
+    för nivåer, en annan deflator, ett annat glidande medelvärde eller en annan uppsättning mätpunkter
+    kan ge en annan bild av samma verklighet. Det är därför sammanvägningen görs på sex
+    sätt och två paneler i stället för på ett enda: skillnaden mellan dem visar hur mycket av resultatet
+    som sitter i metodvalet snarare än i statistiken. Ingen tabell här ska läsas som den enda möjliga
+    redovisningen av materialet, och den som räknar om det på annat sätt gör inget fel.</p>
+    <p><b>Urvalet är godtyckligt.</b> Det finns ingen tanke bakom vilka {len(ORDER)} mätpunkter som kommit
+    med. De har valts efterhand, ungefär i den ordning de dök upp, och inte efter någon uppfattning om
+    vad som betyder mest för Sverige eller efter någon ambition att täcka ett samhällsområde jämnt.
+    Godtyckligt är däremot inte samma sak som slumpmässigt draget: samlingen är inget statistiskt urval
+    ur någon population av tänkbara mått, och den ska inte läsas som representativ för
+    ”svensk officiell statistik”. Vad rapporten mäter tunt – vård- och omsorgskapacitet, kunskapsresultat,
+    äldreomsorg, ungas psykiska hälsa, rättskedjans genomströmning – är alltså inte ett omdöme om att det
+    betyder mindre, bara ett resultat av hur listan blev till.</p>
+    <p><b>Listan är öppen.</b> Fler mätpunkter läggs gärna till på önskemål. Det enda kravet är att
+    statistiken går att hämta maskinellt från den myndighet som ansvarar för den, att den täcker
+    tillräckligt många år för att en mandatperiod ska gå att mäta, och att det går att säga vilket håll
+    som räknas som en förbättring – eller att måttet, som medelålder och skattetryck, får stå utan
+    omdöme. Att lägga till en mätpunkt kräver ingen kodändring i analysen.</p>
+    <p><b>Förbättringar och rättelser är välkomna.</b> Allt – pipeline, konfiguration, texter och den
+    renderade sidan – ligger på
+    <a href="https://github.com/klahr/mandatperioden">github.com/klahr/mandatperioden</a>. Issues och
+    pull requests tas emot, lika gärna på fel i beräkningarna, en missad seriebrytning eller en
+    formulering som lutar, som på förslag på fler punkter att mäta på. Ett rapporterat fel som går att
+    verifiera mot källan rättas.</p>
+  </div>
+</section>
+
 <section aria-labelledby="h-metod">
   <div class="sechead">
     <span class="eyebrow">Metod</span>
@@ -1094,18 +1196,16 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       mandatperiod. De är verifierbara fakta om vad som gjordes – men att ett beslut ligger i samma
       period som en förändring är inget som helst belägg för att det orsakade den. <b>Vad granskarna
       kommit fram till</b> är Riksrevisionens granskningsrapporter, med citat ur rapporternas egna
-      sammanfattningar. Det är här det finns faktisk evidens om effekter, och den evidensen lutar
-      negativt: i de granskningar rapporten citerar finner Riksrevisionen oftast att effekterna av
-      statliga satsningar är svagt belagda. Ett förbehåll hör till den slutsatsen. Riksrevisionen
-      väljer själv vad som granskas, och väljer där problem misstänks; rapporten citerar i sin tur
-      ett urval ur de granskningarna. Att granskade satsningar oftast visar svagt belagda effekter
-      säger därför lite om statliga satsningar i allmänhet, och ingenting om hur stor andel av dem
-      som fungerar. <b>Omvärlden</b> är daterade händelser utanför politiken. För flera av de största
-      rörelserna i rapporten – inflationschocken, pandemin, energipriserna, räntan – väger omvärlden
-      tungt, och den mandatperiod som råkar innehålla återhämtningen får kredit för en rörelse
-      rapporten inte kan tillskriva den.</p>
+      sammanfattningar. Citaten är ordagranna och länkade till sin källa, så var och en går att
+      läsa i original – rapporten sammanfattar dem inte och drar ingen slutsats om vad granskningarna
+      sammantaget visar. Två förbehåll hör till dem ändå: Riksrevisionen väljer själv vad som granskas,
+      och väljer där problem misstänks, och rapporten citerar i sin tur ett urval ur de granskningarna.
+      <b>Omvärlden</b> är daterade händelser utanför politiken, redovisade med vad som rörde sig i
+      rapportens serier under samma tid. Rapporten mäter inte händelserna själva och kan därför inte
+      väga deras bidrag mot politikens; att en mandatperiod råkar innehålla en återhämtning är
+      synligt i serien, men vad återhämtningen berodde på är det inte.</p>
       <p><b>Partierna.</b> Varje mandatperiod visar vilka partier som satt i regeringen och vilka
-      som gav stöd utanför den. Det är den enda uppgiften i rapporten som är sammanställd för hand:
+      som gav stöd utanför den. Det är den enda uppgiften i rapporten som inte är hämtad ur ett API:
       regeringsbildningar publiceras inte som statistik, och riksdagens öppna data beskriver dokument,
       inte regeringar. Uppgifterna går att kontrollera mot riksdagens och regeringens egna
       publiceringar, men inte att verifiera maskinellt som resten av materialet, och de står
@@ -1113,20 +1213,20 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       <p><b>Partiernas röster redovisas per förslagspunkt.</b> Under varje listat beslut går det att
       fälla ut hur partierna röstade i det utskottsbetänkande som behandlade förslaget. Punkten är den
       enhet en omröstning faktiskt gäller, och det är därför varje punkt redovisas för sig i stället
-      för ett tal för beslutet: Justitieutskottets betänkande 2022/23:JuU12 har fyra punkter och
-      partilinjerna skiljer sig på varje – Socialdemokraterna röstade nej på en, ja på en annan och
-      avstod på en tredje. Rapporten pekar därför aldrig ut vilken punkt som ”är” regeringens förslag.
+      för ett tal för beslutet: partilinjerna skiljer sig mellan punkterna i samma betänkande.
+      {vote_example()} Rapporten pekar därför aldrig ut vilken punkt som ”är” regeringens förslag.
       Det fält i datan som skulle säga det är nästan aldrig ifyllt, och att gissa vore att uppfinna
       ett svar.</p>
-      <p>Underlaget är 215 betänkanden med 1012 förslagspunkter, varav 374 avgjordes med
-      omröstning och 609 med acklamation. Acklamation betyder att ingen ledamot begärde
+      <p>Underlaget är {len(VOTES)} betänkanden med {V_PUNKT} förslagspunkter: {V_ACK} avgjordes
+      med acklamation, {V_ROST} med omröstning, och för {V_OKAND} punkter säger källan inte hur
+      beslutet fattades. Av omröstningarna går {V_PARTIER} att redovisa här; {V_SAKNAS} saknas
+      helt, därför att källan svarar med ett tomt dokument. Acklamation betyder att ingen ledamot begärde
       omröstning. Det kan betyda att förslaget inte möttes av tillräckligt motstånd för att någon
       skulle kräva votering, men också att utgången var känd i förväg eller uppgjord i förhandling;
       vilket av dem det är säger materialet inte. Partilinjen är den röst flertalet av partiets närvarande ledamöter
       lade. En avvikelse redovisas bara när den är verklig – minst tre ledamöter och minst en tiondel
       av de närvarande – eftersom en enda avvikande ledamot i ett parti på hundra inte är en delad
-      partilinje. Talmannen och ledamöter utan partibeteckning utgör inget parti och ingår inte.
-      Två omröstningar från 2011/12 saknas helt: källan svarar med ett tomt dokument.</p>
+      partilinje. Talmannen och ledamöter utan partibeteckning utgör inget parti och ingår inte.</p>
       <p><b>Att listan inte är en lista över orsaker.</b> Besluten är valda på titelinnehåll, tre per
       mandatperiod, och rapporten har inte visat att något av dem påverkade måttet. Att se hur
       partierna röstade om ett beslut i samma sakområde som en förändring är inte att se vem som
@@ -1141,16 +1241,10 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       en felaktig källhänvisning är sämre än ingen.</p>
       <p><b>Rapporten belägger inte orsakssamband.</b> Den mäter nivåer och förändringar, och kan visa
       att en förändring sammanfaller i tid med ett beslut. Att gå därifrån till att beslutet orsakade
-      förändringen kräver en kontrafaktisk jämförelse som statistiken här inte innehåller. På två
-      ställen ställs ändå ett svagare anspråk, och då mot tre villkor som alla tre måste hålla:
-      <b>tidsordning</b> – beslutet ligger före förändringen, med marginal för att hinna få verkan;
-      <b>känd mekanism</b> – vägen från beslutet till måttet är beskriven någon annanstans än i den
-      här rapporten och pekar i en bestämd riktning; och <b>oberoende granskning</b> – Riksrevisionen
-      eller en statlig utredning har prövat sambandet utan att avvisa det. De två mätpunkter som
-      passerar är utsläppen av växthusgaser och reduktionsplikten, samt sjukfrånvaron och regelverket
-      i sjukförsäkringen. Villkoren är satta här och är inte hämtade ur någon standard; de utesluter
-      inte att politiken påverkat andra mått, utan säger bara var underlaget räcker för att påstå
-      det. Överallt annars ska avsnittet läsas som sammanhang, inte som förklaring.</p>
+      förändringen kräver en kontrafaktisk jämförelse som statistiken här inte innehåller. Rapporten
+      ställer därför inget orsaksanspråk någonstans, inte ens ett svagare. Där ett avsnitt nämner ett
+      beslut och en förändring i samma sakområde är det tidsordningen som redovisas, inte ett samband:
+      avsnittet ska läsas som sammanhang, aldrig som förklaring.</p>
       <p><b>Fyra mandatperioder.</b> Riksmötet inleds i mitten av oktober valåret, och perioderna räknas
       därför 15 oktober till 14 oktober: 2010–2014, 2014–2018, 2018–2022 och 2022–2026. De faktiska
       riksmötesöppningarna har varierat med några veckor mellan valen; ett gemensamt datum gör perioderna
@@ -1204,9 +1298,8 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       Där en summa, en andel, ett viktat medelvärde eller en kvot har räknats fram står det i rutan
       ”Så är måttet framtaget” under respektive mätpunkt. Inga värden är uppskattade eller interpolerade.</p>
       <p><b>Vad detta inte är.</b> Sambandet mellan en regerings politik och en statistikserie är inte
-      utrett här. Finanskrisen, flyktingmottagandet 2015, pandemin, inflationsvågen och Riksbankens
-      räntecykel påverkar flera av serierna mer än något riksdagsbeslut. Sammanställningen visar vad som
-      hände, inte varför.</p>
+      utrett här, och rapporten mäter inget av det som skulle behövas för att utreda det – konjunktur,
+      världsmarknadspriser, penningpolitik, migration. Sammanställningen visar vad som hände, inte varför.</p>
     </div>
     <div>
       <div class="method" style="margin-top:0">
@@ -1255,6 +1348,10 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
   kalkylfiler från bra.se. Ingen siffra i rapporten är skriven för hand.</p>
   <p>Uttag gjort {DATESTR}. Rapporten byggs av skripten i <span class="mono">pipeline/</span>;
   perioderna definieras i <span class="mono">config/periods.json</span>.</p>
+  <p>Ingen politisk agenda ligger bakom sammanställningen, urvalet av mätpunkter är godtyckligt, de
+  löpande texterna är skrivna av en språkmodell, och samma statistik går att räkna och visa på fler
+  sätt än ett – se <a href="#h-avsikt">Avsikt, urval och förbättringar</a>. Källkod, rättelser och förslag på fler mätpunkter:
+  <a href="https://github.com/klahr/mandatperioden">github.com/klahr/mandatperioden</a>.</p>
 </footer>
 </div>
 

@@ -10,7 +10,7 @@
   "comment": "Per invånare sjönk den alkoholrelaterade dödligheten långsamt under de två första perioderna, från 20,59 per 100 000 år 2010 till 19,03 år 2018, steg sedan till 20,40 år 2022 och föll kraftigt till 17,85 år 2024. Perioden 2010–2014 visar tydligt varför nämnaren spelar roll: i råa tal steg antalet döda med 1,1 procent, men befolkningen växte 3,5 procent, så dödligheten per invånare minskade med 2,3 procent. Ett enda års kraftig nedgång ska tolkas försiktigt, särskilt eftersom indexet bygger på att en alkoholdiagnos nämns på dödsorsaksintyget och därmed påverkas av hur intygen fylls i.",
   "method": "Socialstyrelsens dödsorsaksregister, index för alkoholrelaterad dödlighet: samtliga dödsfall där en alkoholdiagnos nämns på dödsorsaksintyget, båda könen, summerat över alla åldersgrupper. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Indexet bygger på att alkoholdiagnos nämns på intyget och påverkas därför av hur noggrant intygen fylls i.",
    "Serien slutar 2024."
   ],
@@ -70,7 +70,7 @@
   "short": "%",
   "dec": 1,
   "better": "up",
-  "comment": "Detta är den tydligaste förbättringen i hela materialet. Andelen av grundskolans lärarårsarbetare som har pedagogisk högskoleexamen har stigit från 81,5 procent 2022 till 86,0 procent 2025 – en ökning på 4,5 procentenheter på tre år, mot 1,8 procentenheter under hela förra mandatperioden. Gymnasieskolan följer samma riktning (80,9 till 82,9 procent). En del av förklaringen syns i de underliggande talen: antalet lärarårsarbetare i grundskolan har minskat något sedan 2022 medan antalet med examen fortsatt öka, vilket lyfter andelen.",
+  "comment": "Andelen av grundskolans lärarårsarbetare som har pedagogisk högskoleexamen har stigit från 81,5 procent 2022 till 86,0 procent 2025 – en ökning på 4,5 procentenheter på tre år, mot 1,8 procentenheter under hela förra mandatperioden. Gymnasieskolan följer samma riktning (80,9 till 82,9 procent). En del av förklaringen syns i de underliggande talen: antalet lärarårsarbetare i grundskolan har minskat något sedan 2022 medan antalet med examen fortsatt öka, vilket lyfter andelen.",
   "method": "Personal i grundskolan, lärarkategori ”lärare”: antal årsarbetare med pedagogisk högskoleexamen dividerat med totalt antal årsarbetare (kvinnor + män summerade).",
   "notes": [
    "Underlaget kommer från Skolverket och publiceras i SCB:s statistikdatabas (jämställdhetsstatistiken)."
@@ -93,10 +93,10 @@
   "short": "kr/inv",
   "dec": 0,
   "better": "up",
-  "comment": "Per invånare har BNP vuxit i alla fyra perioderna, och snabbast i den pågående: 2,4 procent, 4,4, 4,3 och 5,2 procent. Att den nuvarande perioden ser starkast ut per invånare men inte i totala tal beror på befolkningen – den växte 2,8 procent under 2018–2022 men bara 0,6 procent sedan 2022. Perioden inleddes ändå med stiltje: BNP per invånare låg kvar på samma nivå från andra kvartalet 2022 till fjärde kvartalet 2023, sju kvartal utan nettotillväxt, och tillväxten kom igång först 2024. Nivån är nu 161 244 kr per invånare och kvartal.",
+  "comment": "Per invånare har BNP vuxit i alla fyra perioderna, och snabbast i den pågående: 2,4 procent, 4,4, 4,3 och 5,2 procent. Att den nuvarande perioden ser starkast ut per invånare men inte i totala tal beror på befolkningen – den växte 2,8 procent under 2018–2022 men bara 0,8 procent sedan 2022. Perioden inleddes ändå med stiltje: BNP per invånare låg kvar på samma nivå från andra kvartalet 2022 till fjärde kvartalet 2023, sju kvartal utan nettotillväxt, och tillväxten kom igång först 2024. Nivån är nu 161 244 kr per invånare och kvartal.",
   "method": "Nationalräkenskaperna: BNP till marknadspris, säsongrensad volym i fasta priser med referensår 2025. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "BNP per invånare är en egen beräkning: säsongrensad BNP i fasta priser dividerad med SCB:s folkmängd i riket mitt i kvartalet."
   ],
   "tables": [
@@ -117,7 +117,7 @@
   "short": "%",
   "dec": 2,
   "better": "down",
-  "comment": "Räntan är den mekanism som knyter ihop flera av rapportens andra mätpunkter. Genomsnittsräntan på hushållens utestående bolån låg på 1,61 procent i september 2018 och 2,09 procent i september 2022. Därefter tredubblades den nästan, till en topp på 3,98 procent i december 2023, och har sedan fallit till 2,83 procent i juli 2026. Periodsnittet är 3,31 procent mot 1,64 under förra perioden – dubbelt så hög ränta i genomsnitt. Det är den här kurvan som förklarar bostadsbyggandets fall, bostadsprisernas nedgång och en del av hushållens pressade köpkraft. Räntenivån sätts av Riksbanken och marknadsräntorna, inte av regeringen; mätpunkten finns här som förklaring, inte som omdöme om politiken.",
+  "comment": "Räntan är den mekanism som knyter ihop flera av rapportens andra mätpunkter. Genomsnittsräntan på hushållens utestående bolån låg på 1,61 procent i september 2018 och 2,09 procent i september 2022. Därefter tredubblades den nästan, till en topp på 3,98 procent i december 2023, och har sedan fallit till 2,83 procent i juli 2026. Periodsnittet är 3,31 procent mot 1,64 under förra perioden – dubbelt så hög ränta i genomsnitt. Det är den här kurvan som förklarar bostadsbyggandets fall, bostadsprisernas nedgång och en del av hushållens pressade köpkraft. Mätpunkten finns här som förklaring till rörelser i andra mått, inte som omdöme om politiken.",
   "method": "Finansmarknadsstatistiken: genomsnittlig ränta på hushållens utestående bolån, samtliga räntebindningstider, hos monetära finansinstitut, bostadskreditinstitut och alternativa investeringsfonder.",
   "notes": [
    "Räntenivån bestäms av Riksbankens penningpolitik och av marknadsräntorna, inte av regeringen. Mätpunkten finns här därför att den förklarar utvecklingen i flera andra mätpunkter – bostadsbyggandet, hushållens köpkraft och bostadspriserna – inte som ett omdöme om politiken.",
@@ -139,10 +139,10 @@
   "short": "per 100 000",
   "dec": 1,
   "better": "up",
-  "comment": "Detta är den kraftigaste försämringen i hela materialet, och den står sig även per invånare. Färdigställda lägenheter per 100 000 invånare steg från 207 år 2010 till 536 år 2018 – mer än en fördubbling – låg på 513 år 2022 och har därefter fallit till 296 år 2025. Det är en minskning på 42,4 procent sedan maktskiftet, alltså ungefär samma som i råa tal, och tillbaka på 2014 års nivå. Nedgången gäller både flerbostadshus och småhus. Byggandet drivs främst av räntor, byggkostnader och kreditvillkor, och en färdigställd bostad påbörjades ett till tre år tidigare, så siffrorna för 2024–2025 speglar i hög grad förhållandena 2022–2023.",
+  "comment": "Detta är den näst kraftigaste försämringen i materialet – bara företagskonkurserna, som steg 45,4 procent, rör sig mer – och den står sig även per invånare. Färdigställda lägenheter per 100 000 invånare steg från 207 år 2010 till 536 år 2018 – mer än en fördubbling – låg på 513 år 2022 och har därefter fallit till 296 år 2025. Det är en minskning på 42,4 procent sedan maktskiftet, alltså ungefär samma som i råa tal, och tillbaka på 2014 års nivå. Nedgången gäller både flerbostadshus och småhus. Byggandet drivs främst av räntor, byggkostnader och kreditvillkor, och en färdigställd bostad påbörjades ett till tre år tidigare, så siffrorna för 2024–2025 speglar i hög grad förhållandena 2022–2023.",
   "method": "Färdigställda lägenheter i nybyggda hus i riket, flerbostadshus och småhus summerade. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Byggandet styrs mer av räntor, byggkostnader och kreditvillkor än av enskilda politiska beslut, och en färdigställd bostad påbörjades typiskt ett till tre år tidigare. Nedgången 2024–2025 speglar därför i hög grad beslut fattade 2022–2023.",
    "Färdigställandestatistiken revideras i efterhand och det senaste året är preliminärt."
   ],
@@ -214,7 +214,7 @@
   "comment": "Det dödliga skjutvapenvåldet mer än tredubblades per invånare mellan 2011 och 2022: från 0,18 till 0,60 fall per 100 000 invånare. Sedan dess har det fallit tre år i rad, till 0,40 år 2025 – en minskning på 33,3 procent sedan maktskiftet, tillbaka på ungefär 2018 års nivå (0,42). Också det dödliga våldet utan skjutvapen har minskat. Skjutvapenvåldet är därmed både den del av det dödliga våldet som ökade mest fram till 2022 och den som minskat mest efter – den tydligaste enskilda vändningen i brottsstatistiken.",
   "method": "Brås granskning av konstaterade fall av dödligt våld, uppdelat efter om skjutvapen använts. Endast konstaterade fall räknas. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Skjutvapenvåldet är den del av det dödliga våldet som ökat mest sedan 2010-talets mitt, och den del som fallit mest sedan toppen 2022.",
    "Serien bygger på Brås tabell 22, som börjar 2011."
   ],
@@ -232,7 +232,7 @@
   "short": "öre/kWh",
   "dec": 1,
   "better": "down",
-  "comment": "Elpriset är den andra halvan av kostnadschocken, vid sidan av inflationen. Elhandelspriset för ett rörligt avtal låg på 64 öre/kWh i september 2018 och på 186 öre/kWh i september 2022, månaden före maktskiftet. I december 2022 nådde det 264 öre/kWh. Sedan dess har det fallit tillbaka helt: 55,8 öre/kWh i juli 2026, alltså under nivån 2018. Men periodsnittet berättar en annan sak än slutvärdet: genomsnittet under den nuvarande perioden är 70 öre/kWh mot 62 under den förra, eftersom vintrarna 2022 och 2023 låg extremt högt. Elpriset sätts av väder, vattenmagasin, kärnkraftens tillgänglighet och de europeiska gaspriserna. Vad svensk politik bidrar med på fyra års sikt går inte att läsa ur måttet.",
+  "comment": "Elpriset är den andra halvan av kostnadschocken, vid sidan av inflationen. Elhandelspriset för ett rörligt avtal låg på 64 öre/kWh i september 2018 och på 186 öre/kWh i september 2022, månaden före maktskiftet. I december 2022 nådde det 264 öre/kWh. Sedan dess har det fallit tillbaka helt: 55,8 öre/kWh i juli 2026, alltså under nivån 2018. Men periodsnittet berättar en annan sak än slutvärdet: genomsnittet under den nuvarande perioden är 70 öre/kWh mot 62 under den förra, eftersom vintrarna 2022 och 2023 låg extremt högt. Vad svensk politik bidrar med på fyra års sikt går inte att läsa ur måttet.",
   "method": "Elhandelspris exklusive elskatt, moms och nätavgift, avtal om rörligt månadspris, kundkategori villa med elvärme. SCB redovisar per elområde men inte för riket; värdet här är ett oviktat medelvärde av de fyra elområdena SE1–SE4, en egen beräkning. Varje elområde finns som egen serie.",
   "notes": [
    "Priset gäller elhandelsdelen. Nätavgifter, elskatt och moms tillkommer och rör sig annorlunda – elnätspriserna redovisas som kompletterande serie.",
@@ -338,7 +338,7 @@
   "comment": "Hatbrottsmarkerade polisanmälningar per 100 000 invånare steg från 66,7 år 2014 till 89,8 år 2018 och nästan halverades sedan till 45,5 år 2022. Under den nuvarande perioden har nivån legat stilla: 43,9 år 2024, en minskning på 3,5 procent. Men Brås egen granskade statistik pekar åt andra hållet: brottsanmälningar med identifierade hatbrottsmotiv steg från 26,9 till 27,1 per 100 000 invånare mellan 2022 och 2024. Brå påpekar dessutom att markeringsserien påverkas av hur konsekvent polisen markerar hatbrott och att åren 2020, 2022 och 2024 hämtats med en annan buffertperiod än övriga år. Utfallet får därför läsas som blandat: det stora fallet ligger i förra mandatperioden och beror sannolikt delvis på förändrad registreringspraxis.",
   "method": "Antalet polisanmälningar som polisen själv har hatbrottsmarkerat, enligt Brås tabellsamling. Detta är den enda hatbrottsserien som redovisas varje år. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Brås egen granskade hatbrottsstatistik publiceras bara vartannat år (2020, 2022 och 2024) och redovisas som kompletterande serie.",
    "Enligt Brås fotnot bygger åren 2020, 2022 och 2024 på det uttag som användes vid kodningen av hatbrottsstatistiken respektive år, med en buffertperiod på två månader. Övriga år är hämtade i efterhand med en annan buffertperiod, vilket gör enskilda år inte helt jämförbara.",
    "Antalet hatbrottsmarkeringar beror både på hur många hatbrott som begås och anmäls och på hur konsekvent polisen markerar dem. Nedgången efter 2019 ska läsas med den reservationen."
@@ -433,7 +433,7 @@
   "comment": "Antalet anställda läkare per 100 000 invånare har stigit från 423,0 år 2022 till 475,0 år 2024 – 12,3 procent på två år. I råa tal var ökningen 13,0 procent; skillnaden är befolkningstillväxten. Under 2014–2018 är skillnaden mycket större: uppgången var 10,9 procent i antal men bara 5,7 procent per invånare, så hälften av den ökningen bestod i att Sverige blev fler. Jämförelsen är begränsad av att yrkesregistret bytt produktionssystem: förändringar beräknas aldrig över ett brott, vilket gör att perioden 2018–2022 mäts från 2020 i stället för 2018. Registret publiceras med lång eftersläpning och slutar 2024.",
   "method": "Yrkesregistret med yrkesstatistik, anställda i riket i yrkesgrupp SSYK 221 (3-siffrig SSYK 2012), summerat över födelseregion och kön. Huvudserien är den BAS-baserade tabellen 2020–2024, som är internt jämförbar. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Yrkesregistret har bytt produktionssystem: tabellen 2014–2018 och RAMS-tabellen 2019–2021 omfattar anställda 16–64 år, medan BAS-tabellen 2020–2024 omfattar samtliga anställda. Nivåerna är inte direkt jämförbara mellan tabellerna – därför redovisas huvudjämförelsen inom BAS-serien 2020–2024.",
    "Yrkesregistret publiceras med lång eftersläpning; senaste år är 2024."
   ],
@@ -460,7 +460,7 @@
   "comment": "Per invånare är lärartätheten märkligt stabil över hela sexton år. Antalet anställda lärare per 100 000 invånare låg på 2 642 år 2014, 2 634 år 2018, 2 621 år 2022 och 2 690 år 2024. Uppgången under den nuvarande perioden är 2,6 procent per invånare mot 3,3 procent i antal, och under 2014–2018 försvinner uppgången helt: +4,6 procent i antal blir −0,3 procent per invånare. Måttet omfattar universitets- och högskollärare, yrkeslärare, gymnasielärare samt grundskollärare, fritidspedagoger och förskollärare. En mer träffsäker nämnare vore antalet elever snarare än hela befolkningen, men den finns inte i samma tabell.",
   "method": "Yrkesregistret med yrkesstatistik, anställda i riket i yrkesgrupp SSYK 231–234 (3-siffrig SSYK 2012), summerat över födelseregion och kön. Huvudserien är den BAS-baserade tabellen 2020–2024, som är internt jämförbar. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Yrkesregistret har bytt produktionssystem: tabellen 2014–2018 och RAMS-tabellen 2019–2021 omfattar anställda 16–64 år, medan BAS-tabellen 2020–2024 omfattar samtliga anställda. Nivåerna är inte direkt jämförbara mellan tabellerna – därför redovisas huvudjämförelsen inom BAS-serien 2020–2024.",
    "Yrkesregistret publiceras med lång eftersläpning; senaste år är 2024."
   ],
@@ -508,7 +508,7 @@
   "short": "år",
   "dec": 2,
   "better": "neutral",
-  "comment": "Medelåldern har stigit från 41,72 år vid maktskiftet till 42,42 år 2025, snabbare än under förra perioden (41,23 till 41,72). Medianåldern har vänt uppåt efter att ha fallit fram till 2019. Detta är ett strukturmått som beror på födelsetal, dödlighet och migration snarare än på politiska beslut under en fyraårsperiod, och det redovisas därför utan omdöme om bättre eller sämre.",
+  "comment": "Medelåldern har stigit från 41,72 år vid maktskiftet till 42,42 år 2025, snabbare än under förra perioden (41,23 till 41,72). Medianåldern har vänt uppåt efter att ha fallit fram till 2019. Måttet saknar självklar riktning och redovisas därför utan omdöme om bättre eller sämre.",
   "method": "Befolkningens medelålder den 31 december, kvinnor och män.",
   "notes": [
    "Medelåldern är ett strukturmått och inte ett mått på om samhället blivit bättre eller sämre. Den redovisas därför utan värdering."
@@ -531,7 +531,7 @@
   "comment": "Konstaterade fall av dödligt våld per 100 000 invånare låg på 0,89 år 2014, steg till 1,06 år 2018 och 1,10 år 2022, och har därefter fallit till 0,79 år 2025 – en minskning på 28,2 procent sedan maktskiftet och den lägsta nivån i hela uttaget. I råa tal var toppen 124 fall 2020 och 121 fall 2023; 2025 stannade på 84. Socialstyrelsens dödsorsaksregister, som räknar dödsfall där övergrepp av annan person angetts som dödsorsak, visar samma vändning. En sak går dock åt fel håll samtidigt: andelen fullbordade mord och dråp som personuppklaras har fallit från 16,7 procent 2022 till 15,3 procent 2025. Brå publicerar sitt eget per-invånare-tal med bara en decimal, vilket döljer små förändringar – kvoten här är därför räknad ur Brås antal och SCB:s folkmängd.",
   "method": "Brås särskilda granskning av samtliga polisanmälningar som rör dödligt våld. Endast fall där dödligt våld är konstaterat räknas – anmälningar som efter granskning visat sig vara något annat räknas bort. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Brås mått räknar konstaterade fall och är därför inte samma sak som antalet anmälda mord, som är betydligt högre.",
    "Socialstyrelsens dödsorsaksregister räknar dödsfall där övergrepp av annan person angetts som underliggande dödsorsak. Nivåerna skiljer sig från Brås eftersom registren har olika avgränsning, olika årsindelning och olika källor."
   ],
@@ -553,7 +553,7 @@
   "comment": "Dödsfall av läkemedels- och narkotikaförgiftning per 100 000 invånare steg kraftigt under 2010–2014, från 7,67 till 9,63, och har fallit i varje period sedan: 8,83 år 2018, 8,34 år 2022 och 6,85 år 2024. Nedgången har tagit fart under den nuvarande perioden – 17,9 procent – och nivån är den lägsta i hela uttaget, som börjar 2008. Indexet omfattar både oavsiktliga förgiftningar, självmord och skadehändelser med oklar avsikt. Serien slutar 2024.",
   "method": "Socialstyrelsens dödsorsaksregister: dödsfall där läkemedels- eller narkotikaförgiftning angetts som underliggande dödsorsak, samtliga avsikter, båda könen, summerat över alla åldersgrupper. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Indexet omfattar både oavsiktliga förgiftningar, avsiktliga (självmord) och skadehändelser med oklar avsikt.",
    "Serien slutar 2024."
   ],
@@ -573,7 +573,7 @@
   "comment": "Nominell BNP per invånare har vuxit i alla perioder, mest under 2018–2022 (19,0 procent) och därefter 16,4 procent under den pågående. Men nominell BNP växer både av produktion och av prisökningar. Ställd mot fast-pris-serien, som växte 4,3 respektive 5,2 procent per invånare, framgår att prisnivån stod för det mesta: cirka 14 procent under förra perioden och cirka 11 procent under den nuvarande. Att prisbidraget är mindre nu än då, trots att inflationstoppen ligger inne i den nuvarande perioden, beror på att den snabba prisuppgången började redan hösten 2021.",
   "method": "Nationalräkenskaperna: BNP till marknadspris i löpande priser, säsongrensat. Måttet inkluderar prisförändringar och är därför inte ett mått på volymtillväxt. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Nominell BNP växer både när produktionen ökar och när priserna stiger. Under 2022–2023 kom en stor del av ökningen från prisuppgången, vilket syns om man jämför med fast-pris-serien."
   ],
   "tables": [
@@ -592,7 +592,7 @@
   "short": "% av BNP",
   "dec": 2,
   "better": "up",
-  "comment": "De offentliga finanserna har gått från överskott till underskott. Det finansiella sparandet motsvarade +0,99 procent av BNP 2022 och −1,35 procent 2025, med botten −1,63 procent 2024. Under förra mandatperioden var sparandet positivt varje år utom pandemiåren 2020 (−3,19 procent) och 2021 (−0,20 procent). Ett underskott i en svag konjunktur är inte i sig ett misslyckande – det finanspolitiska ramverket är byggt för att tillåta det – men riktningen är entydig, och den sammanfaller med att statsskuldens nedgång brutits och vänt uppåt sedan 2023.",
+  "comment": "De offentliga finanserna har gått från överskott till underskott. Det finansiella sparandet motsvarade +0,99 procent av BNP 2022 och −1,35 procent 2025, med botten −1,63 procent 2024. Under förra mandatperioden var sparandet positivt varje år utom 2020 (−3,19 procent) och 2021 (−0,20 procent). Ett underskott i en svag konjunktur är inte i sig ett misslyckande – det finanspolitiska ramverket är byggt för att tillåta det – men riktningen är entydig, och den sammanfaller med att statsskuldens nedgång brutits och vänt uppåt sedan 2023.",
   "method": "Nationalräkenskaperna: den konsoliderade offentliga förvaltningens finansiella sparande, dividerat med BNP till marknadspris i löpande priser. Positivt värde är överskott, negativt underskott.",
   "notes": [
    "Ett underskott i en svag konjunktur är inte i sig ett misslyckande – de offentliga finanserna ska enligt det finanspolitiska ramverket kunna gå med underskott när ekonomin viker. Omdömet ska läsas med det i minnet.",
@@ -764,7 +764,7 @@
   "comment": "Här vänder befolkningsjusteringen på slutsatsen. Per 100 000 invånare minskade antalet sjuksköterskor under 2014–2018, från 1 071 till 1 037 – en nedgång på 3,2 procent – trots att antalet i råa tal steg med 1,6 procent. Hela den uppgången var befolkningstillväxt. Under 2018–2022 låg nivån stilla (+0,4 procent per invånare mot +1,7 i antal), och först under den nuvarande perioden stiger den tydligt: från 1 035,6 till 1 125,4 per 100 000, alltså 8,7 procent. Samma registerbrott och samma eftersläpning som för läkarna gäller här.",
   "method": "Yrkesregistret med yrkesstatistik, anställda i riket i yrkesgrupp SSYK 222 och 223 (3-siffrig SSYK 2012), summerat över födelseregion och kön. Huvudserien är den BAS-baserade tabellen 2020–2024, som är internt jämförbar. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
-   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
+   "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
    "Yrkesregistret har bytt produktionssystem: tabellen 2014–2018 och RAMS-tabellen 2019–2021 omfattar anställda 16–64 år, medan BAS-tabellen 2020–2024 omfattar samtliga anställda. Nivåerna är inte direkt jämförbara mellan tabellerna – därför redovisas huvudjämförelsen inom BAS-serien 2020–2024.",
    "Yrkesregistret publiceras med lång eftersläpning; senaste år är 2024."
   ],
@@ -788,7 +788,7 @@
   "short": "per 100 000",
   "dec": 1,
   "better": "down",
-  "comment": "Det åldersviktade dödstalet för självmord och skadehändelser med oklar avsikt låg på 18,7 per 100 000 invånare 15 år och äldre 2018 och på 16,2 år 2024, den lägsta nivån sedan pandemiåret 2020 (15,7). Nedgången är dock inte jämnt fördelad. Bland unga män 15–29 år har talet fallit tydligt sedan 2021, från 20,2 till 15,8 (2024). Bland män 45–59 år har det däremot stigit tillbaka till 2018-nivån efter en dipp under pandemin: 27,1 år 2024 mot 26,9 år 2018. Serien slutar 2024 och täcker därmed bara halva den nuvarande mandatperioden.",
+  "comment": "Det åldersviktade dödstalet för självmord och skadehändelser med oklar avsikt låg på 18,7 per 100 000 invånare 15 år och äldre 2018 och på 16,2 år 2024, den lägsta nivån sedan pandemiåret 2020 (15,7). Nedgången är dock inte jämnt fördelad. Bland unga män 15–29 år har talet fallit tydligt sedan 2021, från 20,2 till 15,8 (2024). Bland män 45–59 år har det däremot stigit tillbaka till 2018-nivån efter en dipp mitt i serien: 27,1 år 2024 mot 26,9 år 2018. Serien slutar 2024 och täcker därmed bara halva den nuvarande mandatperioden.",
   "method": "Dödstal för ”självmord och skadehändelse med oklar avsikt” per åldersgrupp (15–29, 30–44, 45–59, 60–74, 75+) och kön, sammanvägt till ett rikstal med SCB:s folkmängd per åldersgrupp och kön som vikt. Tabellen saknar totalvärde.",
   "notes": [
    "Dödsorsaksstatistiken produceras av Socialstyrelsen och publiceras i SCB:s statistikdatabas (jämställdhetsstatistiken).",
@@ -863,7 +863,7 @@
   "short": "% av BNP",
   "dec": 1,
   "better": "down",
-  "comment": "Statsskulden i förhållande till BNP föll kraftigt under förra mandatperioden, från 26,4 procent 2018 till 18,8 procent 2022. Under nuvarande period är nivån i praktiken oförändrad – 18,6 procent vid senaste mätningen – men riktningen har vänt inne i perioden: efter en botten på 16,7 procent 2023 har kvoten stigit tre år i rad. I kronor har statsskulden vuxit från 1 073 miljarder i september 2022 till 1 265 miljarder i juli 2026, en ökning på 17,8 procent; att kvoten ändå ligger stilla beror på att nominell BNP vuxit ungefär lika snabbt. Maastrichtskulden, som omfattar hela den offentliga förvaltningen och används i EU:s konvergenskriterier, visar samma mönster tydligare: den föll från 35,2 procent av BNP tredje kvartalet 2022 till 31,0 procent tredje kvartalet 2023 och är sedan tillbaka på 35,1 procent första kvartalet 2026.",
+  "comment": "Statsskulden i förhållande till BNP föll kraftigt under förra mandatperioden, från 26,4 procent 2018 till 18,8 procent 2022. Under nuvarande period är nivån i praktiken oförändrad – 18,6 procent vid senaste mätningen – men riktningen har vänt inne i perioden: efter en botten på 16,7 procent 2023 steg kvoten till 17,9 procent 2024 och 18,7 procent 2025, och ligger på 18,6 procent 2026. I kronor har statsskulden vuxit från 1 073 miljarder i september 2022 till 1 265 miljarder i juli 2026, en ökning på 17,8 procent; att kvoten ändå ligger stilla beror på att nominell BNP vuxit ungefär lika snabbt. Maastrichtskulden, som omfattar hela den offentliga förvaltningen och används i EU:s konvergenskriterier, visar samma mönster tydligare: den föll från 35,2 procent av BNP tredje kvartalet 2022 till 31,0 procent tredje kvartalet 2023 och är sedan tillbaka på 35,1 procent första kvartalet 2026.",
   "method": "Statsskulden i december varje år (Riksgäldskontorets officiella mått på statens bruttoskuld, publicerat i SCB:s statistikdatabas) dividerad med årets BNP till marknadspris i löpande priser enligt nationalräkenskaperna.",
   "notes": [
    "Värdet för 2026 är beräknat på det senaste månadsvärdet mot BNP för de fyra senaste kvartalen, eftersom årets BNP ännu inte är fastställd.",
@@ -1002,7 +1002,7 @@
   "short": "%",
   "dec": 1,
   "better": "up",
-  "comment": "Andelen av de köande som väntat högst 90 dagar på operation eller åtgärd steg från 58,1 procent 2022 till 59,0 procent 2024 – en förbättring på 0,9 procentenheter. Men de mått som beskriver samma sak från andra sidan går åt motsatt håll: andelen som faktiskt fick sin operation inom 90 dagar har fallit varje år, från 85,4 procent 2022 till 83,8 procent 2024. Och den enda vårdköserie som täcker båda mandatperioderna fullt ut pekar tydligt nedåt: andelen som fick ett första besök inom 90 dagar i allmänpsykiatrin har fallit varje år sedan 2012, från 92,1 procent 2018 till 85,8 procent 2022 och 81,8 procent 2025. Inom barn- och ungdomspsykiatrin är mönstret detsamma, 97,1 procent 2018 mot 90,0 procent 2025. Sammantaget är utfallet blandat, och den positiva siffran vilar på en kort serie som börjar 2021 – mitt i pandemin, när planerad vård sköts upp.",
+  "comment": "Andelen av de köande som väntat högst 90 dagar på operation eller åtgärd steg från 58,1 procent 2022 till 59,0 procent 2024 – en förbättring på 0,9 procentenheter. Men de mått som beskriver samma sak från andra sidan går åt motsatt håll: andelen som faktiskt fick sin operation inom 90 dagar har fallit varje år, från 85,4 procent 2022 till 83,8 procent 2024. Och den enda vårdköserie som täcker båda mandatperioderna fullt ut pekar tydligt nedåt: andelen som fick ett första besök inom 90 dagar i allmänpsykiatrin har fallit varje år sedan 2012, från 92,1 procent 2018 till 85,8 procent 2022 och 81,8 procent 2025. Inom barn- och ungdomspsykiatrin är mönstret detsamma, 97,1 procent 2018 mot 90,0 procent 2025. Sammantaget är utfallet blandat, och den positiva siffran vilar på en kort serie som börjar 2021 och omfattar fyra mätpunkter.",
   "method": "Antal patienter som väntat högst 90 dagar på operation eller åtgärd i specialiserad vård, delat med samtliga väntande. Vårdgarantin säger att en patient ska få tid inom 90 dagar. Riket, samtliga specialiteter och utförare.",
   "notes": [
    "Serien över den generella vårdgarantin börjar 2021 i Kolada. Förra mandatperioden täcks därför bara av 2021 och 2022, medan de två psykiatriserierna går tillbaka till 2012 och redovisas som lång jämförelse.",
@@ -1025,7 +1025,7 @@
   "short": "dagar",
   "dec": 0,
   "better": "down",
-  "comment": "Mediantiden som de köande hade väntat på operation eller åtgärd sjönk från 65 till 64 dagar mellan 2022 och 2024. Samtidigt steg den tid som patienterna faktiskt fick vänta: medianväntetiden för genomförda operationer gick från 25,5 dagar 2022 till 28,0 dagar 2024. De två måtten mäter olika saker – det första kön just nu, det andra vad de som fick vård fick vänta – och de rör sig i motsatt riktning. Serierna börjar 2021, mitt i pandemin och när planerad vård sköts upp, vilket gör att förra mandatperioden bara täcks av två mätpunkter och att basåret är svårt att jämföra med.",
+  "comment": "Mediantiden som de köande hade väntat på operation eller åtgärd sjönk från 65 till 64 dagar mellan 2022 och 2024. Samtidigt steg den tid som patienterna faktiskt fick vänta: medianväntetiden för genomförda operationer gick från 25,5 dagar 2022 till 28,0 dagar 2024. De två måtten mäter olika saker – det första kön just nu, det andra vad de som fick vård fick vänta – och de rör sig i motsatt riktning. Serierna börjar 2021, vilket gör att förra mandatperioden bara täcks av två mätpunkter och att basåret är svårt att jämföra med.",
   "method": "Mediantid i dagar som patienter som står i kö till operation eller åtgärd i specialiserad vård har väntat. Riket, samtliga specialiteter och utförare.",
   "notes": [
    "Måttet för väntande beskriver kösituationen just nu; måttet för genomförda beskriver hur länge de som fick vård faktiskt fick vänta. De rör sig ofta i olika riktning.",
@@ -1051,10 +1051,10 @@
   "method": "Regionernas verksamhetsstatistik: disponibla vårdplatser i sluten vård, samtliga vårdplatser i länet oavsett driftform eller finansiering, per 1 000 invånare. En disponibel vårdplats är en plats med utformning, utrustning och bemanning som säkerställer patientsäkerhet och arbetsmiljö. Hämtad ur Kolada, riket.",
   "notes": [
    "Måttet finns med därför att rapporten annars helt saknar kapacitetsmått för vården. Vårdköer och väntetider mäter resultatet av kapaciteten, inte kapaciteten själv.",
-   "Antalet vårdplatser säger inget om hur väl de används. Kortare vårdtider och mer dagkirurgi minskar behovet av platser, så nedgången är delvis en avsedd omställning – men den har pågått oavbrutet under alla fyra perioderna.",
+   "Antalet vårdplatser säger inget om hur väl de används. Nedgången har pågått oavbrutet under alla fyra perioderna.",
    "Serien slutar 2023."
   ],
-  "comment": "Detta är det mått i rapporten som försämras i varje enskild period. Antalet disponibla vårdplatser i slutenvård har fallit från 2,72 per 1 000 invånare 2010 till 1,87 år 2023 – en minskning på 31 procent på tretton år, och 33 procent sedan 2008. Nedgången var kraftigast under 2014–2018 (−16,0 procent) och har bromsat in under den nuvarande perioden (−1,2 procent), vilket är den enda ljusning serien uppvisar. Att platserna minskar är delvis en avsedd omställning mot kortare vårdtider och mer dagkirurgi, men takten har inte styrts av någon uttalad målnivå, och Sverige har sedan länge bland de lägsta platstalen i EU.",
+  "comment": "Detta är det mått i rapporten som försämras i varje enskild period. Antalet disponibla vårdplatser i slutenvård har fallit från 2,72 per 1 000 invånare 2010 till 1,87 år 2023 – en minskning på 31 procent på tretton år, och 33 procent sedan 2008. Nedgången var kraftigast under 2014–2018 (−16,0 procent) och har bromsat in under den nuvarande perioden (−1,1 procent), vilket är den enda ljusning serien uppvisar.",
   "extras": []
  },
  "meritvarde": {
@@ -1110,11 +1110,11 @@
   ],
   "method": "Medianskuld bland skuldsatta fysiska personer 18 år och äldre hos Kronofogden. Företag och andra juridiska personer ingår inte. Beloppet är i löpande priser. Hämtad ur Kolada, riket.",
   "notes": [
-   "Beloppet är i löpande priser och inte deflaterat, så en del av uppgången är allmän prisökning. KPI steg 27 procent mellan 2017 och 2025, medianskulden 77 procent.",
+   "Beloppet är i löpande priser och inte deflaterat, så en del av uppgången är allmän prisökning. KPI steg 29,8 procent mellan 2017 och 2025, medianskulden 77 procent.",
    "Medianskulden kan stiga både av att skulderna växer och av att de minsta skulderna betalas av. Den ska läsas tillsammans med andelen skuldsatta.",
    "Serien börjar 2017."
   ],
-  "comment": "Medianskulden bland skuldsatta har stigit oavbrutet: från 45 322 kr 2017 till 80 143 kr 2025, en ökning på 77 procent. Under den nuvarande perioden är uppgången 33,2 procent och under den föregående 28,8 procent. En del av det är allmän prisökning – KPI steg 27 procent under samma period – men huvuddelen är reell. Att medianskulden växer samtidigt som antalet skuldsatta först minskade betyder att skuldbördan koncentrerats: färre personer med större skulder.",
+  "comment": "Medianskulden bland skuldsatta har stigit oavbrutet: från 45 322 kr 2017 till 80 143 kr 2025, en ökning på 77 procent. Under den nuvarande perioden är uppgången 33,2 procent och under den föregående 28,8 procent. En del av det är allmän prisökning – KPI steg 29,8 procent mellan 2017 och 2025 – men huvuddelen är reell. Att medianskulden växer samtidigt som antalet skuldsatta först minskade betyder att skuldbördan koncentrerats: färre personer med större skulder.",
   "extras": []
  },
  "punktlighet": {
@@ -1174,7 +1174,7 @@
    "En minskande andel kan betyda både att färre får hjälp de behöver och att de äldre är friskare och klarar sig längre själva. Medellivslängden har samtidigt stigit, så en del av nedgången är sannolikt det senare – men inte hela.",
    "Serien börjar 2016 och når därför inte perioderna före 2018."
   ],
-  "comment": "Andelen av de allra äldsta som får äldreomsorg har fallit varje enskilt år i serien: från 39,1 procent av invånarna 80 år och äldre 2016 till 32,8 procent 2022 och 29,7 procent 2025. Det är en nedgång på 9,4 procentenheter på nio år, varav 3,1 procentenheter under den pågående perioden. Samtidigt växer gruppen 80 år och äldre snabbt – från 312 000 år 2008 till 389 000 år 2025 – så antalet som får hjälp har inte fallit i samma takt som andelen. Nedgången kan delvis förklaras av att de äldsta är friskare och klarar sig längre själva; medellivslängden har stigit under hela perioden. Men den förklaringen räcker knappast för hela tappet."
+  "comment": "Andelen av de allra äldsta som får äldreomsorg har fallit varje enskilt år i serien: från 39,1 procent av invånarna 80 år och äldre 2016 till 32,8 procent 2022 och 29,7 procent 2025. Det är en nedgång på 9,4 procentenheter på nio år, varav 3,1 procentenheter under den pågående perioden. Antalet brukare 65 år och äldre i särskilt boende har samtidigt bara fallit från 56 940 till 55 063, alltså 3,3 procent, medan andelen av invånarna 65 år och äldre fallit från 14,6 till 12,6 procent: antalet som får hjälp har inte fallit i samma takt som andelen. Medellivslängden är 1,7 år högre 2025 än 2016, vilket kan höra samman med nedgången, men rapporten kan inte visa det. Men den förklaringen räcker knappast för hela tappet."
  },
  "aterfall": {
   "name": "Återfall i brott",
@@ -1191,10 +1191,10 @@
   "method": "Brås återfallsstatistik, tabell s811 och p811: andel av alla personer med en ingångshändelse (lagföringsbeslut, frigivning från anstalt eller avslutad verkställighet) under ett år som återfaller i nytt lagfört brott inom ett år. Måttet redovisas per ingångsår, inte per kalenderår för återfallet.",
   "notes": [
    "Serien består av två versioner av samma statistik med olika lång uppföljningstid för att återfallsbrottet ska hinna lagföras: Brås slutliga statistik för ingångsår 2009–2018 och den preliminära för 2019–2023. Den preliminära ligger ungefär en procentenhet lägre för samma ingångsår, så de behandlas som två segment och ingen förändring mäts över brottet. För perioden 2018–2022 innebär det att förändringen räknas från 2019 i stället för från 2018 – den mäter alltså tre ingångsår, inte fyra.",
-   "Brå påpekar särskilt att nedgången för ingångsår 2018 i den preliminära statistiken inte syns i den slutliga, sannolikt för att fler återfallsbrott hinner lagföras med längre uppföljningstid. Det preliminära 2018-värdet (21,3 procent mot 24,5 i den slutliga) används därför inte som nollpunkt. Båda serierna redovisas som kompletterande mått så att skillnaden går att se.",
+   "Nedgången för ingångsår 2018 i den preliminära statistiken syns inte i den slutliga, och den preliminära serien ligger lägre än den slutliga för varje ingångsår de har gemensamt. Det preliminära 2018-värdet (21,3 procent mot 24,5 i den slutliga) används därför inte som nollpunkt. Båda serierna redovisas som kompletterande mått så att skillnaden går att se.",
    "Måttet är förskjutet i tiden på ett sätt som gör mandatperiodjämförelser svåra: ett återfall efter ingångsår 2023 kan inträffa så sent som 2024 och lagföras ännu senare. Ingångsår 2023 är det senaste som finns, så den pågående perioden vilar på en enda observation.",
    "Ett minskande återfall kan också bero på att färre brott lagförs över huvud taget, inte bara på att färre begår nya brott."
   ],
-  "comment": "Återfallen inom ett år låg påfallande stilla under hela den slutliga statistikens period: 25,5 procent för ingångsår 2010, 25,5 för 2014 och 24,5 för 2018 – en förbättring på en procentenhet över åtta år. I den preliminära statistiken, som inte är jämförbar med den slutliga, ligger nivån på 24,0 procent för ingångsår 2019 och 23,5 för 2023. Måttet är ett av rapportens mest svårtolkade: det dateras efter ingångsåret, återfallet kan inträffa ett år senare och lagföras ännu senare, och andelen påverkas av hur mycket som lagförs alls. Brås egen kommentar om att 2018-nedgången i den preliminära statistiken försvann i den slutliga är en illustration av hur känsligt måttet är för uppföljningstiden. Slutsatsen som håller är att återfallsnivån är stabil kring en fjärdedel och att inga av de fyra mandatperioderna har flyttat den nämnvärt."
+  "comment": "Återfallen inom ett år låg påfallande stilla under hela den slutliga statistikens period: 25,5 procent för ingångsår 2010, 25,5 för 2014 och 24,5 för 2018 – en förbättring på en procentenhet över åtta år. I den preliminära statistiken, som inte är jämförbar med den slutliga, ligger nivån på 24,0 procent för ingångsår 2019 och 23,5 för 2023. Måttet är ett av rapportens mest svårtolkade: det dateras efter ingångsåret, återfallet kan inträffa ett år senare och lagföras ännu senare, och andelen påverkas av hur mycket som lagförs alls. Att den preliminära statistikens nedgång för ingångsår 2018 – 21,3 procent mot 24,5 i den slutliga – inte finns i den slutliga visar hur känsligt måttet är för uppföljningstiden. Slutsatsen som håller är att återfallsnivån är stabil kring en fjärdedel och att inga av de fyra mandatperioderna har flyttat den nämnvärt."
  }
 }
