@@ -873,7 +873,7 @@ def pbar():
                    f'<span class="gov">{E(GOV[i])} · {COV[i]} av {len(ORDER)} mätpunkter</span></div>')
     return "".join(out) + "</div>"
 
-TITLE = "Har Sverige blivit bättre?"
+TITLE = "Fyra mandatperioder i officiell statistik"
 DESC = (f"{len(ORDER)} mätpunkter ur SCB:s, Brås, SKR:s och Socialstyrelsens egna databaser, "
         f"jämförda över {NP} mandatperioder {PLABEL[0].split('–')[0]}–{PLABEL[-1].split('–')[1]}.")
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com">\n'
@@ -890,7 +890,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
     <span class="eyebrow">{len(ORDER)} mätpunkter · {NP} mandatperioder</span>
     <span class="eyebrow" style="color:var(--ink-2)">SCB · Brå · SKR · Socialstyrelsen</span>
   </div>
-  <h1>Har Sverige blivit bättre?</h1>
+  <h1>{E(TITLE)}</h1>
   <p class="standfirst">{len(ORDER)} mätpunkter, hämtade maskinellt ur myndigheternas egna databaser
   och ställda mot varandra över sexton år: fyra mandatperioder, från 2010 till i dag. Ingen siffra är
   skriven för hand.</p>

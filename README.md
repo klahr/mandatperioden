@@ -1,9 +1,8 @@
 # mandatperioden
 
-Har Sverige blivit bättre? En jämförelse av **52 mätpunkter** över **fyra
-mandatperioder** – 2010–2014, 2014–2018, 2018–2022 och 2022–2026 – byggd enbart
-på officiell statistik, med varje siffra spårbar tillbaka till myndighetens eget
-API.
+**Fyra mandatperioder i officiell statistik** – en jämförelse av **52
+mätpunkter** över 2010–2014, 2014–2018, 2018–2022 och 2022–2026, där varje siffra
+är spårbar tillbaka till myndighetens eget API.
 
 **Läs rapporten: <https://klahr.github.io/mandatperioden/>**
 
