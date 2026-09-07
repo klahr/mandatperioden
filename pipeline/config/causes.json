@@ -24,8 +24,8 @@
   ]
  },
  "vardkoer": {
-  "mekanism": "Andelen som får vård inom vårdgarantins gränser bestäms av regionernas produktion i förhållande till efterfrågan. Serien börjar först 2021, alltså mitt i pandemin, vilket är en dålig utgångspunkt: planerad vård var då nedprioriterad och köerna onaturligt långa.",
-  "tolkning": "Att köerna förbättrats under båda de mätbara perioderna är därför till stor del återhämtning efter pandemin snarare än ett resultat av beslut. Kömiljarder och riktade bidrag har använts av regeringar av båda färger; Riksrevisionen har återkommande funnit att effekterna av den styrformen är svåra att belägga.",
+  "mekanism": "Andelen som får vård inom vårdgarantins gränser bestäms av regionernas produktion i förhållande till efterfrågan. Serien börjar först 2021, alltså mitt i pandemin, vilket gör basåret svårt att jämföra med: planerad vård sköts upp och köerna var tillfälligt längre än normalt.",
+  "tolkning": "Att köerna förbättrats under båda de mätbara perioderna är därför till stor del återhämtning efter pandemin snarare än ett resultat av beslut. Kömiljarder och riktade bidrag har använts av regeringar av båda färger; I de granskningar som listas här har Riksrevisionen funnit att effekterna av den styrformen är svåra att belägga.",
   "beslut": {
    "re": "vårdgaranti|hälso- och sjukvård|väntetid|primärvård",
    "inte": "djurens|tandvård",
@@ -72,7 +72,7 @@
  },
  "aldreomsorg": {
   "mekanism": "Täckningsgraden – andelen av de allra äldsta som får hemtjänst eller särskilt boende – bestäms av kommunernas biståndsbedömning. Den faller varje enskilt år i serien, under alla mätbara perioder och oavsett regering, vilket talar för en strukturell orsak snarare än en politisk.",
-  "tolkning": "Två förklaringar konkurrerar och rapporten kan inte skilja dem: att de äldsta blivit friskare och klarar sig längre själva (medellivslängden stiger samtidigt), och att kommunerna skärpt biståndsbedömningen under ekonomisk press. Riksrevisionen har granskat statens styrning av äldreomsorgen och investeringsstödet till särskilda boenden och funnit svaga eller oklara effekter i båda fallen – vilket talar mot att statliga satsningar förklarar utvecklingen i någon riktning.",
+  "tolkning": "Två förklaringar konkurrerar och rapporten kan inte skilja dem: att de äldsta blivit friskare och klarar sig längre själva (medellivslängden stiger samtidigt), och att kommunerna skärpt biståndsbedömningen under ekonomisk press. Riksrevisionen har granskat statens styrning av äldreomsorgen och investeringsstödet till särskilda boenden och funnit svaga eller oklara effekter i båda fallen – vilket gör att rapporten inte kan tillskriva de två satsningarna utvecklingen i någon riktning.",
   "beslut": {
    "re": "äldreomsorg|hemtjänst|särskilt boende|socialtjänstlag|för äldre|äldre personer|som vårdar",
    "inte": "löneskatt|bostadstillägg|arvsfonden|sexuella",
@@ -292,7 +292,7 @@
  },
  "anmalda_brott": {
   "mekanism": "Anmälda brott mäter anmälningsbenägenhet minst lika mycket som brottslighet. Nivån påverkas av att fler brott går att anmäla digitalt, av att nya gärningar kriminaliseras, av polisens egen upptäcktsverksamhet och av att vissa brottstyper – bedrägerier – flyttat ut på nätet.",
-  "tolkning": "Nedgången på 9,4 procent under 2018–2022 är till stor del pandemieffekt: färre människor i rörelse gav färre tillgreppsbrott och färre misshandelsfall utomhus. Det är den enskilt viktigaste förklaringen till att perioden ser bra ut i detta mått, och den är inte politisk. Måttet bör läsas tillsammans med NTU:s självrapporterade utsatthet, som inte har samma anmälningsproblem.",
+  "tolkning": "Nedgången på 9,4 procent under 2018–2022 sammanfaller med pandemin: färre människor i rörelse gav färre tillgreppsbrott och färre misshandelsfall utomhus. Rapporten kan inte väga pandemins bidrag mot politikens. Måttet bör läsas tillsammans med NTU:s självrapporterade utsatthet, som inte har samma anmälningsproblem.",
   "beslut": {
    "re": "kriminalisering|straffskal|brottsbalken|skärpta straff|bedrägeri|kriminella nätverk",
    "doktyp": [
@@ -315,7 +315,7 @@
  },
  "uppklarade_brott": {
   "mekanism": "Personuppklaringen beror på polisens och åklagarnas utredningskapacitet, men också på brottssammansättningen: bedrägerier och nätbrott har mycket låg uppklarning, och när de växer som andel av alla brott faller den totala uppklarningsprocenten utan att någon utredning blivit sämre.",
-  "tolkning": "Nedgången på 7,8 procent under 2018–2022 och uppgången på 3,6 procent under den pågående perioden inträffar samtidigt som polisen växte kraftigt – målet om 10 000 fler polisanställda till 2024 sattes 2017 och nåddes. Att uppklarningen ändå bara delvis förbättrats är ett resultat värt att notera: personalökningen syns inte proportionerligt i måttet. Riksrevisionen har granskat polisens utredningsverksamhet återkommande.",
+  "tolkning": "Nedgången på 7,8 procent under 2018–2022 och uppgången på 3,6 procent under den pågående perioden inträffar samtidigt som polisen växte kraftigt – målet om 10 000 fler polisanställda till 2024 sattes 2017 och nåddes. Att uppklarningen ändå bara delvis förbättrats betyder att personalökningen inte syns proportionerligt i måttet. Riksrevisionen har granskat polisens utredningsverksamhet återkommande.",
   "beslut": {
    "re": "polis|utredningsverksamhet|förundersökning|åklagar|rättsväsend|kronvittne|straffprocess",
    "doktyp": [
@@ -337,7 +337,7 @@
  },
  "hatbrott": {
   "mekanism": "Hatbrottsstatistiken bygger på att polisen identifierar ett hatbrottsmotiv i en anmälan. Nivån speglar därför både faktiska brott och polisens kodningspraxis – och Brå ändrade metod för hatbrottsstatistiken, vilket är den viktigaste förklaringen till det stora fallet mellan perioderna.",
-  "tolkning": "Nedgången på 49,3 procent under 2018–2022 ska läsas med stor försiktighet: en så stor rörelse i ett anmälningsbaserat mått med ändrad metod är mer sannolikt statistisk än verklig. Detta är det mått i rapporten där jag har lägst förtroende för att förändringen betyder vad den ser ut att betyda.",
+  "tolkning": "Nedgången på 49,3 procent under 2018–2022 ska läsas med stor försiktighet: en så stor rörelse i ett anmälningsbaserat mått med ändrad metod är mer sannolikt statistisk än verklig. Kombinationen av ett anmälningsberoende mått och ändrad registreringspraxis gör detta till den serie i rapporten där sambandet mellan mätt och verklig förändring är svagast belagt.",
   "beslut": {
    "re": "hatbrott|hets mot folkgrupp|diskriminering|kön som hatbrott",
    "doktyp": [
@@ -356,7 +356,7 @@
  },
  "trygghet": {
   "mekanism": "Självrapporterad trygghet i SCB:s undersökningar av levnadsförhållanden. Måttet mäter upplevelse, som påverkas av nyhetsrapportering och samhällsdebatt minst lika mycket som av faktisk utsatthet. Det kan därför röra sig i motsatt riktning mot brottsstatistiken.",
-  "tolkning": "Att otryggheten steg under 2014–2018 och 2018–2022, samtidigt som anmälda brott föll under den senare perioden, illustrerar just det. Rapporten kan inte förklara upplevd trygghet med politiska beslut, och bör inte försöka.",
+  "tolkning": "Att otryggheten steg under 2014–2018 och 2018–2022, samtidigt som anmälda brott föll under den senare perioden, illustrerar just det. Rapporten kan inte förklara upplevd trygghet med politiska beslut.",
   "beslut": {
    "re": "kriminella nätverk|trygghet|brottsförebygg|kameraövervakning|ordningsvakt|Barriärer mot brott",
    "doktyp": [
@@ -378,7 +378,7 @@
  },
  "ntu_otrygghet": {
   "mekanism": "Samma sak som trygghetsmåttet men från Brås nationella trygghetsundersökning, och med en kortare serie som börjar 2020.",
-  "tolkning": "Uppgången på 9,6 procentenheter under den pågående perioden är rapportens största försämring i något upplevelsemått, och den sker samtidigt som det dödliga våldet faller kraftigt. De två kan inte båda mäta samma verklighet. Det är ett argument för att läsa upplevelsemått som ett mått på oro, inte på utsatthet.",
+  "tolkning": "Uppgången på 9,6 procentenheter under den pågående perioden är rapportens största försämring i något upplevelsemått, och den sker samtidigt som det dödliga våldet faller kraftigt. De mäter olika saker – oro respektive utsatthet – och kan därför röra sig i olika riktning samtidigt. Det är ett skäl att läsa upplevelsemått som ett mått på oro och inte på utsatthet.",
   "beslut": {
    "re": "kriminella nätverk|trygghet|brottsförebygg|Barriärer mot brott|vistelseförbud",
    "doktyp": [
@@ -443,7 +443,7 @@
  },
  "meritvarde": {
   "mekanism": "Meritvärdet i årskurs 9 sätts av lärarna och är därför känsligt för betygsinflation. Riksrevisionen granskade 2022 just skillnaden mellan betyg och resultat på nationella prov och fann att staten inte säkerställt likvärdig betygssättning.",
-  "tolkning": "Det gör måttet svårt att läsa som kunskapsmått: ett stigande meritvärde kan vara högre kunskaper eller generösare betygsättning. Riksrevisionens granskning är det starkaste sakliga underlaget rapporten har på skolområdet, och den pekar på att måttets giltighet är begränsad snarare än på vilken period som lyckats.",
+  "tolkning": "Det gör måttet svårt att läsa som kunskapsmått: ett stigande meritvärde kan vara högre kunskaper eller generösare betygsättning. Riksrevisionens granskning pekar på att måttets giltighet är begränsad, inte på vilken period som lyckats.",
   "beslut": {
    "re": "betyg|skollag|ämnesbetyg|nationella prov|likvärdig|professionsprogram",
    "inte": "hållbarhetsbetyg",
@@ -467,7 +467,7 @@
  },
  "behoriga_larare": {
   "mekanism": "Andelen behöriga lärare beror på hur många legitimerade lärare som finns och vill arbeta i skolan, och på hur legitimationskravet är utformat. Lärarlegitimationen infördes 2011 med successivt skärpta krav, vilket gör de tidiga åren i serien svårjämförbara.",
-  "tolkning": "Nedgången på 5,2 procentenheter under 2014–2018 följer på att legitimationskraven skärptes och på att elevkullarna växte snabbt, alltså delvis en mätartefakt och delvis verklig brist. Förbättringen på 4,5 procentenheter under den pågående perioden är rapportens starkaste skolresultat. Riksrevisionen granskade systemet för lärarlegitimation 2025 och fann brister i utformning, styrning och uppföljning – vilket är ett skäl att inte övertolka måttet i någon riktning.",
+  "tolkning": "Nedgången på 5,2 procentenheter under 2014–2018 följer på att legitimationskraven skärptes och på att elevkullarna växte snabbt, alltså delvis en mätartefakt och delvis verklig brist. Under den pågående perioden vänder måttet uppåt med 4,5 procentenheter. Riksrevisionen granskade systemet för lärarlegitimation 2025 och fann brister i utformning, styrning och uppföljning – vilket är ett skäl att inte övertolka måttet i någon riktning.",
   "beslut": {
    "re": "lärarleg|legitimation|professionsprogram|karriärtjänst|lärarutbildning|behörighet",
    "inte": "hälso- och sjukvårdskuratorer",
@@ -536,7 +536,7 @@
  },
  "elpriser": {
   "mekanism": "Elpriset sätts på Nord Pool och bestäms av vattentillgång, kärnkraftens tillgänglighet, gaspriset i Europa, väderdrivet vind- och solutbud samt överföringskapacitet. Riksdagen beslutar om elskatt, energiskatter, tillståndsregler och stöd – inte om priset.",
-  "tolkning": "Uppgången på 46,7 respektive 27,5 procent under de två mellersta perioderna och fallet på 70,1 procent under den pågående är gaspriset i Europa, inte svensk politik. Riksdagen beslutade om elstöd till hushåll och företag 2022–2023, vilket dämpade effekten på hushållen men inte påverkade priset. Att den pågående perioden uppvisar rapportens största enskilda förbättring i något mått är en återgång efter en chock, inte en politisk prestation.",
+  "tolkning": "Uppgången på 46,7 respektive 27,5 procent under de två mellersta perioderna och fallet på 70,1 procent under den pågående följer det europeiska gaspriset; rapporten kan inte skilja ut svensk politiks bidrag. Riksdagen beslutade om elstöd till hushåll och företag 2022–2023, vilket dämpade effekten på hushållen men inte påverkade priset. Att den pågående perioden uppvisar rapportens största enskilda förbättring i något mått är i huvudsak en återgång efter en chock; rapporten belägger ingen politisk orsak till nedgången.",
   "beslut": {
    "re": "elstöd|elpris|energiskatt|elmarknad|elcertifikat|kärnkraft|energipolitik|effektreserv",
    "doktyp": [
@@ -559,7 +559,7 @@
  },
  "bolanerantor": {
   "mekanism": "Bolåneräntan följer Riksbankens styrränta och bankernas upplåningskostnad. Riksdagen beslutar inte om någon av dem.",
-  "tolkning": "Måttet hör hemma i rapporten därför att det förklarar andra mått – bostadspriser, bostadsbyggande, konkurser, skuldsättning – men det är inte ett mått på politik. Nedgången på 38,7 procent under 2014–2018 och uppgången på 42,2 respektive 35,4 procent därefter är penningpolitik.",
+  "tolkning": "Måttet hör hemma i rapporten därför att det förklarar andra mått – bostadspriser, bostadsbyggande, konkurser, skuldsättning – men det är inte ett mått på politik. Nedgången på 38,7 procent under 2014–2018 och uppgången på 42,2 respektive 35,4 procent därefter följer Riksbankens styrränta, som riksdagen inte beslutar.",
   "beslut": {
    "re": "riksbank|bolån|amorteringskrav|kreditgivning|bostadskredit|ränteavdrag",
    "doktyp": [
@@ -625,7 +625,7 @@
  },
  "produktivitet": {
   "mekanism": "Arbetsproduktiviteten bestäms av kapitalstock, teknik, utbildningsnivå och näringslivets sammansättning. Ingen av dessa ändras nämnvärt på fyra år, och de politiska verktygen – forskning, utbildning, infrastruktur, regelverk – verkar över decennier.",
-  "tolkning": "Detta är det mått i rapporten där kopplingen till en enskild mandatperiods beslut är svagast. Att den pågående perioden visar +6,6 procent speglar främst att arbetade timmar föll snabbare än produktionen under nedgången och att sammansättningen ändrades, inte att produktivitetspolitiken lyckats.",
+  "tolkning": "Detta är det mått i rapporten där kopplingen till en enskild mandatperiods beslut är svagast. Att den pågående perioden visar +6,6 procent speglar främst att arbetade timmar föll snabbare än produktionen under nedgången och att sammansättningen ändrades; rapporten kan inte belägga något bidrag från produktivitetspolitiken.",
   "beslut": {
    "re": "forskning och innovation|forskningspolitik|högskol|näringspolitik|regelförenkling",
    "prioritera": "forskning|näringspolitik",
@@ -649,7 +649,7 @@
  },
  "arbetsloshet": {
   "mekanism": "Arbetslösheten drivs av konjunkturen på kort sikt och av arbetsmarknadens funktionssätt på lång. Riksdagens verktyg är arbetslöshetsförsäkringen, arbetsmarknadspolitiska program, anställningsstöd, skatt på arbete och Arbetsförmedlingens uppdrag.",
-  "tolkning": "Nedgången under de två första perioderna och uppgången på 9,2 respektive 22,5 procent därefter följer konjunkturen nära: eurokrisen och sedan återhämtning, pandemin, och räntechocken 2022–2024. Riksrevisionen har granskat Arbetsförmedlingens insatser upprepade gånger och genomgående funnit svag kunskapsbas om effekterna – vilket betyder att även de politiska verktygens bidrag är dåligt belagt, oavsett period.",
+  "tolkning": "Nedgången under de två första perioderna och uppgången på 9,2 respektive 22,5 procent därefter följer konjunkturen nära: eurokrisen och sedan återhämtning, pandemin, och räntechocken 2022–2024. I de granskningar av Arbetsförmedlingens insatser som listas här har Riksrevisionen funnit svag kunskapsbas om effekterna – vilket betyder att de politiska verktygens bidrag är svagt belagt, oavsett period.",
   "beslut": {
    "re": "arbetslöshetsförsäkring|arbetsmarknadspolit|Arbetsförmedlingen|etableringsjobb|nystartsjobb|anställningsstöd|karensdag",
    "doktyp": [
@@ -827,7 +827,7 @@
  },
  "skuldsatta": {
   "mekanism": "Antalet med skuld hos Kronofogden beror på hushållens betalningsförmåga, på räntor och priser, och på hur fordringsägare och myndigheter driver in skulder. Riksdagen beslutar om skuldsanering och utsökningsrätt.",
-  "tolkning": "Nedgången under de två mellersta perioderna och uppgången på 10,4 procent under den pågående följer ränte- och prisläget nära. Detta är ett av de tydligaste exemplen på att den pågående periodens försämringar i hushållsekonomin är chockdrivna.",
+  "tolkning": "Nedgången under de två mellersta perioderna och uppgången på 10,4 procent under den pågående följer ränte- och prisläget nära. Rapporten kan därför inte skilja periodens försämring från den rörelsen.",
   "beslut": {
    "re": "skuldsanering|utsökning|Kronofogde|inkasso|överskuldsatt|betalningsanmärkning",
    "doktyp": [
@@ -934,7 +934,7 @@
  },
  "statsskuld": {
   "mekanism": "Statsskulden som andel av BNP faller både när skulden amorteras och när BNP växer – och nominell BNP växer av inflation. Riksdagen beslutar om utgiftstak och överskottsmål.",
-  "tolkning": "Nedgången på 8,8 och 7,6 procentenheter under de två mellersta perioderna är delvis nämnareffekt: BNP växte. Att skulden knappt rört sig under den pågående perioden (-0,2 procentenheter) trots kraftigt ökade försvarsutgifter och stödutbetalningar är i det ljuset ett mer intressant resultat än det ser ut.",
+  "tolkning": "Nedgången på 8,8 och 7,6 procentenheter under de två mellersta perioderna är delvis nämnareffekt: BNP växte. Samma nämnareffekt gäller den pågående perioden, där kvoten knappt rört sig (-0,2 procentenheter) trots kraftigt ökade försvarsutgifter och stödutbetalningar.",
   "beslut": {
    "re": "finanspolitiska ramverket|utgiftstak|överskottsmål|statsskuld|statens upplåning|budgetlag",
    "doktyp": [
@@ -1003,7 +1003,7 @@
  },
  "bostadspriser": {
   "mekanism": "Bostadspriserna bestäms av räntan, av hushållens inkomster och av utbudet. Räntan dominerar på kort sikt och beslutas av Riksbanken; amorteringskrav och bolånetak beslutas av Finansinspektionen, inte av riksdagen.",
-  "tolkning": "Uppgången under tre perioder och fallet på 19,9 procent under den pågående är räntecykeln. Rapporten räknar fallande realpriser som en förbättring eftersom det förbättrar tillgängligheten för dem som ska köpa, men för dem som redan äger är det motsatsen – ett av få mått där riktningens värdering är genuint omtvistad.",
+  "tolkning": "Uppgången under tre perioder och fallet på 19,9 procent under den pågående följer räntecykeln. Rapporten räknar fallande realpriser som en förbättring eftersom det förbättrar tillgängligheten för dem som ska köpa, men för dem som redan äger är det motsatsen – ett av få mått där riktningens värdering är genuint omtvistad.",
   "beslut": {
    "re": "amorteringskrav|bolån|ränteavdrag|bostadskredit|kreditgivning|plan- och bygglag|bostadsförsörjning",
    "doktyp": [
@@ -1093,7 +1093,7 @@
  },
  "medellivslangd": {
   "mekanism": "Medellivslängden rör sig långsamt och drivs av dödlighet i hjärt-kärlsjukdom och cancer, av rökningens nedgång och av sjukvårdens förmåga. Ingen fyraårsperiods politik kan flytta den nämnvärt.",
-  "tolkning": "Uppgången på 1,2 procent under den pågående perioden är den största i serien, men huvudorsaken är att jämförelsen börjar 2022, strax efter att pandemin tillfälligt sänkte medellivslängden. Det är en återhämtningseffekt, inte ett politiskt resultat. Detta är rapportens tydligaste exempel på att en periodgräns kan producera ett imponerande tal av en tragedi.",
+  "tolkning": "Uppgången på 1,2 procent under den pågående perioden är den största i serien, men huvudorsaken är att jämförelsen börjar 2022, strax efter att pandemin tillfälligt sänkte medellivslängden. Serien återvänder därmed till den bana den låg på före 2020, och rapporten belägger ingen politisk orsak till uppgången. Det är rapportens tydligaste exempel på vad en periodgräns kan göra: nedgången hamnade i den föregående perioden och återhämtningen i den här.",
   "beslut": {
    "re": "folkhälso|hälso- och sjukvård|tobak|ANDT|cancer",
    "inte": "djurens",
@@ -1116,7 +1116,7 @@
  },
  "medelalder": {
   "mekanism": "Medelåldern bestäms av fruktsamhet, dödlighet och migration. Den är helt strukturell och rör sig inte på politiska beslut inom en mandatperiod.",
-  "tolkning": "Måttet finns i rapporten därför att prompten efterfrågade det och därför att det förklarar andra mått – vårdbehov, äldreomsorg, skatteunderlag – inte därför att någon regering kan tillskrivas det. Att medelåldern steg långsammare under 2014–2018 (+0,0 procent) beror på att flyktingmottagandet 2015 tillförde många unga.",
+  "tolkning": "Måttet finns i rapporten därför att det förklarar andra mått – vårdbehov, äldreomsorg, skatteunderlag – inte därför att någon regering kan tillskrivas det. Att medelåldern steg långsammare under 2014–2018 (+0,0 procent) beror på att flyktingmottagandet 2015 tillförde många unga.",
   "beslut": {
    "re": "uppehållstillstånd|arbetskraftsinvandring|migration|föräldraförsäkring|familjepolitik",
    "doktyp": [
@@ -1138,7 +1138,7 @@
  },
  "fortroende": {
   "mekanism": "Självrapporterat förtroende och tillit i SCB:s undersökningar. Måttet påverkas av samhällsdebatt, kriser och medierapportering, och serien börjar först 2021.",
-  "tolkning": "Med två mätbara perioder och rörelser på tre respektive två tiondelar av en procentenhet finns ingenting här att förklara. Rapporten redovisar måttet för att prompten efterfrågade det, men drar inga slutsatser.",
+  "tolkning": "Med två mätbara perioder och rörelser på tre respektive två tiondelar av en procentenhet finns ingenting här att förklara. Måttet redovisas för fullständighetens skull; serien är för kort och för platt för att bära någon slutsats.",
   "beslut": {
    "re": "demokrati|offentlighet|förvaltningspolitik|desinformation|psykologiskt försvar",
    "doktyp": [

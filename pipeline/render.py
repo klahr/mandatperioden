@@ -556,7 +556,9 @@ def causes_block(key):
                  '<p class="chint">Riksrevisionen och statliga utredningar som '
                  'faktiskt utvärderat området. Det är här det finns evidens om '
                  'effekter – citaten är sammanfattningar hämtade ur rapporternas '
-                 'egna sammanfattningskapitel.</p>'
+                 'egna sammanfattningskapitel. Urvalet är granskarnas eget: '
+                 'Riksrevisionen väljer var den letar, och letar där problem '
+                 'misstänks.</p>'
                  f'<ul class="dlist">{_doklista(c["granskning"], False)}</ul></div>')
 
     if c.get("beslut"):
@@ -733,6 +735,46 @@ def agg_leaders(panel_key, from_i=0):
         out.append((mn, [i for i, v in vals if abs(v - top) < 1e-9]))
     return out
 
+def _pe(v):
+    """Procentenheter med svenskt decimaltecken och explicit tecken."""
+    return ("+" if v >= 0 else "−") + f"{abs(v):.1f}".replace(".", ",") + " p.e."
+
+def panel_extra_names():
+    """Mätpunkterna som bara finns i den bredare panelen."""
+    smal = set(AGG.get("balanced_keys") or [])
+    bred = set(AGG.get("balanced3_keys") or [])
+    return sorted((IND[k]["name"] for k in bred - smal if k in IND), key=str.lower)
+
+def panel_top(panel_key, from_i=1):
+    """Perioderna som leder på flest av de sex måtten i en panel."""
+    wins = {}
+    for _, ids in agg_leaders(panel_key, from_i):
+        for i in ids: wins[i] = wins.get(i, 0) + 1
+    if not wins: return ()
+    best = max(wins.values())
+    return tuple(sorted(k for k, v in wins.items() if v == best))
+
+def panel_shift():
+    """Vad panelvalet gör med talen, räknat ur AGG i stället för bedömt för hand."""
+    namn = panel_extra_names()
+    if not namn:
+        return "Panelerna innehåller samma mätpunkter, så valet mellan dem flyttar inga tal."
+    inled = (f"De {len(namn)} mätpunkter som bara finns i den bredare panelen – "
+             f"{E(', '.join(namn))} – når inte tillbaka till "
+             f"{E(PLABEL[0].split('–')[0])}, och det är därför den bredare panelen finns.")
+    smal, bred = AGG["balanserad"], AGG["balanserad3"]
+    d = [bred["andel"][i] - smal["andel"][i] for i in range(1, NP)
+         if bred["andel"][i] is not None and smal["andel"][i] is not None]
+    if not d:
+        return inled + " Panelerna har inga tal som går att ställa mot varandra."
+    lo, hi = min(d), max(d)
+    rorelse = _pe(lo) if abs(hi - lo) < 0.05 else f"mellan {_pe(lo)} och {_pe(hi)}"
+    ordning = ("utan att ändra vilken period som ligger högst"
+               if panel_top("balanserad") == panel_top("balanserad3")
+               else "och ändrar vilken period som ligger högst")
+    return (inled + f" Att ta med dem flyttar andelen som förbättrades {rorelse} från "
+            f"{E(PLABEL[1])} och framåt, {ordning}.")
+
 def agg_verdict(panel_key, from_i=0):
     lead = agg_leaders(panel_key, from_i)
     if not lead: return "Panelen ger inga tal att jämföra."
@@ -780,9 +822,10 @@ def matrix():
             f'<p class="ovcap">Matrisen jämför bara de två senaste perioderna – 2022–2026 mot '
             f'2018–2022 – eftersom det är rapportens fråga. Rader: om utvecklingstakten är bättre '
             f'eller sämre än under förra perioden, räknat som förbättring per år. Kolumner: om nivån '
-            f'vid periodens slut är bättre, sämre eller oförändrad. Den övre mittenrutan och den övre '
-            f'högerrutan är de intressanta: där har takten förbättrats trots att nivån ännu inte hunnit '
-            f'tillbaka. Utanför matrisen: {E(" · ".join(i["name"] for i in ut))}.</p>')
+            f'vid periodens slut är bättre, sämre eller oförändrad. I den övre mittenrutan och den övre '
+            f'högerrutan har takten förbättrats medan nivån ännu inte hunnit '
+            f'tillbaka; i den nedre vänstra gäller det omvända, nivån är bättre men takten '
+            f'har försämrats. Vilka rutor som betyder mest beror på vad man frågar efter. Utanför matrisen: {E(" · ".join(i["name"] for i in ut))}.</p>')
 
 def sources():
     us, ua = {}, {}
@@ -956,7 +999,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
 <section aria-labelledby="h-helhet">
   <div class="sechead">
     <span class="eyebrow">Perioderna mot varandra</span>
-    <h2 id="h-helhet">Hur mycket blev bättre, period för period?</h2>
+    <h2 id="h-helhet">Perioderna sammanvägda på sex sätt</h2>
     <p class="lede">Att slå ihop {AGG.get("valued", 0)} olika mått till ett tal per period är inte
     oproblematiskt, och det finns inget enda rätt sätt. Nedan görs det på sex sätt och på två paneler.
     Poängen är inte något av talen i sig, utan var de är överens och var de inte är det.</p>
@@ -965,7 +1008,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
   <div class="overview">
     <div class="ctitle">Andel av mätpunkterna som förbättrades</div>
     <div id="aggChart"></div>
-    <p class="ovcap"><b>Den avgörande rättvisefrågan är vilka mätpunkter som räknas.</b>
+    <p class="ovcap"><b>Vilka mätpunkter som räknas påverkar resultatet.</b>
     Statistiken täcker {COV[0]} mätpunkter under {E(PLABEL[0])} men {COV[-1]} under {E(PLABEL[-1])},
     och en period med fler mått är inte jämförbar med en som har färre. Därför används
     <b>balanserade paneler</b>: samma mätpunkter i alla perioder som ingår. Den smalare panelen
@@ -988,11 +1031,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
 
   <div class="caution" style="margin-top:26px">
     <span class="eyebrow">Vad talen inte klarar</span>
-    <p><b>Panelvalet flyttar resultatet, även när ordningen håller.</b> De fyra mätpunkter som
-    lades till sist – vårdplatser, meritvärde i årskurs 9 och hushållens skulder hos Kronofogden –
-    försämras nästan genomgående, och de sänker varje periods tal. Att de inte ändrar vilken period
-    som ligger högst betyder inte att urvalet är oviktigt: tre av dem når inte tillbaka till
-    {E(PLABEL[0].split("–")[0])}, och det är därför den bredare panelen finns. Ett sammanvägt tal
+    <p><b>Panelvalet flyttar resultatet.</b> {panel_shift()} Ett sammanvägt tal
     beror alltid på vad man råkar mäta, och den här rapporten mäter inte vård- och omsorgskapacitet,
     kunskapsresultat, äldreomsorg, ungas psykiska hälsa eller rättskedjans genomströmning i närheten
     av så väl som den mäter ekonomi och brott.</p>
@@ -1016,7 +1055,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
 <section aria-labelledby="h-riktning">
   <div class="sechead">
     <span class="eyebrow">Nivå eller riktning</span>
-    <h2 id="h-riktning">Har kurvan vänt?</h2>
+    <h2 id="h-riktning">Takt mot nivå: har kurvan vänt?</h2>
     <p class="lede">En jämförelse av nivåer missar en sak: en nedåtgående utveckling som ärvts från
     föregående period tar tid att vända, och en mätpunkt kan ha vänt till det bättre utan att ha hunnit
     tillbaka till utgångsnivån. Därför mäts också <b>takten</b> – hur många enheter per år måttet
@@ -1055,17 +1094,22 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       mandatperiod. De är verifierbara fakta om vad som gjordes – men att ett beslut ligger i samma
       period som en förändring är inget som helst belägg för att det orsakade den. <b>Vad granskarna
       kommit fram till</b> är Riksrevisionens granskningsrapporter, med citat ur rapporternas egna
-      sammanfattningar. Det är här det finns faktisk evidens om effekter, och den evidensen är oftare
-      negativ än positiv: Riksrevisionen finner gång på gång att effekterna av statliga satsningar är
-      svagt belagda. <b>Omvärlden</b> är daterade händelser utanför politiken. För flera av de största
-      rörelserna i rapporten – inflationschocken, pandemin, energipriserna, räntan – är omvärlden hela
-      förklaringen, och den mandatperiod som råkar innehålla återhämtningen får kredit för något den
-      inte gjort.</p>
+      sammanfattningar. Det är här det finns faktisk evidens om effekter, och den evidensen lutar
+      negativt: i de granskningar rapporten citerar finner Riksrevisionen oftast att effekterna av
+      statliga satsningar är svagt belagda. Ett förbehåll hör till den slutsatsen. Riksrevisionen
+      väljer själv vad som granskas, och väljer där problem misstänks; rapporten citerar i sin tur
+      ett urval ur de granskningarna. Att granskade satsningar oftast visar svagt belagda effekter
+      säger därför lite om statliga satsningar i allmänhet, och ingenting om hur stor andel av dem
+      som fungerar. <b>Omvärlden</b> är daterade händelser utanför politiken. För flera av de största
+      rörelserna i rapporten – inflationschocken, pandemin, energipriserna, räntan – väger omvärlden
+      tungt, och den mandatperiod som råkar innehålla återhämtningen får kredit för en rörelse
+      rapporten inte kan tillskriva den.</p>
       <p><b>Partierna.</b> Varje mandatperiod visar vilka partier som satt i regeringen och vilka
       som gav stöd utanför den. Det är den enda uppgiften i rapporten som är sammanställd för hand:
       regeringsbildningar publiceras inte som statistik, och riksdagens öppna data beskriver dokument,
-      inte regeringar. Uppgifterna är okontroversiella men går inte att verifiera maskinellt som
-      resten av materialet, och de står därför i ett eget block, inte i tabellerna.</p>
+      inte regeringar. Uppgifterna går att kontrollera mot riksdagens och regeringens egna
+      publiceringar, men inte att verifiera maskinellt som resten av materialet, och de står
+      därför i ett eget block, inte i tabellerna.</p>
       <p><b>Partiernas röster redovisas per förslagspunkt.</b> Under varje listat beslut går det att
       fälla ut hur partierna röstade i det utskottsbetänkande som behandlade förslaget. Punkten är den
       enhet en omröstning faktiskt gäller, och det är därför varje punkt redovisas för sig i stället
@@ -1076,8 +1120,9 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       ett svar.</p>
       <p>Underlaget är 215 betänkanden med 1012 förslagspunkter, varav 374 avgjordes med
       omröstning och 609 med acklamation. Acklamation betyder att ingen ledamot begärde
-      omröstning, vilket i sig säger något: förslaget möttes inte av tillräckligt motstånd för att
-      någon skulle kräva votering. Partilinjen är den röst flertalet av partiets närvarande ledamöter
+      omröstning. Det kan betyda att förslaget inte möttes av tillräckligt motstånd för att någon
+      skulle kräva votering, men också att utgången var känd i förväg eller uppgjord i förhandling;
+      vilket av dem det är säger materialet inte. Partilinjen är den röst flertalet av partiets närvarande ledamöter
       lade. En avvikelse redovisas bara när den är verklig – minst tre ledamöter och minst en tiondel
       av de närvarande – eftersom en enda avvikande ledamot i ett parti på hundra inte är en delad
       partilinje. Talmannen och ledamöter utan partibeteckning utgör inget parti och ingår inte.
@@ -1096,10 +1141,16 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       en felaktig källhänvisning är sämre än ingen.</p>
       <p><b>Rapporten belägger inte orsakssamband.</b> Den mäter nivåer och förändringar, och kan visa
       att en förändring sammanfaller i tid med ett beslut. Att gå därifrån till att beslutet orsakade
-      förändringen kräver en kontrafaktisk jämförelse som statistiken här inte innehåller. De enda
-      mätpunkter där tidsordning, känd mekanism och oberoende granskning pekar samma väg är
-      utsläppen av växthusgaser och reduktionsplikten, samt sjukfrånvaron och regelverket i
-      sjukförsäkringen. Överallt annars ska avsnittet läsas som sammanhang, inte som förklaring.</p>
+      förändringen kräver en kontrafaktisk jämförelse som statistiken här inte innehåller. På två
+      ställen ställs ändå ett svagare anspråk, och då mot tre villkor som alla tre måste hålla:
+      <b>tidsordning</b> – beslutet ligger före förändringen, med marginal för att hinna få verkan;
+      <b>känd mekanism</b> – vägen från beslutet till måttet är beskriven någon annanstans än i den
+      här rapporten och pekar i en bestämd riktning; och <b>oberoende granskning</b> – Riksrevisionen
+      eller en statlig utredning har prövat sambandet utan att avvisa det. De två mätpunkter som
+      passerar är utsläppen av växthusgaser och reduktionsplikten, samt sjukfrånvaron och regelverket
+      i sjukförsäkringen. Villkoren är satta här och är inte hämtade ur någon standard; de utesluter
+      inte att politiken påverkat andra mått, utan säger bara var underlaget räcker för att påstå
+      det. Överallt annars ska avsnittet läsas som sammanhang, inte som förklaring.</p>
       <p><b>Fyra mandatperioder.</b> Riksmötet inleds i mitten av oktober valåret, och perioderna räknas
       därför 15 oktober till 14 oktober: 2010–2014, 2014–2018, 2018–2022 och 2022–2026. De faktiska
       riksmötesöppningarna har varierat med några veckor mellan valen; ett gemensamt datum gör perioderna
@@ -1149,7 +1200,7 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       <p><b>Fasta priser.</b> Löner, skatteintäkter, statsskuld och bostadspriser är deflaterade med
       konsumentprisindexets fastställda årsmedeltal till {BASE} års prisnivå. BNP redovisas i
       nationalräkenskapernas egna fasta priser med referensår {BASE}.</p>
-      <p><b>Egna beräkningar är utmärkta.</b> Källtabellerna saknar i flera fall färdiga totalvärden.
+      <p><b>Egna beräkningar är märkta.</b> Källtabellerna saknar i flera fall färdiga totalvärden.
       Där en summa, en andel, ett viktat medelvärde eller en kvot har räknats fram står det i rutan
       ”Så är måttet framtaget” under respektive mätpunkt. Inga värden är uppskattade eller interpolerade.</p>
       <p><b>Vad detta inte är.</b> Sambandet mellan en regerings politik och en statistikserie är inte

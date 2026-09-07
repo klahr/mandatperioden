@@ -97,7 +97,7 @@
   "method": "Nationalräkenskaperna: BNP till marknadspris, säsongrensad volym i fasta priser med referensår 2025. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
    "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,6 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
-   "BNP per invånare är beräknad av oss som säsongrensad BNP i fasta priser dividerad med SCB:s folkmängd i riket mitt i kvartalet."
+   "BNP per invånare är en egen beräkning: säsongrensad BNP i fasta priser dividerad med SCB:s folkmängd i riket mitt i kvartalet."
   ],
   "tables": [
    "TAB4553",
@@ -165,7 +165,7 @@
   "dec": 1,
   "better": "neutral",
   "comment": "Småhuspriserna i fasta priser toppade fjärde kvartalet 2021 och har fallit sedan dess: indexet stod på 1 174 tredje kvartalet 2022 och på 941 fjärde kvartalet 2025, en nedgång på 19,9 procent sedan maktskiftet och 24 procent från toppen. I löpande priser är fallet mindre – från 1 045 till 965 – vilket betyder att en stor del av den reala nedgången kommit av att allt annat blivit dyrare snarare än att husen blivit billigare i kronor. Stigande bostadspriser är bra för den som äger och dåligt för den som ska köpa, och måttet redovisas därför utan omdöme. Den reala serien slutar 2025 eftersom 2026 års prisnivå ännu inte är fastställd; den nominella går till andra kvartalet 2026.",
-  "method": "SCB:s fastighetsprisindex för permanenta småhus i riket, deflaterat med KPI:s fastställda årsmedeltal till 2025 års prisnivå. Deflateringen är gjord av oss; SCB publicerar indexet i löpande priser.",
+  "method": "SCB:s fastighetsprisindex för permanenta småhus i riket, deflaterat med KPI:s fastställda årsmedeltal till 2025 års prisnivå. Deflateringen är en egen beräkning; SCB publicerar indexet i löpande priser.",
   "notes": [
    "Stigande bostadspriser är bra för den som äger och dåligt för den som ska köpa. Måttet saknar därför självklar riktning och redovisas utan omdöme.",
    "Deflateringen använder årsmedeltal för KPI, vilket gör de senaste kvartalen något osäkra eftersom årets prisnivå ännu inte är fastställd."
@@ -232,12 +232,12 @@
   "short": "öre/kWh",
   "dec": 1,
   "better": "down",
-  "comment": "Elpriset är den andra halvan av kostnadschocken, vid sidan av inflationen. Elhandelspriset för ett rörligt avtal låg på 64 öre/kWh i september 2018 och på 186 öre/kWh i september 2022, månaden före maktskiftet. I december 2022 nådde det 264 öre/kWh. Sedan dess har det fallit tillbaka helt: 55,8 öre/kWh i juli 2026, alltså under nivån 2018. Men periodsnittet berättar en annan sak än slutvärdet: genomsnittet under den nuvarande perioden är 70 öre/kWh mot 62 under den förra, eftersom vintrarna 2022 och 2023 låg extremt högt. Elpriset styrs av väder, vattenmagasin, kärnkraftens tillgänglighet och de europeiska gaspriserna snarare än av svensk politik på fyra års sikt.",
-  "method": "Elhandelspris exklusive elskatt, moms och nätavgift, avtal om rörligt månadspris, kundkategori villa med elvärme. SCB redovisar per elområde men inte för riket; värdet här är ett oviktat medelvärde av de fyra elområdena SE1–SE4, beräknat av oss. Varje elområde finns som egen serie.",
+  "comment": "Elpriset är den andra halvan av kostnadschocken, vid sidan av inflationen. Elhandelspriset för ett rörligt avtal låg på 64 öre/kWh i september 2018 och på 186 öre/kWh i september 2022, månaden före maktskiftet. I december 2022 nådde det 264 öre/kWh. Sedan dess har det fallit tillbaka helt: 55,8 öre/kWh i juli 2026, alltså under nivån 2018. Men periodsnittet berättar en annan sak än slutvärdet: genomsnittet under den nuvarande perioden är 70 öre/kWh mot 62 under den förra, eftersom vintrarna 2022 och 2023 låg extremt högt. Elpriset sätts av väder, vattenmagasin, kärnkraftens tillgänglighet och de europeiska gaspriserna. Vad svensk politik bidrar med på fyra års sikt går inte att läsa ur måttet.",
+  "method": "Elhandelspris exklusive elskatt, moms och nätavgift, avtal om rörligt månadspris, kundkategori villa med elvärme. SCB redovisar per elområde men inte för riket; värdet här är ett oviktat medelvärde av de fyra elområdena SE1–SE4, en egen beräkning. Varje elområde finns som egen serie.",
   "notes": [
    "Priset gäller elhandelsdelen. Nätavgifter, elskatt och moms tillkommer och rör sig annorlunda – elnätspriserna redovisas som kompletterande serie.",
    "Ett oviktat medelvärde över elområden speglar inte var folk bor; SE3 och SE4 har flest hushåll. Skillnaden mellan områdena var mycket stor under 2022.",
-   "Elpriset styrs av väder, vattenmagasin, kärnkraftens tillgänglighet och de europeiska gaspriserna snarare än av svensk politik på fyra års sikt."
+   "Elpriset sätts av väder, vattenmagasin, kärnkraftens tillgänglighet och de europeiska gaspriserna. Vad svensk politik bidrar med på fyra års sikt går inte att läsa ur måttet."
   ],
   "tables": [
    "TAB3819"
@@ -259,7 +259,7 @@
   "dec": 2,
   "better": "up",
   "comment": "Försvarsutgifterna har ökat från 1,45 procent av BNP 2018 till 1,78 procent 2022 och 1,84 procent 2024. Det mesta av ökningen ligger alltså i förra mandatperioden: hoppet kom mellan 2021 och 2022, från 1,56 till 1,78 procent, i anslutning till invasionen av Ukraina. Den avgörande reservationen är att serien slutar 2024. Den stora upprustningen 2025 och 2026, efter Natomedlemskapet i mars 2024, syns ännu inte i nationalräkenskaperna, och mätpunkten säger därför mycket lite om den nuvarande periodens andra hälft. Måttet bygger dessutom på nationalräkenskapernas COFOG-avgränsning, som inte är densamma som Natos definition bakom tvåprocentsmålet.",
-  "method": "Nationalräkenskaperna efter ändamål (COFOG 02, försvar): offentliga myndigheters konsumtionsutgifter plus fasta bruttoinvesteringar i löpande priser, dividerat med BNP till marknadspris. Summan och kvoten är beräknade av oss ur tre SCB-tabeller.",
+  "method": "Nationalräkenskaperna efter ändamål (COFOG 02, försvar): offentliga myndigheters konsumtionsutgifter plus fasta bruttoinvesteringar i löpande priser, dividerat med BNP till marknadspris. Summan och kvoten är egna beräkningar ur tre SCB-tabeller.",
   "notes": [
    "Riktningen följer Sveriges uttalade åtagande om försvarsutgifter på minst 2 procent av BNP; det är ett politiskt beslut och inte något SCB mäter. Om högre försvarsutgifter är bra är i sig en värdering.",
    "COFOG-avgränsningen är nationalräkenskapernas och sammanfaller inte exakt med Natos definition av försvarsutgifter, som ligger till grund för tvåprocentsmålet.",
@@ -311,7 +311,7 @@
   "short": "%",
   "dec": 1,
   "better": "up",
-  "comment": "Andelen niondeklassare med grundläggande behörighet till gymnasiets yrkesprogram toppade läsåret 2020/21 på 86,2 procent. Sedan dess har den fallit: 85,0 (2021/22), 85,2, 83,7 och 84,1 procent läsåret 2024/25. Behörigheten till natur- och teknikprogrammen har fallit sedan 2020/21 för både flickor och pojkar, från 83,6 till 79,6 procent bland flickor och från 80,6 till 78,2 procent bland pojkar. Skillnaden mellan könen har krympt, men av fel skäl: flickornas behörighet har fallit mer än pojkarnas.",
+  "comment": "Andelen niondeklassare med grundläggande behörighet till gymnasiets yrkesprogram toppade läsåret 2020/21 på 86,2 procent. Sedan dess har den fallit: 85,0 (2021/22), 85,2, 83,7 och 84,1 procent läsåret 2024/25. Behörigheten till natur- och teknikprogrammen har fallit sedan 2020/21 för både flickor och pojkar, från 83,6 till 79,6 procent bland flickor och från 80,6 till 78,2 procent bland pojkar. Skillnaden mellan könen har krympt därför att flickornas behörighet fallit mer än pojkarnas.",
   "method": "Elever behöriga till gymnasieskolans yrkesprogram (grundläggande behörighet), andel av alla avgångna från årskurs 9. SCB:s tabell saknar totalvärde för kön; totalen är beräknad som behöriga (flickor + pojkar) dividerat med antalet avgångna, där antalet avgångna per kön härletts ur tabellens antal och andel.",
   "notes": [
    "Underlaget kommer från Skolverket och publiceras i SCB:s statistikdatabas (jämställdhetsstatistiken).",
@@ -356,10 +356,10 @@
   "short": "p.e. från målet",
   "dec": 2,
   "better": "down",
-  "comment": "Inflationen är den enskilt största ekonomiska händelsen i den nuvarande mandatperioden. KPIF steg med 9,7 procent på tolv månader i september 2022, månaden före maktskiftet, och toppade på 10,2 procent i december samma år. Därefter har takten fallit snabbt: 2,3 procent i december 2023, 1,5 procent 2024, 2,1 procent 2025 och 0,7 procent i juli 2026. Måttet som redovisas här är avståndet till Riksbankens mål på 2 procent, eftersom en inflation långt under målet också är ett problem. Avståndet har krympt från 7,7 till 1,3 procentenheter – men det ligger nu på den låga sidan av målet i stället för den höga. Det är den här kurvan som förklarar reallönefallet 2022–2023, den minskade reala köpkraften i hushållen och de fallande reala skatteintäkterna i övriga mätpunkter.",
+  "comment": "Inflationen är den enskilt största ekonomiska händelsen i den nuvarande mandatperioden. KPIF steg med 9,7 procent på tolv månader i september 2022, månaden före maktskiftet, och toppade på 10,2 procent i december samma år. Därefter har takten fallit snabbt: 2,3 procent i december 2023, 1,5 procent 2024, 2,1 procent 2025 och 0,7 procent i juli 2026. Måttet som redovisas här är avståndet till Riksbankens mål på 2 procent, eftersom en inflation långt under målet också är ett problem. Avståndet har krympt från 7,7 till 1,3 procentenheter – men det ligger nu på den låga sidan av målet i stället för den höga. Uppgången och nedgången är samma händelse, delad av en periodgräns: toppen ligger i slutet av föregående mandatperiod och normaliseringen i början av den här. Det är den här kurvan som förklarar reallönefallet 2022–2023, den minskade reala köpkraften i hushållen och de fallande reala skatteintäkterna i övriga mätpunkter.",
   "method": "KPIF:s förändring på tolv månader, mätt som absolut avstånd till Riksbankens inflationsmål på 2 procent. Både en inflation långt över och långt under målet är ett problem, och därför redovisas avståndet i stället för nivån. Den faktiska inflationstakten finns som kompletterande serie.",
   "notes": [
-   "Inflationsmålet på 2 procent är Riksbankens, inte SCB:s; SCB mäter prisutvecklingen och Riksbanken sätter målet. Avståndet till målet är beräknat av oss.",
+   "Inflationsmålet på 2 procent är Riksbankens, inte SCB:s; SCB mäter prisutvecklingen och Riksbanken sätter målet. Avståndet till målet är en egen beräkning.",
    "KPIF håller bostadsräntorna konstanta och är det mått Riksbanken använder för att bedöma måluppfyllelsen."
   ],
   "tables": [
@@ -404,7 +404,7 @@
   "short": "%",
   "dec": 1,
   "better": "down",
-  "comment": "Andelen med en inkomst under 60 procent av medianen har fallit långsamt under de två senaste perioderna: 13,6 procent 2018, 13,2 procent 2022 och 12,8 procent 2024 – knappt tre procents minskning i vardera perioden. Dessförinnan steg den svagt. Måttet är relativt, vilket gör det svårläst just under inflationsår: när medianinkomsten faller sjunker också fattigdomsgränsen, och andelen under den kan minska utan att någon fått det bättre. Ett mer absolut mått pekar däremot tydligt nedåt: andelen barn 0–17 år i familjer med ekonomiskt bistånd har fallit från 5,4 procent 2018 till 4,1 procent 2022 och 3,2 procent 2024.",
+  "comment": "Andelen med en inkomst under 60 procent av medianen har fallit långsamt under de två senaste perioderna: 13,6 procent 2018, 13,2 procent 2022 och 12,8 procent 2024 – knappt tre procents minskning i vardera perioden. Dessförinnan steg den svagt. Måttet är relativt, vilket gör det svårläst just under inflationsår: när medianinkomsten faller sjunker också fattigdomsgränsen, och andelen under den kan minska utan att någon fått det bättre. En kompletterande serie med fast gräns i kronor rör sig i samma riktning utan att bero på var medianen ligger: andelen barn 0–17 år i familjer med ekonomiskt bistånd har fallit från 5,4 procent 2018 till 4,1 procent 2022 och 3,2 procent 2024. Den redovisas därför att biståndsgränsen inte flyttas när medianinkomsten faller, men den mäter bara barn och bara dem som söker bistånd.",
   "method": "Andel personer med disponibel inkomst per konsumtionsenhet under 60 procent av medianinkomsten – EU:s relativa fattigdomsmått, beräknat av SCB.",
   "notes": [
    "Måttet är relativt: det mäter avståndet till medianinkomsten, inte absolut fattigdom. Om medianinkomsten faller kan andelen med låg ekonomisk standard minska utan att någon fått det bättre.",
@@ -484,7 +484,7 @@
   "short": "år",
   "dec": 2,
   "better": "up",
-  "comment": "Medellivslängden vid födelsen har stigit i båda perioderna, men snabbare under den nuvarande: från 82,53 år 2018 till 83,03 år 2022, och därefter till 84,04 år 2025. Det är en ökning på ett helt år på tre år, mot ett halvår under hela förra mandatperioden – som dessutom innehöll pandemiåret 2020, då medellivslängden föll tillbaka till 2017-nivån. Skillnaden mellan könen krymper: kvinnor levde 3,47 år längre än män 2018 och 3,03 år längre 2025. Männens medellivslängd har stigit från 80,78 till 82,52 år, kvinnornas från 84,25 till 85,55 år. Också den återstående livslängden vid 65 års ålder har ökat, för män från 19,13 till 20,30 år.",
+  "comment": "Medellivslängden vid födelsen har stigit i båda perioderna, men snabbare under den nuvarande: från 82,53 år 2018 till 83,03 år 2022, och därefter till 84,04 år 2025. Det är en ökning på ett helt år på tre år, mot ett halvår under hela förra mandatperioden – som dessutom innehöll pandemiåret 2020, då medellivslängden föll tillbaka till 2017-nivån. Jämförelsen startar därmed strax efter pandemins nedgång, vilket gör en del av den nuvarande periodens uppgång till återhämtning till den tidigare banan snarare än ny utveckling. Skillnaden mellan könen krymper: kvinnor levde 3,47 år längre än män 2018 och 3,03 år längre 2025. Männens medellivslängd har stigit från 80,78 till 82,52 år, kvinnornas från 84,25 till 85,55 år. Också den återstående livslängden vid 65 års ålder har ökat, för män från 19,13 till 20,30 år.",
   "method": "Ettårig livslängdstabell för riket. SCB redovisar återstående medellivslängd per kön men inte för båda könen tillsammans; totalen är beräknad ur samma tabells antal döda och risktid per ålder och kön, med den vanliga omvandlingen från dödstal till dödsrisk (q = m / (1 + m/2)) och den sista åldersklassen som öppen.",
   "notes": [
    "Medellivslängden är ett periodmått: den visar hur länge en nyfödd skulle leva om årets dödlighet i varje ålder bestod hela livet. Den är alltså inte en prognos för dagens nyfödda.",
@@ -596,7 +596,7 @@
   "method": "Nationalräkenskaperna: den konsoliderade offentliga förvaltningens finansiella sparande, dividerat med BNP till marknadspris i löpande priser. Positivt värde är överskott, negativt underskott.",
   "notes": [
    "Ett underskott i en svag konjunktur är inte i sig ett misslyckande – de offentliga finanserna ska enligt det finanspolitiska ramverket kunna gå med underskott när ekonomin viker. Omdömet ska läsas med det i minnet.",
-   "Kvoten mot BNP är beräknad av oss ur nationalräkenskapernas två serier."
+   "Kvoten mot BNP är en egen beräkning ur nationalräkenskapernas två serier."
   ],
   "tables": [
    "TAB6735",
@@ -639,7 +639,7 @@
   "dec": 1,
   "better": "up",
   "comment": "Här är resultatet oväntat. BNP per arbetad timme steg från 717,8 kr tredje kvartalet 2018 till 745,7 kr samma kvartal 2022, en ökning på 3,9 procent. Under den nuvarande perioden har den stigit till 795,1 kr, en ökning på 6,6 procent – alltså snabbare än under förra perioden, trots svagare BNP-tillväxt. Förklaringen ligger i nämnaren: antalet arbetade timmar har vuxit långsamt medan produktionen fortsatt öka. Produktiviteten är det mått som på lång sikt avgör hur höga löner och hur stor offentlig välfärd landet kan bära, och den svänger kraftigt på kort sikt – under nedgångar hålls den uppe av att timmarna faller snabbare än produktionen.",
-  "method": "Säsongrensad BNP i fasta priser dividerad med säsongrensat och kalenderkorrigerat antal arbetade timmar i hela ekonomin, båda ur nationalräkenskaperna. Kvoten är beräknad av oss; SCB publicerar de två serierna men inte kvoten i denna form.",
+  "method": "Säsongrensad BNP i fasta priser dividerad med säsongrensat och kalenderkorrigerat antal arbetade timmar i hela ekonomin, båda ur nationalräkenskaperna. Kvoten är en egen beräkning; SCB publicerar de två serierna men inte kvoten i denna form.",
   "notes": [
    "Arbetsproduktiviteten är det mått som på lång sikt avgör hur höga löner och hur stor offentlig välfärd ett land kan bära. Den svänger kraftigt på kort sikt: under nedgångar hålls den uppe av att arbetade timmar faller snabbare än produktionen.",
    "Måttet fångar hela ekonomin, inklusive offentlig sektor, där produktion mäts som kostnad och produktivitetsökningar därför är svåra att se."
@@ -893,8 +893,8 @@
   "short": "p.e.",
   "dec": 1,
   "better": "down",
-  "comment": "Skillnaden i sysselsättningsgrad mellan inrikes och utrikes födda 20–64 år har krympt i båda perioderna: 15,6 procentenheter tredje kvartalet 2018, 12,9 procentenheter 2022 och 10,7 procentenheter andra kvartalet 2026. Det är den lägsta nivån i den redovisade serien. Nedgången beror på båda hållen men mest på det önskvärda: utrikes föddas sysselsättningsgrad har stigit från 70,1 till 74,1 procent, medan inrikes föddas har sjunkit svagt, från 85,7 till 84,8 procent. Att en del av gapminskningen kommer från att inrikes födda fått det något sämre är värt att notera – ett gap kan krympa av fel skäl.",
-  "method": "AKU: sysselsättningsgraden för inrikes födda minus sysselsättningsgraden för utrikes födda, 20–64 år, båda könen, säsongrensade kvartalsvärden. Differensen är beräknad av oss.",
+  "comment": "Skillnaden i sysselsättningsgrad mellan inrikes och utrikes födda 20–64 år har krympt i båda perioderna: 15,6 procentenheter tredje kvartalet 2018, 12,9 procentenheter 2022 och 10,7 procentenheter andra kvartalet 2026. Det är den lägsta nivån i den redovisade serien. Nedgången beror på båda hållen, mest på att utrikes föddas sysselsättningsgrad stigit från 70,1 till 74,1 procent, medan inrikes föddas sjunkit svagt, från 85,7 till 84,8 procent. En del av gapminskningen kommer alltså av att inrikes föddas nivå fallit: ett gap krymper också när det övre värdet sjunker.",
+  "method": "AKU: sysselsättningsgraden för inrikes födda minus sysselsättningsgraden för utrikes födda, 20–64 år, båda könen, säsongrensade kvartalsvärden. Differensen är en egen beräkning.",
   "notes": [
    "Gapet kan krympa av två skäl: att utrikes föddas sysselsättning stiger eller att inrikes föddas faller. Båda delserierna redovisas därför separat.",
    "AKU lades om 2021, vilket gör nivåjämförelser över årsskiftet 2020/2021 osäkra."
@@ -985,7 +985,7 @@
   "method": "SCB:s lufträkenskaper (miljöräkenskaperna): utsläpp av växthusgaser från den svenska ekonomin, summerat över tabellens samtliga 37 redovisningsgrupper (näringsgrenar, offentliga myndigheter, hushållens icke-vinstdrivande organisationer och privat konsumtion).",
   "notes": [
    "Miljöräkenskapernas ekonomibaserade avgränsning skiljer sig från Naturvårdsverkets territoriella klimatrapportering; nivåerna är därför inte jämförbara med den officiella klimatrapporteringen.",
-   "Tabellen har inget färdigt totalvärde – summan är beräknad av oss över samtliga redovisningsgrupper."
+   "Tabellen har inget färdigt totalvärde – summan är en egen beräkning över samtliga redovisningsgrupper."
   ],
   "tables": [
    "TAB4349"
@@ -1002,7 +1002,7 @@
   "short": "%",
   "dec": 1,
   "better": "up",
-  "comment": "Andelen av de köande som väntat högst 90 dagar på operation eller åtgärd steg från 58,1 procent 2022 till 59,0 procent 2024 – en förbättring på 0,9 procentenheter. Men de mått som beskriver samma sak från andra sidan går åt motsatt håll: andelen som faktiskt fick sin operation inom 90 dagar har fallit varje år, från 85,4 procent 2022 till 83,8 procent 2024. Och den enda vårdköserie som täcker båda mandatperioderna fullt ut pekar tydligt nedåt: andelen som fick ett första besök inom 90 dagar i allmänpsykiatrin har fallit varje år sedan 2012, från 92,1 procent 2018 till 85,8 procent 2022 och 81,8 procent 2025. Inom barn- och ungdomspsykiatrin är mönstret detsamma, 97,1 procent 2018 mot 90,0 procent 2025. Sammantaget är utfallet blandat, och den positiva siffran vilar på en kort serie.",
+  "comment": "Andelen av de köande som väntat högst 90 dagar på operation eller åtgärd steg från 58,1 procent 2022 till 59,0 procent 2024 – en förbättring på 0,9 procentenheter. Men de mått som beskriver samma sak från andra sidan går åt motsatt håll: andelen som faktiskt fick sin operation inom 90 dagar har fallit varje år, från 85,4 procent 2022 till 83,8 procent 2024. Och den enda vårdköserie som täcker båda mandatperioderna fullt ut pekar tydligt nedåt: andelen som fick ett första besök inom 90 dagar i allmänpsykiatrin har fallit varje år sedan 2012, från 92,1 procent 2018 till 85,8 procent 2022 och 81,8 procent 2025. Inom barn- och ungdomspsykiatrin är mönstret detsamma, 97,1 procent 2018 mot 90,0 procent 2025. Sammantaget är utfallet blandat, och den positiva siffran vilar på en kort serie som börjar 2021 – mitt i pandemin, när planerad vård sköts upp.",
   "method": "Antal patienter som väntat högst 90 dagar på operation eller åtgärd i specialiserad vård, delat med samtliga väntande. Vårdgarantin säger att en patient ska få tid inom 90 dagar. Riket, samtliga specialiteter och utförare.",
   "notes": [
    "Serien över den generella vårdgarantin börjar 2021 i Kolada. Förra mandatperioden täcks därför bara av 2021 och 2022, medan de två psykiatriserierna går tillbaka till 2012 och redovisas som lång jämförelse.",
@@ -1025,7 +1025,7 @@
   "short": "dagar",
   "dec": 0,
   "better": "down",
-  "comment": "Mediantiden som de köande hade väntat på operation eller åtgärd sjönk från 65 till 64 dagar mellan 2022 och 2024. Samtidigt steg den tid som patienterna faktiskt fick vänta: medianväntetiden för genomförda operationer gick från 25,5 dagar 2022 till 28,0 dagar 2024. De två måtten mäter olika saker – det första kön just nu, det andra vad de som fick vård fick vänta – och de rör sig i motsatt riktning. Serierna börjar 2021, vilket gör att förra mandatperioden bara täcks av två mätpunkter.",
+  "comment": "Mediantiden som de köande hade väntat på operation eller åtgärd sjönk från 65 till 64 dagar mellan 2022 och 2024. Samtidigt steg den tid som patienterna faktiskt fick vänta: medianväntetiden för genomförda operationer gick från 25,5 dagar 2022 till 28,0 dagar 2024. De två måtten mäter olika saker – det första kön just nu, det andra vad de som fick vård fick vänta – och de rör sig i motsatt riktning. Serierna börjar 2021, mitt i pandemin och när planerad vård sköts upp, vilket gör att förra mandatperioden bara täcks av två mätpunkter och att basåret är svårt att jämföra med.",
   "method": "Mediantid i dagar som patienter som står i kö till operation eller åtgärd i specialiserad vård har väntat. Riket, samtliga specialiteter och utförare.",
   "notes": [
    "Måttet för väntande beskriver kösituationen just nu; måttet för genomförda beskriver hur länge de som fick vård faktiskt fick vänta. De rör sig ofta i olika riktning.",
