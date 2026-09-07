@@ -708,6 +708,31 @@ def gov_block():
             f'till partier.</b> Att en förändring inträffade under en viss regering säger '
             f'ingenting om vad regeringen orsakade; se metodavsnittet.</p></div>')
 
+
+def directions():
+    """Every direction judgement in the report, listed one by one out of the
+    better field. This is the report's largest non-statistical choice, so it is
+    rendered from the configuration rather than summarised in prose."""
+    lbl = {"down": ("Sjunkande är bättre", "d-down"),
+           "up": ("Stigande är bättre", "d-up"),
+           "neutral": ("Ingen självklar riktning – inget omdöme", "d-neu")}
+    rows = ""
+    for key in ORDER:
+        ind = IND[key]
+        txt, kls = lbl.get(ind.get("better"), lbl["neutral"])
+        rows += (f'<tr><td>{E(ind["name"])}</td>'
+                 f'<td class="dgrp">{E(ind["grupp"])}</td>'
+                 f'<td class="{kls}">{E(txt)}</td></tr>')
+    n = {k: sum(1 for x in IND.values() if x.get("better") == k)
+         for k in ("down", "up", "neutral")}
+    return (f'<table class="dirtab"><thead><tr><th>Mätpunkt</th><th>Område</th>'
+            f'<th>Vad som räknas som en förbättring</th></tr></thead>'
+            f'<tbody>{rows}</tbody></table>'
+            f'<p class="ovcap" style="border-top:0;padding-top:6px">'
+            f'{n["down"]} mätpunkter räknas som bättre när de sjunker, {n["up"]} när de stiger, '
+            f'och {n["neutral"]} lämnas utan omdöme och ingår inte i något aggregat.</p>')
+
+
 def agg_table(panel_key, from_i=0):
     rows = [
       ("Andel som förbättrades", "andel", "%", 0,
@@ -1316,15 +1341,19 @@ BODY = f"""<a class="skiplink" href="#innehall">Hoppa till innehållet</a>
       </div>
       <div class="method">
         <b>Riktning</b>
-        För varje mätpunkt är det angivet vilket håll som räknas som en förbättring. Sjunkande
-        sjukfrånvaro, utsläpp, självmord, dödligt våld, hatbrott, otrygghet, väntetider, arbetslöshet,
-        elpriser, räntor och statsskuld räknas som bättre; stigande löner, sysselsättning, behörighet,
-        personal, uppklarande, BNP, produktivitet, medellivslängd och tillit räknas som bättre.
-        Medelålder, skatteintäkter, skattetryck, inkomstklyfta och bostadspriser har ingen självklar
-        riktning och lämnas utan omdöme.
+        För varje mätpunkt är det angivet vilket håll som räknas som en förbättring. Det är rapportens
+        största icke-statistiska val, och därför står alla {len(ORDER)} avgörandena uppräknade i
+        tabellen nedan i stället för sammanfattade här.
       </div>
     </div>
   </div>
+
+  <h3 style="margin:38px 0 8px;font-size:1.15rem">Varje riktningsval, ett för ett</h3>
+  <p class="lede" style="margin-bottom:14px">Vilket håll som är en förbättring följer inte ur
+  statistiken – det är ett omdöme, ett per mätpunkt, och det avgör vilka tal som räknas som bättre i
+  varje tabell och diagram i rapporten. Tabellen är genererad ur konfigurationen, så den kan inte
+  hamna i otakt med beräkningarna. Den som är oenig om en rad ser exakt vilken den är.</p>
+  <div class="overview" style="overflow-x:auto">{directions()}</div>
 </section>
 
 <section aria-labelledby="h-kallor">

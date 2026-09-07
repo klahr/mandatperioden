@@ -211,7 +211,7 @@
   "short": "per 100 000",
   "dec": 2,
   "better": "down",
-  "comment": "Det dödliga skjutvapenvåldet mer än tredubblades per invånare mellan 2011 och 2022: från 0,18 till 0,60 fall per 100 000 invånare. Sedan dess har det fallit tre år i rad, till 0,40 år 2025 – en minskning på 33,3 procent sedan maktskiftet, tillbaka på ungefär 2018 års nivå (0,42). Också det dödliga våldet utan skjutvapen har minskat. Skjutvapenvåldet är därmed både den del av det dödliga våldet som ökade mest fram till 2022 och den som minskat mest efter – den tydligaste enskilda vändningen i brottsstatistiken.",
+  "comment": "Det dödliga skjutvapenvåldet mer än tredubblades per invånare mellan 2011 och 2022: från 0,18 till 0,60 fall per 100 000 invånare. Sedan dess har det fallit tre år i rad, till 0,40 år 2025 – en minskning på 33,3 procent sedan maktskiftet, tillbaka på ungefär 2018 års nivå (0,42). Också det dödliga våldet utan skjutvapen har minskat. Skjutvapenvåldet är därmed både den del av det dödliga våldet som ökade mest fram till 2022 och den som minskat mest efter – en uppgång på 42,9 procent under 2018–2022 följd av en nedgång på 33,3 procent.",
   "method": "Brås granskning av konstaterade fall av dödligt våld, uppdelat efter om skjutvapen använts. Endast konstaterade fall räknas. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
    "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
@@ -286,7 +286,7 @@
   "short": "%",
   "dec": 1,
   "better": "up",
-  "comment": "Den allmänna tilliten till andra människor är märkligt stabil: 62,6 procent gav höga betyg 2022 och 62,8 procent 2025. Förtroendet för politiker rör sig desto mer. Andelen som ger riksdagens politiker höga betyg föll från 41,7 procent 2022 till 34,0 procent 2023, ett fall på 7,7 procentenheter på ett år, och har därefter bara delvis återhämtat sig, till 38,4 procent 2025. Måttet är den svagaste jämförelsen i rapporten: SCB:s medborgarundersökning i nuvarande form startade 2021, så förra mandatperioden täcks bara av två mätpunkter.",
+  "comment": "Den allmänna tilliten till andra människor ligger stilla: 62,6 procent gav höga betyg 2022 och 62,8 procent 2025. Förtroendet för politiker rör sig desto mer. Andelen som ger riksdagens politiker höga betyg föll från 41,7 procent 2022 till 34,0 procent 2023, ett fall på 7,7 procentenheter på ett år, och har därefter bara delvis återhämtat sig, till 38,4 procent 2025. Underlaget är tunt: SCB:s medborgarundersökning i nuvarande form startade 2021, så förra mandatperioden täcks bara av två mätpunkter.",
   "method": "SCB:s medborgarundersökning, riket, samtliga svarande. Redovisad serie: ”Allmänt sett, tycker du att man kan lita på människor?”, andel höga betyg.",
   "notes": [
    "Medborgarundersökningen i sin nuvarande form startade 2021. Förra mandatperioden täcks därför bara av mätpunkterna 2021 och 2022, vilket gör periodjämförelsen svag.",
@@ -457,7 +457,7 @@
   "short": "per 100 000",
   "dec": 1,
   "better": "up",
-  "comment": "Per invånare är lärartätheten märkligt stabil över hela sexton år. Antalet anställda lärare per 100 000 invånare låg på 2 642 år 2014, 2 634 år 2018, 2 621 år 2022 och 2 690 år 2024. Uppgången under den nuvarande perioden är 2,6 procent per invånare mot 3,3 procent i antal, och under 2014–2018 försvinner uppgången helt: +4,6 procent i antal blir −0,3 procent per invånare. Måttet omfattar universitets- och högskollärare, yrkeslärare, gymnasielärare samt grundskollärare, fritidspedagoger och förskollärare. En mer träffsäker nämnare vore antalet elever snarare än hela befolkningen, men den finns inte i samma tabell.",
+  "comment": "Per invånare ligger lärartätheten stilla över hela sexton år. Antalet anställda lärare per 100 000 invånare låg på 2 642 år 2014, 2 634 år 2018, 2 621 år 2022 och 2 690 år 2024. Uppgången under den nuvarande perioden är 2,6 procent per invånare mot 3,3 procent i antal, och under 2014–2018 försvinner uppgången helt: +4,6 procent i antal blir −0,3 procent per invånare. Måttet omfattar universitets- och högskollärare, yrkeslärare, gymnasielärare samt grundskollärare, fritidspedagoger och förskollärare. En mer träffsäker nämnare vore antalet elever snarare än hela befolkningen, men den finns inte i samma tabell.",
   "method": "Yrkesregistret med yrkesstatistik, anställda i riket i yrkesgrupp SSYK 231–234 (3-siffrig SSYK 2012), summerat över födelseregion och kön. Huvudserien är den BAS-baserade tabellen 2020–2024, som är internt jämförbar. Räknat per 100 000 invånare med SCB:s folkmängd den 31 december som nämnare, så att befolkningstillväxten inte räknas som en förbättring. Det råa antalet finns som kompletterande serie.",
   "notes": [
    "Sveriges befolkning växte 3,5 procent under 2010–2014, 5,0 procent under 2014–2018, 2,8 procent under 2018–2022 och 0,8 procent sedan 2022. Ett rått antal överskattar därför förbättringen, mest i de två mellersta perioderna.",
@@ -592,7 +592,7 @@
   "short": "% av BNP",
   "dec": 2,
   "better": "up",
-  "comment": "De offentliga finanserna har gått från överskott till underskott. Det finansiella sparandet motsvarade +0,99 procent av BNP 2022 och −1,35 procent 2025, med botten −1,63 procent 2024. Under förra mandatperioden var sparandet positivt varje år utom 2020 (−3,19 procent) och 2021 (−0,20 procent). Ett underskott i en svag konjunktur är inte i sig ett misslyckande – det finanspolitiska ramverket är byggt för att tillåta det – men riktningen är entydig, och den sammanfaller med att statsskuldens nedgång brutits och vänt uppåt sedan 2023.",
+  "comment": "De offentliga finanserna har gått från överskott till underskott. Det finansiella sparandet motsvarade +0,99 procent av BNP 2022 och −1,35 procent 2025, med botten −1,63 procent 2024. Under förra mandatperioden var sparandet positivt varje år utom 2020 (−3,19 procent) och 2021 (−0,20 procent). Sparandet gick från +0,99 procent 2022 till −1,63 procent 2024 och ligger på −1,35 procent 2025, och statsskuldens nedgång bröts samma år: kvoten bottnade på 16,7 procent 2023 och ligger på 18,6 procent 2026.",
   "method": "Nationalräkenskaperna: den konsoliderade offentliga förvaltningens finansiella sparande, dividerat med BNP till marknadspris i löpande priser. Positivt värde är överskott, negativt underskott.",
   "notes": [
    "Ett underskott i en svag konjunktur är inte i sig ett misslyckande – de offentliga finanserna ska enligt det finanspolitiska ramverket kunna gå med underskott när ekonomin viker. Omdömet ska läsas med det i minnet.",
@@ -1054,7 +1054,7 @@
    "Antalet vårdplatser säger inget om hur väl de används. Nedgången har pågått oavbrutet under alla fyra perioderna.",
    "Serien slutar 2023."
   ],
-  "comment": "Detta är det mått i rapporten som försämras i varje enskild period. Antalet disponibla vårdplatser i slutenvård har fallit från 2,72 per 1 000 invånare 2010 till 1,87 år 2023 – en minskning på 31 procent på tretton år, och 33 procent sedan 2008. Nedgången var kraftigast under 2014–2018 (−16,0 procent) och har bromsat in under den nuvarande perioden (−1,1 procent), vilket är den enda ljusning serien uppvisar.",
+  "comment": "Detta är det mått i rapporten som försämras i varje enskild period. Antalet disponibla vårdplatser i slutenvård har fallit från 2,72 per 1 000 invånare 2010 till 1,87 år 2023 – en minskning på 31 procent på tretton år, och 33 procent sedan 2008. Nedgången var kraftigast under 2014–2018 (−16,0 procent) och har bromsat in under den nuvarande perioden (−1,1 procent), vilket är seriens minsta nedgång under någon period.",
   "extras": []
  },
  "meritvarde": {
@@ -1074,7 +1074,7 @@
    "Meritvärdet är inte jämförbart över långa tidsspann: betygsinflation, ändrade kursplaner och att fler ämnen räknas in påverkar nivån. Jämförelser mellan närliggande år är säkrare än mellan decennier.",
    "Serien börjar 2015 och når därför inte perioden 2010–2014."
   ],
-  "comment": "Det genomsnittliga meritvärdet i årskurs 9 steg från 238,0 år 2015 till 247,3 år 2017 och har därefter sjunkit tillbaka: 239,0 år 2023 och 237,0 både 2024 och 2025. Under den nuvarande perioden är förändringen −1,7 procent och under den föregående −1,2 procent, medan 2014–2018 var positiv med 2,5 procent. Måttet ska tolkas försiktigt över längre tid – betygsinflation och ändrade kursplaner påverkar nivån – men riktningen sedan 2017 är entydig och den syns även i behörigheten till gymnasiet.",
+  "comment": "Det genomsnittliga meritvärdet i årskurs 9 steg från 238,0 år 2015 till 247,3 år 2017 och har därefter sjunkit tillbaka: 239,0 år 2023 och 237,0 både 2024 och 2025. Under den nuvarande perioden är förändringen −1,7 procent och under den föregående −1,2 procent, medan 2014–2018 var positiv med 2,5 procent. Måttet ska tolkas försiktigt över längre tid – betygsinflation och ändrade kursplaner påverkar nivån – men serien faller under båda perioderna efter 2017, med 1,2 och 1,7 procent, och behörigheten till gymnasiet faller också.",
   "extras": []
  },
  "skuldsatta": {
@@ -1135,7 +1135,7 @@
    "Måttet räknar tåg, inte resenärer, och ett inställt tåg räknas inte som försenat – det räknas inte alls. Punktligheten kan alltså förbättras genom att trafik ställs in.",
    "Nivån ligger kring 90 procent, alltså utanför intervallet 15–85, så förändringen redovisas relativt och inte i procentenheter."
   ],
-  "comment": "Punktligheten är märkligt stabil vid periodgränserna – 91,0 procent i september 2014, 91,1 i september 2018, 91,8 i september 2022 och 91,8 i december 2025 – men däremellan rör den sig tydligt. Årsmedelvärdet föll från 91,3 procent 2013 till 89,6 procent 2018, återhämtade sig till 90,2 år 2022 och sjönk sedan till 87,1 procent 2024, det svagaste året i serien, innan det steg till 88,6 år 2025. Att jämförelsen mellan nollpunkterna ser oförändrad ut medan årsmedlen svänger flera procentenheter är en påminnelse om att enstaka mätpunkter kan dölja förloppet – det glidande medelvärdet i diagrammet visar det tydligare. Måttet räknar dessutom bara framförda tåg: inställd trafik försvinner ur statistiken i stället för att räknas som försening."
+  "comment": "Punktligheten ligger nästan lika vid periodgränserna – 91,0 procent i september 2014, 91,1 i september 2018, 91,8 i september 2022 och 91,8 i december 2025 – men däremellan rör den sig tydligt. Årsmedelvärdet föll från 91,3 procent 2013 till 89,6 procent 2018, återhämtade sig till 90,2 år 2022 och sjönk sedan till 87,1 procent 2024, seriens lägsta årsmedel, innan det steg till 88,6 år 2025. Att jämförelsen mellan nollpunkterna ser oförändrad ut medan årsmedlen svänger flera procentenheter är en påminnelse om att enstaka mätpunkter kan dölja förloppet – det glidande medelvärdet i diagrammet visar det tydligare. Måttet räknar dessutom bara framförda tåg: inställd trafik försvinner ur statistiken i stället för att räknas som försening."
  },
  "konkurser": {
   "name": "Företagskonkurser",
@@ -1174,11 +1174,11 @@
    "En minskande andel kan betyda både att färre får hjälp de behöver och att de äldre är friskare och klarar sig längre själva. Medellivslängden har samtidigt stigit, så en del av nedgången är sannolikt det senare – men inte hela.",
    "Serien börjar 2016 och når därför inte perioderna före 2018."
   ],
-  "comment": "Andelen av de allra äldsta som får äldreomsorg har fallit varje enskilt år i serien: från 39,1 procent av invånarna 80 år och äldre 2016 till 32,8 procent 2022 och 29,7 procent 2025. Det är en nedgång på 9,4 procentenheter på nio år, varav 3,1 procentenheter under den pågående perioden. Antalet brukare 65 år och äldre i särskilt boende har samtidigt bara fallit från 56 940 till 55 063, alltså 3,3 procent, medan andelen av invånarna 65 år och äldre fallit från 14,6 till 12,6 procent: antalet som får hjälp har inte fallit i samma takt som andelen. Medellivslängden är 1,7 år högre 2025 än 2016, vilket kan höra samman med nedgången, men rapporten kan inte visa det. Men den förklaringen räcker knappast för hela tappet."
+  "comment": "Andelen av de allra äldsta som får äldreomsorg har fallit varje enskilt år i serien: från 39,1 procent av invånarna 80 år och äldre 2016 till 32,8 procent 2022 och 29,7 procent 2025. Det är en nedgång på 9,4 procentenheter på nio år, varav 3,1 procentenheter under den pågående perioden. Antalet brukare 65 år och äldre i särskilt boende har samtidigt bara fallit från 56 940 till 55 063, alltså 3,3 procent, medan andelen av invånarna 65 år och äldre fallit från 14,6 till 12,6 procent: antalet som får hjälp har inte fallit i samma takt som andelen. Medellivslängden är 1,7 år högre 2025 än 2016, vilket kan höra samman med nedgången, men rapporten kan inte visa det."
  },
  "aterfall": {
   "name": "Återfall i brott",
-  "grupp": "Brott och trygghet",
+  "grupp": "Trygghet och brott",
   "source": "BRÅ",
   "unit": "andel av personerna med en ingångshändelse som återfaller i brott inom ett år, procent",
   "short": "%",
@@ -1195,6 +1195,6 @@
    "Måttet är förskjutet i tiden på ett sätt som gör mandatperiodjämförelser svåra: ett återfall efter ingångsår 2023 kan inträffa så sent som 2024 och lagföras ännu senare. Ingångsår 2023 är det senaste som finns, så den pågående perioden vilar på en enda observation.",
    "Ett minskande återfall kan också bero på att färre brott lagförs över huvud taget, inte bara på att färre begår nya brott."
   ],
-  "comment": "Återfallen inom ett år låg påfallande stilla under hela den slutliga statistikens period: 25,5 procent för ingångsår 2010, 25,5 för 2014 och 24,5 för 2018 – en förbättring på en procentenhet över åtta år. I den preliminära statistiken, som inte är jämförbar med den slutliga, ligger nivån på 24,0 procent för ingångsår 2019 och 23,5 för 2023. Måttet är ett av rapportens mest svårtolkade: det dateras efter ingångsåret, återfallet kan inträffa ett år senare och lagföras ännu senare, och andelen påverkas av hur mycket som lagförs alls. Att den preliminära statistikens nedgång för ingångsår 2018 – 21,3 procent mot 24,5 i den slutliga – inte finns i den slutliga visar hur känsligt måttet är för uppföljningstiden. Slutsatsen som håller är att återfallsnivån är stabil kring en fjärdedel och att inga av de fyra mandatperioderna har flyttat den nämnvärt."
+  "comment": "Återfallen inom ett år låg still under hela den slutliga statistikens period: 25,5 procent för ingångsår 2010, 25,5 för 2014 och 24,5 för 2018 – en förbättring på en procentenhet över åtta år. I den preliminära statistiken, som inte är jämförbar med den slutliga, ligger nivån på 24,0 procent för ingångsår 2019 och 23,5 för 2023. Måttet är förskjutet i tiden: det dateras efter ingångsåret, återfallet kan inträffa ett år senare och lagföras ännu senare, och andelen påverkas av hur mycket som lagförs alls. Att den preliminära statistikens nedgång för ingångsår 2018 – 21,3 procent mot 24,5 i den slutliga – inte finns i den slutliga visar hur känsligt måttet är för uppföljningstiden. Slutsatsen som håller är att återfallsnivån är stabil kring en fjärdedel och att inga av de fyra mandatperioderna har flyttat den nämnvärt."
  }
 }

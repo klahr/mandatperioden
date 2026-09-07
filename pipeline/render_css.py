@@ -166,6 +166,16 @@ section{margin-top:72px}
 
 .ledger-scroll{overflow-x:auto; border:1px solid var(--rule); background:var(--sheet); box-shadow:var(--shadow)}
 table.ledger{width:100%; border-collapse:collapse; min-width:1080px}
+table.dirtab{width:100%; border-collapse:collapse; min-width:520px; font-size:.9rem}
+table.dirtab th{font-family:var(--display); font-size:.65rem; font-weight:600; letter-spacing:.11em;
+  text-transform:uppercase; color:var(--ink-3); text-align:left; padding:0 11px 8px;
+  border-bottom:1px solid var(--ink)}
+table.dirtab td{padding:8px 11px; border-bottom:1px solid var(--rule-soft)}
+table.dirtab tbody tr:last-child td{border-bottom:0}
+table.dirtab tbody tr:hover{background:var(--sunk)}
+table.dirtab td.dgrp{color:var(--ink-2); font-size:.82rem}
+table.dirtab td.d-down,table.dirtab td.d-up{white-space:nowrap}
+table.dirtab td.d-neu{color:var(--ink-2)}
 table.ledger th{font-family:var(--display); font-size:.65rem; font-weight:600; letter-spacing:.11em;
   text-transform:uppercase; color:var(--ink-3); text-align:left; padding:11px 11px;
   border-bottom:1px solid var(--ink); white-space:nowrap}

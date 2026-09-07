@@ -49,7 +49,7 @@
  },
  "vantetider": {
   "mekanism": "Samma slags mått som vårdköerna, och samma startpunkt 2021.",
-  "tolkning": "Förbättringen är verklig men bromsar in, och basåret 2021 bär en del av den. Se vårdköerna för samma resonemang.",
+  "tolkning": "Förbättringen bromsar in – 15,0 procent under förra perioden mot 1,5 under den pågående – och basåret 2021 bär en del av den. Se vårdköerna för samma resonemang.",
   "beslut": {
    "re": "vårdgaranti|väntetid|hälso- och sjukvård",
    "inte": "djurens|tandvård",
@@ -95,7 +95,7 @@
  },
  "sjukfranvaro": {
   "mekanism": "Måttet är sjukpenningtalet: antal utbetalda dagar per försäkrad. Serien 2008–2025 är obruten, medan SCB:s två egna frånvaromått bryts mitt i den pågående perioden och redovisas som kompletterande serier.",
-  "tolkning": "Att frånvaron försämrats under alla fyra perioderna, med den kraftigaste uppgången i den första (55,9 procent), gör detta till ett av rapportens mest entydiga mått: ingen mandatperiod har vänt utvecklingen. Riksrevisionen har granskat vad som händer efter nekad sjukpenning. Vad som ligger bakom nivån kan rapporten inte visa.",
+  "tolkning": "Att frånvaron försämrats under alla fyra perioderna, med den kraftigaste uppgången i den första (55,9 procent), betyder att ingen mandatperiod har vänt utvecklingen. Riksrevisionen har granskat vad som händer efter nekad sjukpenning. Vad som ligger bakom nivån kan rapporten inte visa.",
   "beslut": {
    "re": "sjukförsäkring|sjukpenning|rehabiliteringskedjan|karensavdrag|arbetsprövning|angiven yrkesgrupp|sjukersättning",
    "doktyp": [
@@ -139,7 +139,7 @@
  },
  "sjalvmord": {
   "mekanism": "Dödstalet är åldersviktat över fem åldersgrupper och båda könen. Serien börjar 2017, slutar 2024 och omfattar åtta mätpunkter.",
-  "tolkning": "Riksrevisionen granskade statens suicidpreventiva arbete 2021 och regeringen svarade riksdagen 2022; en nationell strategi beslutades 2025. Nedgången på 9,0 procent under den pågående perioden ligger delvis före strategin, så tidsordningen tillåter inte att den tillskrivs politiken. Att nedgången accelererat över tre perioder är däremot ett robust mönster i serien.",
+  "tolkning": "Riksrevisionen granskade statens suicidpreventiva arbete 2021 och regeringen svarade riksdagen 2022; en nationell strategi beslutades 2025. Nedgången på 9,0 procent under den pågående perioden ligger delvis före strategin, så tidsordningen tillåter inte att den tillskrivs politiken. Att nedgången accelererat över tre perioder syns däremot i varje mätbar period: +0,5, -4,8 och -9,0 procent.",
   "beslut": {
    "re": "suicid|självmord|psykisk hälsa",
    "doktyp": [
@@ -337,7 +337,7 @@
  },
  "hatbrott": {
   "mekanism": "Måttet bygger på att ett hatbrottsmotiv identifierats i en anmälan. Rapporten redovisar två serier som skiljer sig kraftigt i nivå – hatbrottsmarkerade anmälningar och anmälningar med identifierat motiv enligt Brås granskning – och de rör sig olika mellan perioderna.",
-  "tolkning": "Nedgången på 49,3 procent under 2018–2022 ska läsas med stor försiktighet: de två hatbrottsserierna i materialet skiljer sig kraftigt i nivå och rör sig olika mellan perioderna. Det gör detta till den serie i rapporten där sambandet mellan mätt och verklig förändring är svagast belagt.",
+  "tolkning": "Nedgången på 49,3 procent under 2018–2022 ska läsas med stor försiktighet: de två hatbrottsserierna i materialet skiljer sig kraftigt i nivå och rör sig olika mellan perioderna. De två serierna låg 2022 på 45,5 respektive 26,9 per 100 000, och rapporten kan inte avgöra vilken av dem som bäst speglar antalet hatbrott.",
   "beslut": {
    "re": "hatbrott|hets mot folkgrupp|diskriminering|kön som hatbrott",
    "doktyp": [
@@ -356,7 +356,7 @@
  },
  "trygghet": {
   "mekanism": "Självrapporterad trygghet i SCB:s undersökningar av levnadsförhållanden. Måttet mäter upplevelse, inte utsatthet, och kan därför röra sig i motsatt riktning mot brottsstatistiken: under 2018–2022 försämrades det 3,1 procentenheter medan de anmälda brotten föll 9,4 procent.",
-  "tolkning": "Att otryggheten steg under 2014–2018 och 2018–2022 samtidigt som anmälda brott föll under den senare perioden illustrerar just det. Rapporten kan inte förklara upplevd trygghet med politiska beslut.",
+  "tolkning": "Måttet mäter upplevelse, inte utsatthet: otryggheten steg 4,6 och 3,1 procentenheter under 2014–2018 och 2018–2022, medan de anmälda brotten föll 9,4 procent under den senare perioden. Rapporten kan inte förklara upplevd trygghet med politiska beslut.",
   "beslut": {
    "re": "kriminella nätverk|trygghet|brottsförebygg|kameraövervakning|ordningsvakt|Barriärer mot brott",
    "doktyp": [
@@ -400,7 +400,7 @@
  },
  "aterfall": {
   "mekanism": "Måttet är förskjutet i tiden: det dateras efter ingångsåret, medan återfallet och dess lagföring inträffar senare. Serien består av två versioner med olika uppföljningstid, och den preliminära ligger lägre än den slutliga för varje ingångsår de har gemensamt.",
-  "tolkning": "Serien är påfallande stabil kring en fjärdedel under hela perioden och ingen mandatperiod har flyttat den nämnvärt. Det är i sig ett resultat: området har varit föremål för flera granskningar utan att måttet rört sig. Att den pågående perioden vilar på ett enda ingångsår gör dess siffra särskilt osäker.",
+  "tolkning": "Serien ligger mellan 23,3 och 25,9 procent under hela perioden, och den största periodförändringen är 1,0 procentenheter. Att den pågående perioden vilar på ett enda ingångsår gör dess siffra särskilt osäker.",
   "beslut": {
    "re": "kriminalvård|frivård|återfall|villkorlig frigivning|verkställighet av|påföljd",
    "doktyp": [
@@ -489,7 +489,7 @@
   ]
  },
  "larare": {
-  "mekanism": "Antalet anställda lärare per 100 000 invånare. Måttet är påfallande stabilt: 2 642 år 2014, 2 634 år 2018 och 2 621 år 2022.",
+  "mekanism": "Antalet anställda lärare per 100 000 invånare. Måttet ligger stilla: 2 642 år 2014, 2 634 år 2018 och 2 621 år 2022.",
   "tolkning": "Måttet är per invånare, inte per elev, vilket gör att det rör sig när åldersstrukturen ändras även om lärartätheten i klassrummet är oförändrad. Rapporten mäter inte elevantalet, så uppgången på 2,6 procent under den pågående perioden går inte att tolka som ökad lärartäthet i skolan.",
   "beslut": {
    "re": "lärarutbildning|lärarleg|professionsprogram|karriärtjänst|skollag",
@@ -514,7 +514,7 @@
  },
  "inflation": {
   "mekanism": "Måttet är KPIF:s absoluta avstånd från inflationsmålet på 2 procent, så både en inflation långt över och långt under målet ger ett stort värde. KPIF-serien redovisas som kompletterande mått.",
-  "tolkning": "Detta är rapportens tydligaste fall där ett mått rör sig kraftigt utan att rapporten kan säga något om regeringens politik. Uppgången på 6,8 procentenheter under 2018–2022 och nedgången på 6,4 under den pågående perioden är i allt väsentligt samma rörelse sedd från två sidor av en periodgräns: KPIF steg från under målet till 10,2 procent i december 2022 och tillbaka igen. Att den pågående perioden får kredit för nedgången är en artefakt av var gränsen råkar ligga.",
+  "tolkning": "Måttet rör sig kraftigt utan att rapporten kan säga något om regeringens politik. Uppgången på 6,8 procentenheter under 2018–2022 och nedgången på 6,4 under den pågående perioden är i allt väsentligt samma rörelse sedd från två sidor av en periodgräns: KPIF steg från under målet till 10,2 procent i december 2022 och tillbaka igen. Att den pågående perioden får kredit för nedgången är en artefakt av var gränsen råkar ligga.",
   "beslut": {
    "re": "riksbank|penningpolitik|inflationsmål|prisstabilitet",
    "doktyp": [
@@ -649,7 +649,7 @@
  },
  "arbetsloshet": {
   "mekanism": "Arbetslöshetstalet 15–74 år, säsongrensat. Det stiger under den pågående perioden samtidigt som arbetskraftstalet 20–64 år stiger, från 87,4 till 88,1 procent – båda serierna redovisas.",
-  "tolkning": "Nedgången under de två första perioderna och uppgången på 9,2 respektive 22,5 procent därefter kan rapporten inte tillskriva politiken. I de granskningar av Arbetsförmedlingens insatser som listas här har Riksrevisionen funnit svag kunskapsbas om effekterna – vilket betyder att de politiska verktygens bidrag är svagt belagt, oavsett period.",
+  "tolkning": "Nedgången under de två första perioderna och uppgången på 9,2 respektive 22,5 procent därefter kan rapporten inte tillskriva politiken. I de granskningar av Arbetsförmedlingens insatser som listas här har Riksrevisionen funnit svag kunskapsbas om effekterna.",
   "beslut": {
    "re": "arbetslöshetsförsäkring|arbetsmarknadspolit|Arbetsförmedlingen|etableringsjobb|nystartsjobb|anställningsstöd|karensdag",
    "doktyp": [
@@ -761,7 +761,7 @@
  },
  "disp_inkomst": {
   "mekanism": "Disponibel inkomst per konsumtionsenhet exklusive kapitalvinst, median, i fasta priser. Måttet omfattar hela hushållets ekonomi och rör sig därför inte likadant som lönen: inkomsten står högre än 2022 medan reallönen inte gör det.",
-  "tolkning": "Uppgången föll från 7,5 och 6,2 procent under de två första perioderna till 0,9 och 0,8 under de två senare. Det är rapportens tydligaste inbromsning i hushållens ekonomi. Måttet omfattar skatter, bidrag och pensioner, som riksdagen beslutar om, men rapporten mäter inte de enskilda posterna och kan inte fördela inbromsningen mellan dem.",
+  "tolkning": "Uppgången föll från 7,5 och 6,2 procent under de två första perioderna till 0,9 och 0,8 under de två senare. Inbromsningen sker mellan de två första perioderna och de två sista. Måttet omfattar skatter, bidrag och pensioner, som riksdagen beslutar om, men rapporten mäter inte de enskilda posterna och kan inte fördela inbromsningen mellan dem.",
   "beslut": {
    "re": "inkomstskatt|jobbskatteavdrag|skattereduktion|bostadstillägg|barnbidrag|pension|garantipension|höjt.*bidrag",
    "prioritera": "inkomstskatt|jobbskatteavdrag|pension",
@@ -1003,7 +1003,7 @@
  },
  "bostadspriser": {
   "mekanism": "Fastighetsprisindex för permanenta småhus, deflaterat till 2025 års prisnivå. Måttet saknar självklar riktning och lämnas utan omdöme.",
-  "tolkning": "Uppgången under tre perioder och fallet på 19,9 procent under den pågående sammanfaller med att bolåneräntorna föll 38,7 procent och sedan steg 42,2 och 35,4 procent. Rapporten räknar fallande realpriser som en förbättring eftersom det förbättrar tillgängligheten för dem som ska köpa, men för dem som redan äger är det motsatsen – ett av få mått där riktningens värdering är genuint omtvistad.",
+  "tolkning": "Uppgången under tre perioder och fallet på 19,9 procent under den pågående sammanfaller med att bolåneräntorna föll 38,7 procent och sedan steg 42,2 och 35,4 procent. Måttet har ingen självklar riktning – fallande realpriser förbättrar läget för den som ska köpa och försämrar det för den som äger – och lämnas därför utan omdöme och räknas inte in i något aggregat.",
   "beslut": {
    "re": "amorteringskrav|bolån|ränteavdrag|bostadskredit|kreditgivning|plan- och bygglag|bostadsförsörjning",
    "doktyp": [
@@ -1093,7 +1093,7 @@
  },
  "medellivslangd": {
   "mekanism": "Återstående medellivslängd vid födelsen. Serien rör sig långsamt och föll bara tre år 2008–2025, kraftigast 2020 med 0,62 år.",
-  "tolkning": "Uppgången på 1,2 procent under den pågående perioden är den största i serien, men huvudorsaken är att jämförelsen börjar 2022, strax efter seriens kraftigaste nedgång: 0,62 år under 2020. Serien återvänder därmed till den bana den låg på före 2020, och rapporten belägger ingen politisk orsak till uppgången. Det är rapportens tydligaste exempel på vad en periodgräns kan göra: nedgången hamnade i den föregående perioden och återhämtningen i den här.",
+  "tolkning": "Uppgången på 1,2 procent under den pågående perioden är den största i serien, men huvudorsaken är att jämförelsen börjar 2022, strax efter seriens kraftigaste nedgång: 0,62 år under 2020. Serien återvänder därmed till den bana den låg på före 2020, och rapporten belägger ingen politisk orsak till uppgången. Periodgränsen delar rörelsen i två: nedgången hamnade i den föregående perioden och återhämtningen i den här.",
   "beslut": {
    "re": "folkhälso|hälso- och sjukvård|tobak|ANDT|cancer",
    "inte": "djurens",
